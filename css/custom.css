@@ -2,3 +2,8 @@ body {
     font-family: "Noto Sans JP";
 }
 
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
