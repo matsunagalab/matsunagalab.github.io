@@ -21,7 +21,7 @@
       
         <meta name="lang:clipboard.copied" content="コピーしました">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
       
@@ -44,12 +44,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -465,7 +465,17 @@
 </p></p>
 <h2 id="_1">シミュレーションの高速化・効率化</h2>
 <p>分子シミュレーションは計算顕微鏡(computational microscope)とも呼ばれているように、
-ミクロな世界のふるまいを観察する有力な手法のひとつです。</p>
+ミクロな世界のふるまいを観察する有力な手法のひとつです。
+その意味で、分子シミュレーションの理論やアルゴリズムを開発することは、
+顕微鏡の開発と同じ工学的な課題のひとつと言えます。
+我々が取り組んでいるシミュレーション技法のひとつである、分子動力学法(molecular dynamics simulation)は、
+中学校で習うニュートンの運動法則(力=質量×加速度)を数値的に解く手法です。これは非常にシンプルな方法で、
+原子間距離を計算してそこから各原子に働く力を計算して原子の座標をアップデートする、
+それを繰り返すことで時間発展させる、ということをやっています。
+たったこれだけことですが、そこからタンパク質がどうふるまうのかを詳しく調べることができます。
+具体的には、どのような構造が安定か？構造変化が起こりやすいか？どうやって構造変化するか?
+薬剤がどれくらい結合しやすいか？薬剤と構造安定性の関係は?他のタンパク質と結合しやすいか？
+といったたくさんの物性を定量化することができます。</p>
 <p>作成中</p>
 <h2 id="_2">シミュレーションデータ解析法の開発</h2>
 <p>作成中</p>
@@ -542,7 +552,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
       
         
         
@@ -554,7 +564,7 @@
                 <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
