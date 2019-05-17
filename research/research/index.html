@@ -21,7 +21,7 @@
       
         <meta name="lang:clipboard.copied" content="コピーしました">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
       
@@ -44,12 +44,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -549,12 +549,21 @@
 理化学研究所で開発している<a href="https://www.r-ccs.riken.jp/labs/cbrt/">GENESIS</a> や 
 ヨーロッパの<a href="http://www.gromacs.org">GROMACS</a> や 
 米国の<a href="http://ambermd.org">AMBER</a> といった分子動力学法ソフトウェアです。 </p>
-<p>別の視点で、我々が最近取り組んでいることは、もう少しメタなレベルの並列化です。
-たとえば、構造変化を軌跡を最初に考えてしまって、ほぼ独立なシミュレーションをたくさん実行して、
-ニュートンの方程式を満たす軌跡を探す・最適化するというアプローチがあります
-(概念的には方程式のレベルで時間方向に並列してることになります)。
-我々は少し前にこの手法を高度化して、京コンピュータ上で
-多剤耐性の原因となるタンパク質の薬剤輸送過程をシミュレートしました。作成中</p>
+<p>別の視点で、我々が最近特に取り組んでいることは、もう少しメタなレベルの並列化です。
+たとえば、ニュートンの運動法則を満たす方程式を時間方向に並列化して、一つのシミュレーションではなく
+たくさんのシミュレーションを同時に走らせて方程式を満たす解を探索したり、
+もしくは単に独立なシミュレーションを並列にたくさんはしらせて、
+あとで機械学習を使ってデータを統合するといったアプローチがあります。
+我々は少し前にこうした並列化手法を駆使して、京コンピュータ上で
+薬剤耐性の原因となる巨大タンパク質の薬剤輸送過程をシミュレートしました。</p>
+<p align="center">
+  <img src="../../images/acrb.gif">
+</p>
+
+<p></br>
+<p align="center">
+京コンピュータ上でシミュレートした巨大タンパク質の薬剤輸送過程</br>
+</p></p>
 <h2 id="_2">シミュレーションデータ解析法の開発</h2>
 <p>作成中</p>
 <h2 id="_3">実験データを統合したモデリング</h2>
@@ -630,7 +639,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
       
         
         
@@ -642,7 +651,7 @@
                 <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
