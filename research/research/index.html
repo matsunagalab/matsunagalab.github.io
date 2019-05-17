@@ -546,9 +546,10 @@
 力の計算(原子間距離の計算)を行うことは有効な並列化のひとつです(もちろんグループ間の移動も毎回起こります)。
 うまく並列化することでスーパーコンピュータ等の並列計算環境で高速に計算することができるようになります。
 このレベルの並列化をつきつめて作られているのが、共同研究先である
-理化学研究所で開発している<a href="https://www.r-ccs.riken.jp/labs/cbrt/">GENESIS</a> や 
-ヨーロッパの<a href="http://www.gromacs.org">GROMACS</a> や 
-米国の<a href="http://ambermd.org">AMBER</a> といった分子動力学法ソフトウェアです。 </p>
+理化学研究所で開発している<a href="https://www.r-ccs.riken.jp/labs/cbrt/">GENESIS</a>や 
+ヨーロッパの<a href="http://www.gromacs.org">GROMACS</a>、
+米国の<a href="http://ambermd.org">AMBER</a>や<a href="http://www.ks.uiuc.edu/Research/namd/">NAMD</a>
+といった分子動力学法ソフトウェアです。 </p>
 <p>別の視点で、我々が最近特に取り組んでいることは、もう少しメタなレベルの並列化です。
 たとえば、ニュートンの運動法則を満たす方程式を時間方向に並列化して、一つのシミュレーションではなく
 たくさんのシミュレーションを同時に走らせて方程式を満たす解を探索したり、
