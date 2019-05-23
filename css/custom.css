@@ -2,7 +2,7 @@ body {
     font-family: "Noto Sans JP";
 }
 
-.video-wrapper {
+video-wrapper {
   position: relative;
   display: block;
   height: 0;
@@ -10,7 +10,8 @@ body {
   overflow: hidden;
   padding-bottom: 56.25%;
 }
-.video-wrapper > iframe {
+
+video-wrapper > iframe {
   position: absolute;
   top: 0;
   bottom: 0;
