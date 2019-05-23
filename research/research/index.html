@@ -44,14 +44,15 @@
 例えば、各原子を近いもの同士でグループに分けて、別々のコンピュータに保有させて
 力の計算(原子間距離の計算)を行うことは有効な並列化のひとつです(グループ間の移動も考慮が必要ですが)。
 うまく並列化することでスーパーコンピュータ等の並列計算環境を活かして高速に計算することができるようになります。
-このレベルの並列化をつきつめて作られているのが、共同研究先の
-理化学研究所で開発している<a href="https://www.r-ccs.riken.jp/labs/cbrt/">GENESIS</a>や 
+このレベルの並列化には長い歴史があり、この方向をつきつめて作られているのが、
+共同研究先の理化学研究所で開発している<a href="https://www.r-ccs.riken.jp/labs/cbrt/">GENESIS</a>や 
 ヨーロッパの<a href="http://www.gromacs.org">GROMACS</a>、
 米国の<a href="http://ambermd.org">AMBER</a>や<a href="http://www.ks.uiuc.edu/Research/namd/">NAMD</a>
 といった分子動力学法ソフトウェアです。 </p>
 <p>別の視点で、我々が最近特に取り組んでいることは、ひとつメタなレベルの並列化です。
 単純に言うと、一つのシミュレーションをながす代わりに、多数のシミュレーションを連携して流すことで
-目的の計算(たとえばどのようなタンパク質構造が安定か、薬剤が結合しやすいか)を短時間で計算できないか、ということを研究しています。
+目的の計算(たとえばどのようなタンパク質構造が安定か、薬剤が結合しやすいかといった統計量)を短時間で計算できないか、
+ということを研究しています。
 例えば、構造の異なる独立なシミュレーションを並列にたくさんはしらせて、
 マルコフ性という物理的仮定をした上で、機械学習を使ってデータを統合するといったアプローチがあります。
 他には、ニュートンの方程式(力=質量×加速度)を時間方向に「並列化」して、
@@ -60,7 +61,7 @@
 (詳しくは<a href="http://www.riken.jp/pr/press/2018/20180312_1/">こちら</a>)。
 このメタなレベルの並列化は、シミュレーションデータの機械学習と組み合わせることでまだまだ効率化することができると考えています。
 例えば、シミュレーションの途中で機械学習を行って、まだサンプリングができていない構造領域を予測し、
-次のシミュレーションではその付近に多数のシミュレーションをばらまく、そしてそれを繰り返す、といったアプローチが考えられます。
+次のシミュレーションではその付近に集中的にシミュレーションをばらまく、そしてそれを繰り返す、といったアプローチが考えられます。
 それを実現させるために、下で説明しているデータ解析法の開発にも取り組んでいます。</p>
 <!-- <p align="center"> -->
 
@@ -76,9 +77,31 @@
 
 <!-- </p> -->
 
+<p>キーワード
+- 高性能計算(High Peformance Computing; HPC)
+- 低レベル言語 FORTRAN・C
+- 並列化 MPI・OpenMP
+- ストリング法や分散コンピューティング</p>
 <h2 id="_2">シミュレーションデータ解析法の開発</h2>
 <p>作成中</p>
+<p>キーワード
+- 反応座標探索
+- アロステリック(相関がある)アミノ酸ペアの同定
+- 自由エネルギー推定
+- マルコフ状態モデル
+- ベイズ推定、ベイズ最適化・ガウス過程
+- 線形応答</p>
 <h2 id="_3">実験データを統合したモデリング</h2>
 <p>作成中</p>
+<p>キーワード
+- データ同化
+- カルマンフィルタ・粒子フィルタ
+- マルコフ状態モデル
+- 隠れマルコフモデル</p>
 <h2 id="_4">その他</h2>
-<p>作成中</p></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../.." title="Top" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前</span>Top</span></div></a><a href="../publication/" title="出版物" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">次</span>出版物</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>
+<p>作成中</p>
+<p>キーワード
+- データ同化
+- カルマンフィルタ・粒子フィルタ
+- マルコフ状態モデル
+- 隠れマルコフモデル</p></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../.." title="Top" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前</span>Top</span></div></a><a href="../publication/" title="出版物" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">次</span>出版物</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script></body></html>
