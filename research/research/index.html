@@ -180,7 +180,7 @@ Villin headpiece という小さなタンパク質がフォールディング(�
 これを行うにはデータベースに登録されている変異実験データと「統合」して推定するのが有効だと考えられます。
 例えば、<a href="https://www.iitm.ac.in/bioinfo/ProTherm/">ProTherm</a>というデータベースには、
 あるタンパク質のどのアミノ酸残基を変異させたらどれくらい安定・不安定になったか、というデータが登録されています。
-これとシミュレーションデータから得られた構造安定性やアミノ酸残基間の相互作用データを統合することになります。
+これとシミュレーションデータから得られた安定構造やアミノ酸残基間の相互作用データを統合することになります。
 こうした異なる種類のデータを統合してモデリングを行い、より正確な推定を行うための研究も行っています(次へ続く)。</p>
 <div class="video-wrapper">
 <p align="center">
@@ -194,9 +194,9 @@ Villin headpiece という小さなタンパク質がフォールディング(�
 
 <p>具体的な研究テーマ</p>
 <ul>
-<li>限られた数のデータから構造の安定性(自由エネルギー)の推定する手法の開発</li>
+<li>限られた数のデータから構造の安定性(自由エネルギー)を推定する手法の開発</li>
 <li>自由エネルギー推定におけるエラーの評価</li>
-<li>推定のエラーに基づくシミュレーション資源の効率的配分</li>
+<li>推定エラーに基づくシミュレーション資源の効率的配分</li>
 </ul>
 <p>キーワード</p>
 <ul>
@@ -211,7 +211,6 @@ Villin headpiece という小さなタンパク質がフォールディング(�
 </ul>
 <hr />
 <h2 id="_3">実験データを統合したモデリング</h2>
-<p>作成中</p>
 <div class="video-wrapper">
 <p align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0ew3L2RbbQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -224,10 +223,13 @@ Villin headpiece という小さなタンパク質がフォールディング(�
 
 <p>キーワード</p>
 <ul>
-<li>データ同化・ベイズ推定</li>
-<li>カルマンフィルタ・粒子フィルタ</li>
-<li>マルコフ状態モデル・隠れマルコフモデル</li>
+<li>ベイズモデリング・データ同化</li>
+<li>逐次モンテカルロ(粒子フィルタ)・隠れマルコフモデル</li>
 <li>1分子計測・NMR・高速AFM</li>
+</ul>
+<p>参考文献</p>
+<ul>
+<li>Y. Matsunaga, and Y. Sugita, “<a href="https://elifesciences.org/articles/32668">Linking time-series of single-molecule experiments with molecular dynamics simulations by machine learning</a>”, eLife 7, e32668 (19 pages) (2018) (日本語による解説 「<a href="http://www.riken.jp/pr/press/2018/20180515_2/">1分子計測のデータ同化による生体分子構造ダイナミクス －小タンパク質が折り畳まれる際の中間構造・パスウェイを特定－</a>」)</li>
 </ul>
 <hr />
 <h2 id="_4">その他</h2>
