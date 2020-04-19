@@ -3,7 +3,7 @@
 <p>研究室配属された4年生には1人あたりMacBook1台をできる限り貸し出しています。
 そのMacBook Proで、輪講のスライド作成や、研究活動のコーディングや計算・解析(重たい計算はサーバでやりますが)、卒検発表のスライド作成・発表までほぼ全てを行ってもらいます。
 教員や他のメンバーとも環境が揃っていたほうが便利なことが多いので、環境のセットアップ手順をまとめます。</p>
-<p>以下の状態となることが目標です：</p>
+<p>以下の状態となることが目標です。各種ソフトウェアの具体的な使い方については、輪講後にハンズオンセミナーを行います：</p>
 <ul>
 <li>
 <p>研究室メンバーで連絡を取り合えるようにSlackを使えるようになる</p>
@@ -57,8 +57,10 @@ $ defaults write NSGlobalDomain InitialKeyRepeat -int <span class="m">10</span>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install microsoft-office microsoft-teams
 </pre></div>
 </td></tr></table></p>
-<p>PyMOLをインストールします。PyMOLはタンパク質構造可視化ソフトで、輪講で勉強した構造に関する知識が実際のデータで確認できます。
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install microsoft-office microsoft-teams
+<p>PyMOLをインストールします。PyMOLはタンパク質構造可視化ソフトで、輪講で勉強した構造に関する知識が実際のデータを使って確認できるようになります。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew tap brewsci/bio
+$ brew install pymol
 </pre></div>
 </td></tr></table></p>
 <h4 id="docker">Dockerのインストール</h4>
@@ -71,6 +73,6 @@ $ defaults write NSGlobalDomain InitialKeyRepeat -int <span class="m">10</span>
 </pre></div>
 </td></tr></table></p>
 <p>また、Dockerを使って、分子シミュレーションソフトのGENESISを起動してみましょう。以下のコマンドでGENESISの計算エンジンであるspdynの簡易ヘルプを表示します。
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work -w /work/ ymatsunaga/genesis mpirun -np <span class="m">8</span> spdyn
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">n$</span> <span class="n">docker</span> <span class="n">run</span> <span class="c1">--rm -v $(pwd):/work -w /work/ ymatsunaga/genesis mpirun -np 8 spdyn</span>
 </pre></div>
 </td></tr></table></p></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../link/" title="Links" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前</span>Links</span></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
