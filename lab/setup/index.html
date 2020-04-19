@@ -24,7 +24,10 @@
 <p>シミュレーションの実行のためにDockerを使えるようになる</p>
 </li>
 <li>
-<p>データ解析の環境としてJupyterを使えるようになる</p>
+<p>Docker経由でデータ解析環境であるJupyterを使えるようになる</p>
+</li>
+<li>
+<p>Docker経由で分子シミュレーションソフトを使えるようになる</p>
 </li>
 </ul>
 <h4 id="_1">「ターミナル」の起動</h4>
@@ -46,7 +49,7 @@ $ defaults write NSGlobalDomain InitialKeyRepeat -int <span class="m">10</span>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install slack
 </pre></div>
 </td></tr></table></p>
-<p>Microsoft Office(ワードやパワーポイント)とTeamsをインストールします。インストール後、起動時にアカウントが求められますので、大学のOffice365アカウントを使ってください。
+<p>Microsoft Office(ワードやパワーポイント)とTeamsをインストールします。インストール後、起動時にアカウントが求められますので、大学のOffice365アカウントを使ってください。Teamsではmatsunagalabという「チーム」へ参加してテレビ会議で輪講を行います(新型コロナ対応)。チームへ参加するために必要な「チームコード」は別途共有します。
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install microsoft-office microsoft-teams
 </pre></div>
 </td></tr></table></p>
@@ -58,4 +61,16 @@ $ defaults write NSGlobalDomain InitialKeyRepeat -int <span class="m">10</span>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install microsoft-office microsoft-teams
 </pre></div>
 </td></tr></table></p>
-<h4 id="docker">Dockerのインストール</h4></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../link/" title="Links" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前</span>Links</span></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
+<h4 id="docker">Dockerのインストール</h4>
+<p>Dockerはコンテナ型仮想アプリケーションの実行環境であり開発環境です。シミュレーションや解析系のコンパイル・インストールが難しいアプリケーションはこれを使って実行します。これもbrewでインストールできます。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install docker
+</pre></div>
+</td></tr></table></p>
+<p>Dockerの動作確認を兼ねて、Dockerを使って、データ解析系の環境であるJupyterを起動してみましょう。以下のコマンドを実行して出てくるアドレスをブラウザへ貼り付けてみてください(:8888の前の記号の羅列はlocalhostへ置き換えてください)。Ctrl+cで終了します。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run --rm -p <span class="m">10000</span>:8888 -e <span class="nv">JUPYTER_ENABLE_LAB</span><span class="o">=</span>yes -v <span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span>:/home/jovyan/work jupyter/datascience-notebook
+</pre></div>
+</td></tr></table></p>
+<p>また、Dockerを使って、分子シミュレーションソフトのGENESISを起動してみましょう。以下のコマンドでGENESISの計算エンジンであるspdynの簡易ヘルプを表示します。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work -w /work/ ymatsunaga/genesis mpirun -np <span class="m">8</span> spdyn
+</pre></div>
+</td></tr></table></p></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../link/" title="Links" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前</span>Links</span></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
