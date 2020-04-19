@@ -691,7 +691,7 @@
 <p>プログラムのコーディングをするためにエディタ(Atom)を使えるようになる</p>
 </li>
 <li>
-<p>タンパク質構造に慣れるために構造ゲームソフトであるFoldItを使えるようになる</p>
+<p>タンパク質構造に慣れるために構造ゲームソフトであるFoldItで遊べるようになる</p>
 </li>
 <li>
 <p>タンパク質構造を可視化するソフトであるPyMOLを使えるようになる</p>
@@ -748,15 +748,15 @@ $ brew install pymol
 </pre></div>
 </td></tr></table></p>
 <h4 id="docker">Dockerのインストール</h4>
-<p>Dockerはコンテナ型仮想アプリケーションの実行環境であり開発環境です。シミュレーションや解析系のコンパイル・インストールが難しいアプリケーションはこれを使って実行します。これもbrewでインストールできます。
+<p>Dockerはコンテナ型仮想アプリケーションの実行環境であり開発環境です。シミュレーションや解析系のコンパイル・インストールが難しいアプリケーションはこれを使って実行します。これも<code class="codehilite"><span class="n">brew</span></code>でインストールできます。
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install docker
 </pre></div>
 </td></tr></table></p>
-<p>Dockerの動作確認を兼ねて、Dockerを使って、データ解析系の環境であるJupyterを起動してみましょう。以下のコマンドを実行して出てくるアドレスをブラウザへ貼り付けてみてください(:8888の前の記号の羅列はlocalhostへ置き換えてください)。Ctrl+cで終了します。
+<p>Dockerの動作確認を兼ねて、Dockerを使って、データ解析系の環境であるJupyterを起動してみましょう。以下のコマンドを実行して出てくるアドレスをブラウザへ貼り付けてみてください(<code class="codehilite"><span class="p">:</span><span class="mi">8888</span></code>の前の記号の羅列は<code class="codehilite"><span class="n">localhost</span></code>へ置き換えてください)。Ctrl+cで終了します。
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run --rm -p <span class="m">8888</span>:8888 -e <span class="nv">JUPYTER_ENABLE_LAB</span><span class="o">=</span>yes -v <span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span>:/home/jovyan/work jupyter/datascience-notebook
 </pre></div>
 </td></tr></table></p>
-<p>また、Dockerを使って、分子シミュレーションソフトのGENESISを起動してみましょう。以下のコマンドでGENESISの計算エンジンであるspdynの簡易ヘルプを表示します。
+<p>また、Dockerを使って、分子シミュレーションソフトのGENESISを起動してみましょう。以下のコマンドでGENESISの計算エンジンである<code class="codehilite"><span class="n">spdyn</span></code>の簡易ヘルプを表示します。
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work -w /work/ ymatsunaga/genesis mpirun -np <span class="m">8</span> spdyn
 </pre></div>
 </td></tr></table></p>
