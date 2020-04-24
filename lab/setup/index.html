@@ -741,10 +741,19 @@ $ defaults write NSGlobalDomain KeyRepeat -int <span class="m">2</span>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install foldit
 </pre></div>
 </td></tr></table></p>
-<p>PyMOLをインストールします。PyMOLはタンパク質構造可視化ソフトで、輪講で勉強した構造に関する知識が実際のデータを使って確認できるようになります。
+<p>PyMOLをインストールします。PyMOLはタンパク質構造可視化ソフトで、輪講で勉強した構造に関する知識が実際のデータを使って確認できるようになります。</p>
+<p>PyMOLはUnix系OSのX Window System (GUI)を使っているので、まずはMacOSでX Window Systemを使えるようにするXQuartzをインストール必要があります。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew cask install xquartz
+</pre></div>
+</td></tr></table></p>
+<p>その後、PyMOLをインストールします。
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew tap brewsci/bio
-$ brew install pymol
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nv">brew</span> <span class="nv">tap</span> <span class="nv">brewsci</span><span class="o">/</span><span class="nv">bio</span>
+$ <span class="nv">brew</span> <span class="nv">install</span> <span class="nv">pymol</span>
+# インストールできていることを確認
+$ <span class="nv">pymol</span> <span class="o">-</span><span class="nv">d</span> <span class="s2">&quot;</span><span class="s">fetch 4akeA; center; show sticks</span><span class="s2">&quot;</span>
 </pre></div>
 </td></tr></table></p>
 <h4 id="docker">Dockerのインストールと実行の確認</h4>
