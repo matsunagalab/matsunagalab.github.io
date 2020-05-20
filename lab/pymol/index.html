@@ -284,7 +284,7 @@ $ brew install pymol
 <span class="n">dss</span> <span class="o">#</span><span class="err">本当は</span><span class="n">dsspかstrideで二次構造判定することを推奨</span>
 <span class="o">#</span> <span class="err">主鎖の水素結合を表示</span>
 <span class="k">as</span> <span class="n">sticks</span><span class="p">,</span> <span class="n">name</span> <span class="k">c</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="n">o</span><span class="o">+</span><span class="n">ca</span>
-<span class="n">Objectメニュー</span> <span class="mi">1</span><span class="n">ake</span><span class="o">-&gt;</span><span class="n">Action</span><span class="o">-&gt;</span><span class="n">find</span><span class="o">-&gt;</span><span class="n">polar</span> <span class="n">contacts</span><span class="o">-&gt;</span> <span class="n">just</span> <span class="n">intra</span><span class="o">-</span><span class="n">main</span> <span class="k">chain</span>
+<span class="n">Objectメニュー</span> <span class="mi">4</span><span class="n">akeA</span><span class="o">-&gt;</span><span class="n">Action</span><span class="o">-&gt;</span><span class="n">find</span><span class="o">-&gt;</span><span class="n">polar</span> <span class="n">contacts</span><span class="o">-&gt;</span> <span class="n">just</span> <span class="n">intra</span><span class="o">-</span><span class="n">main</span> <span class="k">chain</span>
 </pre></div>
 </td></tr></table></p>
 <p>疎水性
@@ -303,14 +303,6 @@ $ brew install pymol
 <span class="n">color</span> <span class="n">blue</span><span class="p">,</span> <span class="n">hydrophilic</span>
 </pre></div>
 </td></tr></table></p>
-<p>重ね合わせて構造比較
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">fetch</span> <span class="mi">1</span><span class="n">akeA</span>
-<span class="k">fetch</span> <span class="mi">4</span><span class="n">akeA</span>
-<span class="n">align</span> <span class="mi">4</span><span class="n">akeA</span><span class="p">,</span> <span class="mi">1</span><span class="n">akeA</span>
-</pre></div>
-</td></tr></table></p>
 <p>分子表面
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">fetch</span> <span class="mi">4</span><span class="nv">akeA</span>
@@ -320,11 +312,21 @@ $ brew install pymol
 <p>Solvent accessible surface area (SASA)
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">PyMOLではSASAの値だけ</span>
-<span class="n">Objectメニュー</span><span class="o">-&gt;</span><span class="mi">4</span><span class="n">ake</span><span class="o">-&gt;</span><span class="n">compute</span><span class="o">-&gt;</span><span class="n">surface</span> <span class="n">area</span><span class="o">-&gt;</span><span class="n">solvent</span> <span class="n">accessible</span>
+<span class="n">Objectメニュー</span><span class="o">-&gt;</span><span class="mi">4</span><span class="n">akeA</span><span class="o">-&gt;</span><span class="n">compute</span><span class="o">-&gt;</span><span class="n">surface</span> <span class="n">area</span><span class="o">-&gt;</span><span class="n">solvent</span> <span class="n">accessible</span>
 </pre></div>
 </td></tr></table></p>
 <p>静電ポテンシャル
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Objectメニュー</span><span class="o">-&gt;</span><span class="mi">4</span><span class="n">ake</span><span class="o">-&gt;</span><span class="n">action</span><span class="o">-&gt;</span><span class="n">generate</span><span class="o">-&gt;</span><span class="k">vacuum</span> <span class="n">electrostatics</span><span class="o">-&gt;</span><span class="n">protein</span> <span class="n">contact</span> <span class="n">potential</span> <span class="p">(</span><span class="k">local</span><span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Objectメニュー</span><span class="o">-&gt;</span><span class="mi">4</span><span class="n">akeA</span><span class="o">-&gt;</span><span class="n">action</span><span class="o">-&gt;</span><span class="n">generate</span><span class="o">-&gt;</span><span class="k">vacuum</span> <span class="n">electrostatics</span><span class="o">-&gt;</span><span class="n">protein</span> <span class="n">contact</span> <span class="n">potential</span> <span class="p">(</span><span class="k">local</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></p>
+<p>重ね合わせて構造比較
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">reinitialize</span>
+<span class="k">fetch</span> <span class="mi">1</span><span class="n">akeA</span>
+<span class="k">fetch</span> <span class="mi">4</span><span class="n">akeA</span>
+<span class="n">align</span> <span class="mi">4</span><span class="n">akeA</span><span class="p">,</span> <span class="mi">1</span><span class="n">akeA</span>
 </pre></div>
 </td></tr></table></p>
 <p>結合ポケット
@@ -333,8 +335,10 @@ $ brew install pymol
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 簡易的であるが<span class="nv">PyMOL</span>の<span class="nv">cavity</span>モードを使う
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 簡易的であるが<span class="nv">PyMOL</span>の<span class="nv">cavity</span>モードを使う
 # タミフルでの例
+<span class="nv">reinitialize</span>
 <span class="nv">fetch</span> <span class="mi">2</span><span class="nv">ht7</span>
 <span class="k">show</span> <span class="nv">surf</span>
 <span class="nv">set</span> <span class="nv">surface_cavity_mode</span>, <span class="mi">1</span>
