@@ -9,13 +9,13 @@
 <h4 id="pymol_1">PyMOLとは？</h4>
 <ul>
 <li>
-<p>20年くらいの歴史がある分子可視化ソフト</p>
+<p>20年くらいの歴史がある分子構造可視化ソフト</p>
 </li>
 <li>
 <p>分子可視化ソフトにはVMDやCHIMERAなどがあるが、表示の美しさ・センスの良さで定評がある</p>
 </li>
 <li>
-<p>OpenGL、FreeGLUT、Pythonを使用している</p>
+<p>Python、OpenGL、FreeGLUTを使用している</p>
 </li>
 <li>
 <p>Warren DeLano個人によって開発されていたが、彼の突然の死によって、 Schrödinger社(バイオ系のソフトウェア会社)によって引き受けられている</p>
@@ -26,7 +26,7 @@
 </ul>
 <h4 id="_1">インストール</h4>
 <p>オープンソース版をインストールします。現状、MacOSにはHomebrew経由でいれるのがよいです。HomebrewはAnacondaと相性が悪いので、Anacondaはアンインストールするか、pyenvで環境をわけるのが推奨です。</p>
-<p>HomebrewでPyMOLをインストールするにはAg_smithさん謹製のHomebrewレシピを使います <a href="https://qiita.com/Ag_smith/items/58e917710c4eddab46ee">https://qiita.com/Ag_smith/items/58e917710c4eddab46ee</a>
+<p>HomebrewでPyMOLをインストールするには森脇さん謹製のHomebrewレシピを使わせてもらいます <a href="https://qiita.com/Ag_smith/items/58e917710c4eddab46ee">https://qiita.com/Ag_smith/items/58e917710c4eddab46ee</a>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ brew tap brewsci/bio
 $ brew install pymol
@@ -64,17 +64,17 @@ $ brew install pymol
 </ul>
 <h4 id="_3">コマンドの文法</h4>
 <p>PyMOLのコマンドは以下のような文法になっています。
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">「何かの処理」</span> <span class="err">「オブジェクト」</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">何かの処理</span> <span class="err">オブジェクト</span>
 </pre></div>
 </td></tr></table>
 例えば
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">center</span> <span class="k">all</span>
 </pre></div>
 </td></tr></table>
-というコマンドは、全てのオブジェクト(all)を中心に移動する(center)という処理を行います。</p>
-<p>オブジェクトは、構造データ(PDBファイル)を読み込んだり、読み込んだ構造を選択(selection)することで作ることができます。</p>
+というコマンドは、全てのオブジェクト(all)を真ん中へ移動させる(center)という処理を行います。</p>
+<p>オブジェクトは、構造データ(PDBファイルなど)を読み込んだり、読み込んだ構造を選択(selection)することで作ることができます。</p>
 <h4 id="_4">コマンドの実践</h4>
-<p>実際にコマンドを実行しながら、処理とselectionによるオブジェクト生成を見ていきましょう。</p>
+<p>実際にコマンドを実行しながら、処理やselectionのやり方を見ていきましょう</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -119,49 +119,57 @@ $ brew install pymol
 42
 43
 44
-45</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#<span class="nv">PDB</span>から <span class="nv">PDB</span> <span class="nv">ID</span><span class="o">=</span><span class="mi">1</span><span class="nv">ake</span> の <span class="nv">chain</span><span class="o">=</span><span class="nv">A</span>の構造をとる
+45
+46
+47
+48
+49</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># <span class="nv">PDB</span>から <span class="nv">PDB</span> <span class="nv">ID</span><span class="o">=</span><span class="mi">1</span><span class="nv">ake</span> の <span class="nv">chain</span><span class="o">=</span><span class="nv">A</span>の構造をダウンロードする
 <span class="nv">fetch</span> <span class="mi">1</span><span class="nv">akeA</span>
 
-# 全てのオブジェクト
-<span class="k">show</span> <span class="nv">lines</span>, <span class="nv">all</span> #もしくは省略すると<span class="nv">all</span>になる
+# 全てのオブジェクトを真ん中へ移動させる<span class="ss">(</span><span class="nv">all</span>の省略も可<span class="ss">)</span>
+<span class="nv">center</span>, <span class="nv">all</span>
 
-# 特定のオブジェクト
+# 全てのオブジェクトの<span class="nv">line</span>表示を追加する
+<span class="k">show</span> <span class="nv">lines</span>, <span class="nv">all</span>
+
+# 特定のオブジェクト<span class="ss">(</span><span class="mi">1</span><span class="nv">akeA</span><span class="ss">)</span>を<span class="nv">line</span>表示だけにする
 <span class="nv">as</span> <span class="nv">lines</span>, <span class="mi">1</span><span class="nv">akeA</span>
 
-# <span class="nv">chain</span> <span class="nv">A</span>
+# <span class="nv">chain</span> <span class="nv">A</span>の色を赤にする
 <span class="nv">color</span> <span class="nv">red</span>, <span class="nv">chain</span> <span class="nv">A</span>
 
-#元素名
+# 元素名<span class="nv">s</span>の<span class="nv">sphere</span>表示を追加する
 <span class="k">show</span> <span class="nv">spheres</span>, <span class="nv">elem</span> <span class="nv">s</span>
 
-# 原子名の指定
+# 原子名<span class="nv">c</span>または<span class="nv">n</span>または<span class="nv">o</span>または<span class="nv">ca</span>の<span class="nv">stick</span>表示を追加する
 <span class="k">show</span> <span class="nv">sticks</span>, <span class="nv">name</span> <span class="nv">c</span><span class="o">+</span><span class="nv">n</span><span class="o">+</span><span class="nv">o</span><span class="o">+</span><span class="nv">ca</span>
 
-#アミノ酸残基番号の指定
+# アミノ酸残基番号<span class="mi">10</span>〜<span class="mi">15</span>の色を青にする
 <span class="nv">color</span> <span class="nv">blue</span>, <span class="nv">resid</span> <span class="mi">10</span>:<span class="mi">15</span>
 
-#アミノ酸残基名の指定
+# アミノ酸残基名<span class="nv">pro</span><span class="ss">(</span><span class="nv">proline</span><span class="ss">)</span>の色を黄色にする
 <span class="nv">color</span> <span class="nv">yellow</span>, <span class="nv">resn</span> <span class="nv">pro</span>
 
-#２次構造
+# 二次構造を<span class="nv">select</span>しての色を変える
 <span class="nv">color</span> <span class="nv">purple</span>, <span class="nv">ss</span> <span class="nv">h</span> #ヘリックス
 <span class="nv">color</span> <span class="nv">yellow</span>, <span class="nv">ss</span> <span class="nv">s</span> #シート
 <span class="nv">color</span> <span class="nv">red</span>, <span class="nv">ss</span> <span class="nv">l</span> #ループ
 <span class="nv">color</span> <span class="nv">blue</span>, <span class="nv">ss</span> “” #それ以外
 
-#分子種
+# 分子種を<span class="nv">select</span>して表示を変える
 <span class="nv">as</span> <span class="nv">cartoon</span>, <span class="nv">polymer</span>
 <span class="nv">as</span> <span class="nv">spheres</span>, <span class="nv">solvent</span>
 <span class="nv">as</span> <span class="nv">sticks</span>, <span class="nv">organic</span>
 
-# <span class="nv">logical</span> <span class="nv">operator</span>を使って複雑な<span class="nv">selection</span>
+# <span class="nv">logical</span> <span class="nv">operator</span>を使って複雑な<span class="nv">selection</span>を行う
 <span class="k">show</span> <span class="nv">dots</span>, <span class="nv">not</span> <span class="nv">name</span> <span class="nv">c</span><span class="o">+</span><span class="nv">n</span><span class="o">+</span><span class="nv">o</span><span class="o">+</span><span class="nv">ca</span> #側鎖
 <span class="nv">color</span> <span class="nv">purple</span>, <span class="nv">resn</span> <span class="nv">ala</span> <span class="nv">and</span> <span class="nv">resid</span> <span class="mi">1</span>:<span class="mi">30</span> <span class="nv">and</span> <span class="nv">chain</span> <span class="nv">A</span>  
 
-# <span class="nv">selection</span>をオブジェクトとして保存
+# <span class="nv">selection</span>を名前を付けてオブジェクトとして保存し、後で使う
 <span class="nv">select</span> <span class="nv">backbone</span>, <span class="nv">name</span> <span class="nv">c</span><span class="o">+</span><span class="nv">n</span><span class="o">+</span><span class="nv">o</span><span class="o">+</span><span class="nv">ca</span>
+<span class="nv">color</span> <span class="nv">pink</span>, <span class="nv">backbone</span>
 
-#距離
+# 距離で<span class="nv">select</span>する
 <span class="k">show</span> <span class="nv">sticks</span>, <span class="nv">organic</span> <span class="nv">around</span> <span class="mi">5</span>.<span class="mi">0</span>
 <span class="k">show</span> <span class="nv">sphere</span>, <span class="nv">organic</span> <span class="nv">around</span> <span class="mi">5</span>.<span class="mi">0</span> <span class="nv">and</span> <span class="nv">solvent</span>
 </pre></div>
@@ -223,13 +231,13 @@ $ brew install pymol
 </td></tr></table></p>
 <p>疎水性
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">hydrophobic</span><span class="p">,</span> <span class="n">resn</span> <span class="n">ala</span><span class="o">+</span><span class="n">leu</span><span class="o">+</span><span class="n">val</span><span class="o">+</span><span class="n">tyr</span><span class="o">+</span><span class="n">phe</span><span class="o">+</span><span class="n">trp</span><span class="o">+</span><span class="n">ile</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">hydrophobic</span><span class="p">,</span> <span class="n">resn</span> <span class="n">ala</span><span class="o">+</span><span class="n">cys</span><span class="o">+</span><span class="n">gly</span><span class="o">+</span><span class="n">val</span><span class="o">+</span><span class="n">ile</span><span class="o">+</span><span class="n">leu</span><span class="o">+</span><span class="n">phe</span><span class="o">+</span><span class="n">pro</span><span class="o">+</span><span class="n">met</span><span class="o">+</span><span class="n">trp</span><span class="o">+</span><span class="n">tyr</span>
 <span class="n">color</span> <span class="n">yellow</span><span class="p">,</span> <span class="n">hydrophobic</span>
 </pre></div>
 </td></tr></table></p>
 <p>親水性
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">hydrophilic</span><span class="p">,</span> <span class="n">resn</span> <span class="n">asp</span><span class="o">+</span><span class="n">glu</span><span class="o">+</span><span class="n">arg</span><span class="o">+</span><span class="n">lys</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">hydrophilic</span><span class="p">,</span> <span class="n">resn</span> <span class="n">arg</span><span class="o">+</span><span class="n">asn</span><span class="o">+</span><span class="n">asp</span><span class="o">+</span><span class="n">gln</span><span class="o">+</span><span class="n">glu</span><span class="o">+</span><span class="n">his</span><span class="o">+</span><span class="n">lys</span><span class="o">+</span><span class="n">ser</span><span class="o">+</span><span class="n">thr</span>
 <span class="n">color</span> <span class="n">blue</span><span class="p">,</span> <span class="n">hydrophilic</span>
 </pre></div>
 </td></tr></table></p>
@@ -277,4 +285,5 @@ $ brew install pymol
 <ul>
 <li>PyMOL Wiki <a href="https://pymolwiki.org">https://pymolwiki.org</a></li>
 <li>阪大 蛋白研 鈴木守先生のページ <a href="http://www.protein.osaka-u.ac.jp/rcsfp/supracryst/suzuki/jpxtal/Katsutani/install.php">http://www.protein.osaka-u.ac.jp/rcsfp/supracryst/suzuki/jpxtal/Katsutani/install.php</a></li>
+<li>東大 森脇さんのPyMOL tutorial <a href="https://yoshitakamo.github.io/pymol-book/index.html">https://yoshitakamo.github.io/pymol-book/index.html</a></li>
 </ul></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../setup/" title="Setup" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前</span>Setup</span></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
