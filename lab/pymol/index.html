@@ -229,13 +229,13 @@ $ brew install pymol
 <p>Sceneの保存
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">scene</span> <span class="n">auto</span><span class="p">,</span> <span class="n">store</span>
-<span class="err">またはメニューから保存</span>
+<span class="o">#</span> <span class="err">またはメニューから保存</span>
 </pre></div>
 </td></tr></table></p>
 <p>Sceneの呼び出し
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FN</span><span class="o">+</span><span class="n">CTRL</span><span class="o">+</span><span class="n">DownArrow</span> <span class="k">on</span> <span class="n">the</span> <span class="n">Mac</span>
-<span class="err">またはメニューから</span><span class="n">Sceneボタンを表示させてクリック</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">FN</span><span class="o">+</span><span class="n">CTRL</span><span class="o">+</span><span class="n">DownArrow</span> <span class="k">on</span> <span class="n">Mac</span>
+<span class="o">#</span> <span class="err">またはメニューから</span><span class="n">Sceneボタンを表示させてクリック</span>
 </pre></div>
 </td></tr></table></p>
 <h4 id="pymol_2">PyMOLのワークフロー</h4>
@@ -245,14 +245,17 @@ $ brew install pymol
 </ul>
 </li>
 <li>見やすい角度や表現でsceneを保存する<ul>
-<li><code class="codehilite"><span class="n">save</span></code></li>
+<li><code class="codehilite"><span class="n">scene</span> <span class="n">auto</span><span class="p">,</span> <span class="n">store</span></code></li>
 </ul>
 </li>
 <li>PyMOL session(pse)として保存する<ul>
 <li><code class="codehilite"><span class="n">save</span> <span class="n">myfile</span><span class="p">.</span><span class="n">pse</span></code></li>
 </ul>
 </li>
-<li>次回作業する時はpseを開く2へ戻る</li>
+<li>次回作業する時はpseを開き、2へ戻る<ul>
+<li><code class="codehilite"><span class="k">load</span> <span class="n">myfile</span><span class="p">.</span><span class="n">pse</span></code> または起動時に <code class="codehilite">$ pymol myfile.pse</code></li>
+</ul>
+</li>
 </ol>
 <h4 id="_6">輪講で勉強したことの確認をする</h4>
 <p>それでは輪講で勉強したタンパク質の構造の特徴を実際に確認してみましょう。
