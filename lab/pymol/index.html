@@ -41,9 +41,9 @@ $ brew install pymol
 </ul>
 </li>
 <li>マウス操作<ul>
-<li>左クリックドラッグで回転</li>
+<li>ドラッグで回転</li>
 <li>Optionを押しながら左クリックドラッグで並進</li>
-<li>右クリックドラッグでslab</li>
+<li>スクロールでslab</li>
 </ul>
 </li>
 <li>Objectメニュー<ul>
@@ -116,11 +116,14 @@ $ brew install pymol
 46
 47
 48
-49</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># <span class="nv">PDB</span>から <span class="nv">PDB</span> <span class="nv">ID</span><span class="o">=</span><span class="mi">1</span><span class="nv">ake</span> の <span class="nv">chain</span><span class="o">=</span><span class="nv">A</span>の構造をダウンロードする
+49
+50
+51
+52</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># <span class="nv">PDB</span>から <span class="nv">PDB</span> <span class="nv">ID</span><span class="o">=</span><span class="mi">1</span><span class="nv">ake</span> の <span class="nv">chain</span><span class="o">=</span><span class="nv">A</span>の構造をダウンロードする
 <span class="nv">fetch</span> <span class="mi">1</span><span class="nv">akeA</span>
 
 # 全てのオブジェクトを真ん中へ移動させる<span class="ss">(</span><span class="nv">all</span>の省略も可<span class="ss">)</span>
-<span class="nv">center</span>, <span class="nv">all</span>
+<span class="nv">center</span> <span class="nv">all</span>
 
 # 全てのオブジェクトの<span class="nv">line</span>表示を追加する
 <span class="k">show</span> <span class="nv">lines</span>, <span class="nv">all</span>
@@ -138,31 +141,34 @@ $ brew install pymol
 <span class="k">show</span> <span class="nv">sticks</span>, <span class="nv">name</span> <span class="nv">c</span><span class="o">+</span><span class="nv">n</span><span class="o">+</span><span class="nv">o</span><span class="o">+</span><span class="nv">ca</span>
 
 # アミノ酸残基番号<span class="mi">10</span>〜<span class="mi">15</span>の色を青にする
-<span class="nv">color</span> <span class="nv">blue</span>, <span class="nv">resid</span> <span class="mi">10</span>:<span class="mi">15</span>
+<span class="nv">color</span> <span class="nv">blue</span>, <span class="nv">resid</span> <span class="mi">7</span>:<span class="mi">13</span>
 
 # アミノ酸残基名<span class="nv">pro</span><span class="ss">(</span><span class="nv">proline</span><span class="ss">)</span>の色を黄色にする
 <span class="nv">color</span> <span class="nv">yellow</span>, <span class="nv">resn</span> <span class="nv">pro</span>
-
-# 二次構造を<span class="nv">select</span>しての色を変える
-<span class="nv">color</span> <span class="nv">purple</span>, <span class="nv">ss</span> <span class="nv">h</span> #ヘリックス
-<span class="nv">color</span> <span class="nv">yellow</span>, <span class="nv">ss</span> <span class="nv">s</span> #シート
-<span class="nv">color</span> <span class="nv">red</span>, <span class="nv">ss</span> <span class="nv">l</span> #ループ
-<span class="nv">color</span> <span class="nv">blue</span>, <span class="nv">ss</span> “” #それ以外
 
 # 分子種を<span class="nv">select</span>して表示を変える
 <span class="nv">as</span> <span class="nv">cartoon</span>, <span class="nv">polymer</span>
 <span class="nv">as</span> <span class="nv">spheres</span>, <span class="nv">solvent</span>
 <span class="nv">as</span> <span class="nv">sticks</span>, <span class="nv">organic</span>
 
+# 二次構造を<span class="nv">select</span>しての色を変える
+<span class="nv">as</span> <span class="nv">cartoon</span>
+<span class="nv">color</span> <span class="nv">purple</span>, <span class="nv">ss</span> <span class="nv">h</span> #ヘリックス
+<span class="nv">color</span> <span class="nv">yellow</span>, <span class="nv">ss</span> <span class="nv">s</span> #シート
+<span class="nv">color</span> <span class="nv">red</span>, <span class="nv">ss</span> <span class="nv">l</span> #ループ
+<span class="nv">color</span> <span class="nv">blue</span>, <span class="nv">ss</span> “” #それ以外
+
 # <span class="nv">logical</span> <span class="nv">operator</span>を使って複雑な<span class="nv">selection</span>を行う
 <span class="k">show</span> <span class="nv">dots</span>, <span class="nv">not</span> <span class="nv">name</span> <span class="nv">c</span><span class="o">+</span><span class="nv">n</span><span class="o">+</span><span class="nv">o</span><span class="o">+</span><span class="nv">ca</span> #側鎖
-<span class="nv">color</span> <span class="nv">purple</span>, <span class="nv">resn</span> <span class="nv">ala</span> <span class="nv">and</span> <span class="nv">resid</span> <span class="mi">1</span>:<span class="mi">30</span> <span class="nv">and</span> <span class="nv">chain</span> <span class="nv">A</span>  
+<span class="nv">color</span> <span class="nv">white</span>, <span class="nv">resn</span> <span class="nv">ala</span> <span class="nv">and</span> <span class="nv">resid</span> <span class="mi">1</span>:<span class="mi">30</span> <span class="nv">and</span> <span class="nv">chain</span> <span class="nv">A</span>
 
 # <span class="nv">selection</span>を名前を付けてオブジェクトとして保存し、後で使う
 <span class="nv">select</span> <span class="nv">backbone</span>, <span class="nv">name</span> <span class="nv">c</span><span class="o">+</span><span class="nv">n</span><span class="o">+</span><span class="nv">o</span><span class="o">+</span><span class="nv">ca</span>
-<span class="nv">color</span> <span class="nv">pink</span>, <span class="nv">backbone</span>
+<span class="k">show</span> <span class="nv">sticks</span>, <span class="nv">backbone</span>
 
 # 距離で<span class="nv">select</span>する
+<span class="nv">as</span> <span class="nv">cartoon</span>
+<span class="k">show</span> <span class="nv">sticks</span>, <span class="nv">organic</span>
 <span class="k">show</span> <span class="nv">sticks</span>, <span class="nv">organic</span> <span class="nv">around</span> <span class="mi">5</span>.<span class="mi">0</span>
 <span class="k">show</span> <span class="nv">sphere</span>, <span class="nv">organic</span> <span class="nv">around</span> <span class="mi">5</span>.<span class="mi">0</span> <span class="nv">and</span> <span class="nv">solvent</span>
 </pre></div>
@@ -216,7 +222,11 @@ $ brew install pymol
 </pre></div>
 </td></tr></table></p>
 <p>構造の重ね合わせ
-<code class="codehilite"><span class="n">align</span></code>や<code class="codehilite"><span class="n">super</span></code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">align</span> <span class="n">mobile</span><span class="p">,</span> <span class="n">target</span>
+<span class="n">super</span> <span class="n">mobile</span><span class="p">,</span> <span class="n">target</span>
+</pre></div>
+</td></tr></table></p>
 <p>背景色を変える
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">bg_color</span> <span class="n">white</span>
 </pre></div>
@@ -237,14 +247,14 @@ $ brew install pymol
 <p>Sceneとは構造の表示や見ている角度を含んだ現在の可視化状態のことを言います。PyMOLではこのSceneを何個も保存して、後で気軽に呼び出すことができます。</p>
 <p>Sceneの保存
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">scene</span> <span class="n">auto</span><span class="p">,</span> <span class="n">store</span>
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">scene</span> <span class="k">new</span><span class="p">,</span> <span class="n">store</span>
 <span class="o">#</span> <span class="err">またはメニューから保存</span>
+<span class="o">#</span> <span class="err">または</span><span class="n">Fn</span><span class="o">+</span><span class="n">Cmd</span><span class="o">+</span><span class="err">→</span> <span class="k">on</span> <span class="n">Mac</span>
 </pre></div>
 </td></tr></table></p>
 <p>Sceneの呼び出し
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">FN</span><span class="o">+</span><span class="n">CTRL</span><span class="o">+</span><span class="n">DownArrow</span> <span class="k">on</span> <span class="n">Mac</span>
-<span class="o">#</span> <span class="err">またはメニューから</span><span class="n">Sceneボタンを表示させてクリック</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="err">左下の</span><span class="n">Sceneボタンをクリック</span>
 </pre></div>
 </td></tr></table></p>
 <h4 id="pymol_2">PyMOLのワークフロー</h4>
@@ -254,7 +264,7 @@ $ brew install pymol
 </ul>
 </li>
 <li>見やすい角度や表現でsceneを保存する<ul>
-<li><code class="codehilite"><span class="n">scene</span> <span class="n">auto</span><span class="p">,</span> <span class="n">store</span></code></li>
+<li><code class="codehilite"><span class="n">scene</span> <span class="k">new</span><span class="p">,</span> <span class="n">store</span></code></li>
 </ul>
 </li>
 <li>PyMOL session(pse)として保存する<ul>
@@ -280,7 +290,9 @@ $ brew install pymol
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="err">二次構造判定</span>
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="err">二次構造判定</span>
+<span class="k">as</span> <span class="n">cartoon</span>
 <span class="n">dss</span> <span class="o">#</span><span class="err">本当は</span><span class="n">dsspかstrideで二次構造判定することを推奨</span>
 <span class="o">#</span> <span class="err">主鎖の水素結合を表示</span>
 <span class="k">as</span> <span class="n">sticks</span><span class="p">,</span> <span class="n">name</span> <span class="k">c</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="n">o</span><span class="o">+</span><span class="n">ca</span>
@@ -290,23 +302,25 @@ $ brew install pymol
 <p>疎水性
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="err">疎水性残基を黄色で表示。内部に埋もれていることを確認する</span>
-<span class="k">select</span> <span class="n">hydrophobic</span><span class="p">,</span> <span class="n">resn</span> <span class="n">ala</span><span class="o">+</span><span class="n">cys</span><span class="o">+</span><span class="n">gly</span><span class="o">+</span><span class="n">val</span><span class="o">+</span><span class="n">ile</span><span class="o">+</span><span class="n">leu</span><span class="o">+</span><span class="n">phe</span><span class="o">+</span><span class="n">pro</span><span class="o">+</span><span class="n">met</span><span class="o">+</span><span class="n">trp</span><span class="o">+</span><span class="n">tyr</span>
-<span class="n">color</span> <span class="n">yellow</span><span class="p">,</span> <span class="n">hydrophobic</span>
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 疎水性残基を黄色で表示。内部に埋もれていることを確認する
+<span class="nv">select</span> <span class="nv">hydrophobic</span>, <span class="nv">resn</span> <span class="nv">ala</span><span class="o">+</span><span class="nv">cys</span><span class="o">+</span><span class="nv">gly</span><span class="o">+</span><span class="nv">val</span><span class="o">+</span><span class="nv">ile</span><span class="o">+</span><span class="nv">leu</span><span class="o">+</span><span class="nv">phe</span><span class="o">+</span><span class="nv">pro</span><span class="o">+</span><span class="nv">met</span><span class="o">+</span><span class="nv">trp</span><span class="o">+</span><span class="nv">tyr</span>
+<span class="k">show</span> <span class="nv">spheres</span>, <span class="nv">hydrophobic</span>
+<span class="nv">color</span> <span class="nv">yellow</span>, <span class="nv">hydrophobic</span>
 </pre></div>
 </td></tr></table></p>
 <p>親水性
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="err">親水性残基を黄色で表示。表面に露出していることを確認する</span>
-<span class="k">select</span> <span class="n">hydrophilic</span><span class="p">,</span> <span class="n">resn</span> <span class="n">arg</span><span class="o">+</span><span class="n">asn</span><span class="o">+</span><span class="n">asp</span><span class="o">+</span><span class="n">gln</span><span class="o">+</span><span class="n">glu</span><span class="o">+</span><span class="n">his</span><span class="o">+</span><span class="n">lys</span><span class="o">+</span><span class="n">ser</span><span class="o">+</span><span class="n">thr</span>
-<span class="n">color</span> <span class="n">blue</span><span class="p">,</span> <span class="n">hydrophilic</span>
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 親水性残基を黄色で表示。表面に露出していることを確認する
+<span class="nv">select</span> <span class="nv">hydrophilic</span>, <span class="nv">resn</span> <span class="nv">arg</span><span class="o">+</span><span class="nv">asn</span><span class="o">+</span><span class="nv">asp</span><span class="o">+</span><span class="nv">gln</span><span class="o">+</span><span class="nv">glu</span><span class="o">+</span><span class="nv">his</span><span class="o">+</span><span class="nv">lys</span><span class="o">+</span><span class="nv">ser</span><span class="o">+</span><span class="nv">thr</span>
+<span class="k">show</span> <span class="nv">spheres</span>, <span class="nv">hydrophilic</span>
+<span class="nv">color</span> <span class="nv">blue</span>, <span class="nv">hydrophilic</span>
 </pre></div>
 </td></tr></table></p>
 <p>分子表面
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">fetch</span> <span class="mi">4</span><span class="nv">akeA</span>
-<span class="k">show</span> <span class="nv">surf</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">as</span> <span class="n">surf</span>
 </pre></div>
 </td></tr></table></p>
 <p>Solvent accessible surface area (SASA)
