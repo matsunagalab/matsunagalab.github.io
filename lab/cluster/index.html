@@ -138,7 +138,7 @@ $ <span class="nb">cd</span> /data/username/chignolin/
 $ docker service create --name jobname  --constraint node.hostname<span class="o">==</span>n2 --replicas <span class="m">1</span> -u <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> --restart-condition<span class="o">=</span>none --mount <span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>,destination<span class="o">=</span>/work --generic-resource <span class="s2">&quot;gpu=1&quot;</span> crab:5000/openmm python -m run.py
 <span class="c1"># 投入されているジョブのリスト表示</span>
 $ docker service ls
-<span class="c1"># 計算の途中や終了後したジョブのの標準出力をチェック</span>
+<span class="c1"># 計算の途中や終了後したジョブの標準出力をチェック</span>
 $ docker service logs jobname
 <span class="c1"># マニュアルでジョブを削除しなければならない</span>
 $ docker service rm jobname
