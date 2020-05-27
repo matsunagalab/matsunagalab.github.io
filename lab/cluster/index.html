@@ -91,8 +91,17 @@ $ docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span c
 </pre></div>
 </td></tr></table></p>
 <h4 id="n2">計算ノードn2でシニョリンのシミュレーションをながす</h4>
+<ul>
+<li>
 <p>シニョリンのインプットファイル <a href="https://github.com/matsunagalab/chignolin">https://github.com/matsunagalab/chignolin</a></p>
-<p>シニョリンの参考文献 <a href="https://www.jstage.jst.go.jp/article/mssj/12/2/12_2_2_11/_pdf/-char/ja">https://www.jstage.jst.go.jp/article/mssj/12/2/12_2_2_11/_pdf/-char/ja</a></p>
+</li>
+<li>
+<p>シニョリンの参考文献1 <a href="https://www.aist.go.jp/aist_j/press_release/pr2004/pr20040810/pr20040810.html">https://www.aist.go.jp/aist_j/press_release/pr2004/pr20040810/pr20040810.html</a></p>
+</li>
+<li>
+<p>シニョリンの参考文献2 <a href="https://www.jstage.jst.go.jp/article/mssj/12/2/12_2_2_11/_pdf/-char/ja">https://www.jstage.jst.go.jp/article/mssj/12/2/12_2_2_11/_pdf/-char/ja</a></p>
+</li>
+</ul>
 <p>まずは、とりあえずn2でシミュレーションがながれるか確認
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -142,7 +151,7 @@ $ docker service rm jobname
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ scp -Cr username@crab:/data/username/chignolin ./
 </pre></div>
 </td></tr></table></p>
-<p>ディレクトリが巨大で、差分を少しずつローカルへコピーしたい場合などはrsyncを使います。最後のスラッシュは抜かさないように気をつける
+<p>ディレクトリが巨大で、差分を少しずつローカルへコピーしたい場合などはrsyncを使う。最後のスラッシュは抜かさないように気をつける
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -auz -vv --stats --progress --exclude <span class="s2">&quot;*~&quot;</span> username@crab:/data/username/chignolin/ /home/username/path/to/
 </pre></div>
 </td></tr></table></p>
