@@ -78,12 +78,16 @@ $ ssh n1
 </pre></div>
 </td></tr></table></p>
 <h4 id="_4">ローカルマシンでシニョリンのシミュレーションをながす</h4>
-<p>まずは、ローカルマシンで
+<p>まずはローカルマシンで正しく計算できるか確認
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git clone https://github.com/matsunagalab/chignolin.git
 $ <span class="nb">cd</span> chignolin/
 $ docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work -w /work matsunagalab/openmm python -u run.py
+</pre></div>
+</td></tr></table></p>
+<p>シミュレーション結果の構造がおかしくないかPyMOLで確認
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pymol -d <span class="s2">&quot;load init.psf, obj, 0, psf; load_traj run.dcd, obj, 0, dcd; remove not polymer; remove h.; dss; show sticks; intra_fit all&quot;</span>
 </pre></div>
 </td></tr></table></p>
 <h4 id="n2">計算ノードn2でシニョリンのシミュレーションをながす</h4>
@@ -136,7 +140,7 @@ $ docker service rm jobname
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -auz -vv --stats --progress --exclude <span class="s2">&quot;*~&quot;</span> username@crab:/data/username/chignolin/ /home/username/path/to/
 </pre></div>
 </td></tr></table></p>
-<p>ローカルへコピーしたらPyMOL等の可視化ソフトでみてみる
+<p>シミュレーション結果の構造がおかしくないかPyMOLで確認
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> chignolin/
 $ pymol -d <span class="s2">&quot;load init.psf, obj, 0, psf; load_traj run.dcd, obj, 0, dcd; remove not polymer; remove h.; dss; show sticks; intra_fit all&quot;</span>
