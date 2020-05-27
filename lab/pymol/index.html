@@ -41,8 +41,9 @@ $ brew install pymol
 </ul>
 </li>
 <li>マウス操作<ul>
-<li>ドラッグで回転</li>
-<li>Optionを押しながら左クリックドラッグで並進</li>
+<li>左ドラッグで回転</li>
+<li>右ドラッグで拡大・縮小</li>
+<li>Optionを押しながら左ドラッグで並進</li>
 <li>スクロールでslab</li>
 </ul>
 </li>
@@ -326,7 +327,7 @@ $ brew install pymol
 <p>Solvent accessible surface area (SASA)
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">PyMOLではSASAの値だけ</span>
-<span class="n">Objectメニュー</span><span class="o">-&gt;</span><span class="mi">4</span><span class="n">akeA</span><span class="o">-&gt;</span><span class="n">compute</span><span class="o">-&gt;</span><span class="n">surface</span> <span class="n">area</span><span class="o">-&gt;</span><span class="n">solvent</span> <span class="n">accessible</span>
+<span class="n">Objectメニュー</span><span class="o">-&gt;</span><span class="mi">4</span><span class="n">akeA</span><span class="o">-&gt;</span><span class="n">generate</span><span class="o">-&gt;</span><span class="n">compute</span><span class="o">-&gt;</span><span class="n">surface</span> <span class="n">area</span><span class="o">-&gt;</span><span class="n">solvent</span> <span class="n">accessible</span>
 </pre></div>
 </td></tr></table></p>
 <p>静電ポテンシャル
@@ -360,7 +361,7 @@ $ brew install pymol
 </pre></div>
 </td></tr></table></p>
 <h4 id="_7">シミュレーショントラジェクトリの読み込み</h4>
-<p>シェルの起動コマンドラインの引数で指定しまうのが便利です
+<p>シェルの起動コマンドラインの引数で指定してしまうのが便利です
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pymol -d <span class="s2">&quot;load resources/alanine-dipeptide-implicit.pdb, obj, 0, pdb; load_traj output.dcd, obj, 0, dcd&quot;</span>
 </pre></div>
 </td></tr></table>
