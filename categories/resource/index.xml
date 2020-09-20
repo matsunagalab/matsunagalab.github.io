@@ -17,7 +17,7 @@
       <pubDate>Sun, 20 Sep 2020 21:10:35 +0900</pubDate>
       
       <guid>https://www.bio.ics.saitama-u.ac.jp/resource/</guid>
-      <description>Computers 200TB storage (RAID) 512GB memory node for large data analysis 5 computation nodes with the follwing GPUs 2x NVIDIA Quadro RTX8000 10x NVIDIA GTX 2080Ti 20x NVIDIA GTX 1080Ti 20x NVIDIA Titan-P Software MDToolbox.jl and MDToolbox 分子シミュレーションデータを統計解析するためのMATLB/Juliaツールボックス。データのIO、原子選択、分子の重ね合わせ、多変量解析やクラスタリング、自由エネルギ</description>
+      <description>Computers 200TB storage (RAID) 512GB memory node for large data analysis 5 computation nodes with the follwing GPUs 2x NVIDIA Quadro RTX8000 10x NVIDIA GTX 2080Ti 20x NVIDIA GTX 1080Ti 20x NVIDIA Titan-P Software MDToolbox.jl and MDToolbox 分子シミュレーションデータを統計解析するためのJulia/MATLABツールボックス。データのIO、原子選択、分子の重ね合わせ、多変量解析やクラスタリング、自由エネル</description>
     </item>
     
   </channel>
