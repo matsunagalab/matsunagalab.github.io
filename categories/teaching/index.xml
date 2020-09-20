@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching on 埼玉大学松永研究室</title>
+    <link>https://www.bio.ics.saitama-u.ac.jp/categories/teaching/</link>
+    <description>Recent content in Teaching on 埼玉大学松永研究室</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 20 Sep 2020 18:39:20 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/teaching/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/teaching/</link>
+      <pubDate>Sun, 20 Sep 2020 18:39:20 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/teaching/</guid>
+      <description>担当講義 2020年度 前期(第1・第2ターム) 学部 全学教育 理工学と現代社会 (金3限 or 金5限) (分担、オムニバス形式で１回のみ担当) 工学部 機械学習 (火3限) 理工学研究科博士課程後期 生体分子シミュレーション特論 (月5限) 後期(第3・第4ターム) 工</description>
+    </item>
+    
+  </channel>
+</rss>

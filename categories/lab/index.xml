@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lab on 埼玉大学松永研究室</title>
+    <link>https://www.bio.ics.saitama-u.ac.jp/categories/lab/</link>
+    <description>Recent content in Lab on 埼玉大学松永研究室</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 20 Sep 2020 18:30:26 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/lab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/</link>
+      <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/</guid>
+      <description>研究室内部向け Setup PyMOL GENESIS OpenMM PC Cluster</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/genesis/</link>
+      <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/genesis/</guid>
+      <description>GENESISハンズオン GENESIS tutorial https://www.r-ccs.riken.jp/labs/cbrt/tutorials2019/</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/openmm/</link>
+      <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/openmm/</guid>
+      <description>OpenMMハンズオン OpenMM http://openmm.org ハンズオン資料(Jupyter notebook) https://github.com/matsunagalab/openmm-tutorials GitHubからハンズオン資料をダウンロード $ git clone https://github.com/matsunagalab/openmm-tutorials.git DockerのOpenMMイメージをダウンロード 12GBほどあるので時間がかかります $ docker pull matsunagalab/openmm Docker経由でJupyterを起</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/pc_cluster/</link>
+      <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/pc_cluster/</guid>
+      <description>PCクラスタの使い方 ハンズオン クラスタの構成 crabがログインノード兼ファイルサーバ。crabはメモリ容量大きめ(512GB)なのでデータ解析にも使う。n1〜n4がそれぞれGPU10枚積んだ計算ノード。n1のGPUはメモリ容量大きめ(48G</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/pymol/</link>
+      <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/pymol/</guid>
+      <description>PyMOLハンズオン PyMOLとは？ 20年くらいの歴史がある分子構造可視化ソフト 分子可視化ソフトにはVMDやCHIMERAなどがあるが、表示の美しさ・センスの良さで定評がある Python、OpenGL、FreeGLUTなどを使用している Warren D</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/setup/</link>
+      <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/setup/</guid>
+      <description>Setup 4年生向け：Macの環境セットアップ 研究室配属された4年生には1人あたりMacBook Pro1台をできる限り貸し出しています。 そのMacBook Proで、輪講やセミナーのスライド作成や、研究のコーディングや計算・解析(重たい計算はサーバで</description>
+    </item>
+    
+  </channel>
+</rss>

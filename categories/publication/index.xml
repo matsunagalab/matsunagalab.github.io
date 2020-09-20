@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publication on 埼玉大学松永研究室</title>
+    <link>https://www.bio.ics.saitama-u.ac.jp/categories/publication/</link>
+    <description>Recent content in Publication on 埼玉大学松永研究室</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 20 Sep 2020 21:00:54 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/publication/</link>
+      <pubDate>Sun, 20 Sep 2020 21:00:54 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/publication/</guid>
+      <description>Papers Y. Matsunaga, and Y. Sugita “Use of single-molecule time-series data for refining conformational dynamics in molecular simulations”, Current Opinion in Structural Biology 61, 153-159 (2020) DOI:10.1016/j.sbi.2019.12.022 A. Shinobu, C. Kobayashi, Y. Matsunaga, and Y. Sugita “Building a macro-mixing dual‑basin Gō model using the Multistate Bennett Acceptance Ratio”, Biophysics and Physicobiology 16, 310-321 (2019) DOI:10.2142/biophysico.16.0_310 松永康佑 &amp;ldquo;全原子分子動力学シミュレーショ</description>
+    </item>
+    
+  </channel>
+</rss>

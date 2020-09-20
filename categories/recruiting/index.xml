@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recruiting on 埼玉大学松永研究室</title>
+    <link>https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/</link>
+    <description>Recent content in Recruiting on 埼玉大学松永研究室</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 20 Sep 2020 19:22:44 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/recruiting/</link>
+      <pubDate>Sun, 20 Sep 2020 19:22:44 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/recruiting/</guid>
+      <description>FAQ 研究室でどのような能力が得られますか？ 情報工学、特に学部で学んできた数学・プログラミング・データ解析の知識を自然現象の解析(我々の場合は特に生命科学)へ応用する能力が得られます。また逆に、データ解析やシミュレーションは、実際のモノへ応用し</description>
+    </item>
+    
+  </channel>
+</rss>
