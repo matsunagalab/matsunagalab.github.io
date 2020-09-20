@@ -140,31 +140,30 @@
 <p>OpenMM <a href="http://openmm.org">http://openmm.org</a></p>
 <p>ハンズオン資料(Jupyter notebook) <a href="https://github.com/matsunagalab/openmm-tutorials">https://github.com/matsunagalab/openmm-tutorials</a></p>
 <h4 id="githubからハンズオン資料をダウンロード">GitHubからハンズオン資料をダウンロード</h4>
-<pre><code>$ git clone https://github.com/matsunagalab/openmm-tutorials.git
-
-</code></pre><h4 id="dockerのopenmmイメージをダウンロード">DockerのOpenMMイメージをダウンロード</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/matsunagalab/openmm-tutorials.git
+</code></pre></div><h4 id="dockerのopenmmイメージをダウンロード">DockerのOpenMMイメージをダウンロード</h4>
 <p>12GBほどあるので時間がかかります</p>
-<pre><code>$ docker pull matsunagalab/openmm
-</code></pre><h4 id="docker経由でjupyterを起動">Docker経由でJupyterを起動</h4>
-<pre><code>$ cd openmm-tutorials/
-$ docker run --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v &quot;$PWD&quot;:/work matsunagalab/openmm
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker pull matsunagalab/openmm
+</code></pre></div><h4 id="docker経由でjupyterを起動">Docker経由でJupyterを起動</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd openmm-tutorials/
+$ docker run --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB<span style="color:#f92672">=</span>yes -v <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">&#34;</span>:/work matsunagalab/openmm
 Executing the command: jupyter lab
-[I 01:32:15.946 LabApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
-[I 01:32:16.475 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
-[I 01:32:16.475 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
-[I 01:32:16.478 LabApp] Serving notebooks from local directory: /work
-[I 01:32:16.478 LabApp] The Jupyter Notebook is running at:
-[I 01:32:16.478 LabApp] http://0f9e67b09c57:8888/?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
-[I 01:32:16.478 LabApp]  or http://127.0.0.1:8888/?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-[I 01:32:16.478 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 01:32:16.482 LabApp] 
+<span style="color:#f92672">[</span>I 01:32:15.946 LabApp<span style="color:#f92672">]</span> Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+<span style="color:#f92672">[</span>I 01:32:16.475 LabApp<span style="color:#f92672">]</span> JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+<span style="color:#f92672">[</span>I 01:32:16.475 LabApp<span style="color:#f92672">]</span> JupyterLab application directory is /opt/conda/share/jupyter/lab
+<span style="color:#f92672">[</span>I 01:32:16.478 LabApp<span style="color:#f92672">]</span> Serving notebooks from local directory: /work
+<span style="color:#f92672">[</span>I 01:32:16.478 LabApp<span style="color:#f92672">]</span> The Jupyter Notebook is running at:
+<span style="color:#f92672">[</span>I 01:32:16.478 LabApp<span style="color:#f92672">]</span> http://0f9e67b09c57:8888/?token<span style="color:#f92672">=</span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+<span style="color:#f92672">[</span>I 01:32:16.478 LabApp<span style="color:#f92672">]</span>  or http://127.0.0.1:8888/?token<span style="color:#f92672">=</span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<span style="color:#f92672">[</span>I 01:32:16.478 LabApp<span style="color:#f92672">]</span> Use Control-C to stop this server and shut down all kernels <span style="color:#f92672">(</span>twice to skip confirmation<span style="color:#f92672">)</span>.
+<span style="color:#f92672">[</span>C 01:32:16.482 LabApp<span style="color:#f92672">]</span> 
     
     To access the notebook, open this file in a browser:
         file:///home/jovyan/.local/share/jupyter/runtime/nbserver-6-open.html
     Or copy and paste one of these URLs:
-        http://0f9e67b09c57:8888/?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-     or http://127.0.0.1:8888/?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-</code></pre><p>最後の<code>http://127.0.0.1:8888/?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code>をブラウザのURL欄に貼り付けてJupyterを使います。</p>
+        http://0f9e67b09c57:8888/?token<span style="color:#f92672">=</span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+     or http://127.0.0.1:8888/?token<span style="color:#f92672">=</span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+</code></pre></div><p>最後の<code>http://127.0.0.1:8888/?token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code>をブラウザのURL欄に貼り付けてJupyterを使います。</p>
 
 		</div>
 	</article>
@@ -209,6 +208,12 @@ Executing the command: jupyter lab
 		<div class="widget-social__item widget__item">
 			<a class="widget-social__link widget__link btn" title="OneDrive" rel="noopener noreferrer" href="https://suitc-my.sharepoint.com/:f:/g/personal/ymatsunaga_mail_saitama-u_ac_jp/Ejkll3xv4iZBmiV49Ns13IIBc9Xoh_aFUODdlF_vIjCq9w" target="_blank">
 				<span>OneDrive</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Docker Hub" rel="noopener noreferrer" href="https://hub.docker.com/u/matsunagalab" target="_blank">
+				<span>Docker Hub</span>
 			</a>
 		</div>
 		

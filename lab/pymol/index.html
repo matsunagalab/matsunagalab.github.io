@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Lab-only">
 <meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="2412">
+<meta itemprop="wordCount" content="2409">
 
 
 
@@ -159,9 +159,9 @@
 <h4 id="インストール">インストール</h4>
 <p>オープンソース版をインストールします。現状、MacOSにはHomebrew経由でいれるのがよいです。HomebrewはAnacondaと相性が悪いので、Anacondaはアンインストールするか、pyenvで環境をわけるのが推奨です。</p>
 <p>HomebrewでPyMOLをインストールするには森脇さん謹製のHomebrewレシピを使わせてもらいます <a href="https://qiita.com/Ag_smith/items/58e917710c4eddab46ee">https://qiita.com/Ag_smith/items/58e917710c4eddab46ee</a></p>
-<pre><code>$ brew tap brewsci/bio
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew tap brewsci/bio
 $ brew install pymol
-</code></pre><h4 id="基本操作">基本操作</h4>
+</code></pre></div><h4 id="基本操作">基本操作</h4>
 <ul>
 <li>起動オプション</li>
 <li>ウィンドウ・メニューの説明</li>
@@ -191,109 +191,109 @@ $ brew install pymol
 </ul>
 <h4 id="コマンドの文法">コマンドの文法</h4>
 <p>PyMOLのコマンドは以下のような文法になっています。</p>
-<pre><code>何かの処理 オブジェクト
-</code></pre><p>例えば</p>
-<pre><code>center all
-</code></pre><p>というコマンドは、全てのオブジェクト(all)を真ん中へ移動させる(center)という処理を行います。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">何かの処理 オブジェクト
+</code></pre></div><p>例えば</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">center all
+</code></pre></div><p>というコマンドは、全てのオブジェクト(all)を真ん中へ移動させる(center)という処理を行います。</p>
 <p>オブジェクトは、構造データ(PDBファイルなど)を読み込んだり、読み込んだ構造を選択(selection)することで作ることができます。</p>
 <h4 id="コマンドの実践">コマンドの実践</h4>
 <p>実際にコマンドを実行しながら、処理やselectionのやり方を見ていきましょう</p>
-<pre><code># PDBから PDB ID=1ake の chain=Aの構造をダウンロードする
-fetch 1akeA
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># PDBから PDB ID=1ake の chain=Aの構造をダウンロードする</span>
+fetch <span style="color:#ae81ff">1</span>akeA
 
-# 全てのオブジェクトを真ん中へ移動させる(allの省略も可)
+<span style="color:#75715e"># 全てのオブジェクトを真ん中へ移動させる(allの省略も可)</span>
 center all
 
-# 全てのオブジェクトのline表示を追加する
+<span style="color:#75715e"># 全てのオブジェクトのline表示を追加する</span>
 show lines, all
 
-# 特定のオブジェクト(1akeA)をline表示だけにする
-as lines, 1akeA
+<span style="color:#75715e"># 特定のオブジェクト(1akeA)をline表示だけにする</span>
+<span style="color:#66d9ef">as</span> lines, <span style="color:#ae81ff">1</span>akeA
 
-# chain Aの色を赤にする
+<span style="color:#75715e"># chain Aの色を赤にする</span>
 color red, chain A
 
-# 元素名sのsphere表示を追加する
+<span style="color:#75715e"># 元素名sのsphere表示を追加する</span>
 show spheres, elem s
 
-# 原子名cまたはnまたはoまたはcaのstick表示を追加する
-show sticks, name c+n+o+ca
+<span style="color:#75715e"># 原子名cまたはnまたはoまたはcaのstick表示を追加する</span>
+show sticks, name c<span style="color:#f92672">+</span>n<span style="color:#f92672">+</span>o<span style="color:#f92672">+</span>ca
 
-# アミノ酸残基番号10〜15の色を青にする
-color blue, resid 7:13
+<span style="color:#75715e"># アミノ酸残基番号10〜15の色を青にする</span>
+color blue, resid <span style="color:#ae81ff">7</span>:<span style="color:#ae81ff">13</span>
 
-# アミノ酸残基名pro(proline)の色を黄色にする
+<span style="color:#75715e"># アミノ酸残基名pro(proline)の色を黄色にする</span>
 color yellow, resn pro
 
-# 分子種をselectして表示を変える
-as cartoon, polymer
-as spheres, solvent
-as sticks, organic
+<span style="color:#75715e"># 分子種をselectして表示を変える</span>
+<span style="color:#66d9ef">as</span> cartoon, polymer
+<span style="color:#66d9ef">as</span> spheres, solvent
+<span style="color:#66d9ef">as</span> sticks, organic
 
-# 二次構造をselectしての色を変える
-as cartoon
-color purple, ss h #ヘリックス
-color yellow, ss s #シート
-color red, ss l #ループ
-color blue, ss “” #それ以外
+<span style="color:#75715e"># 二次構造をselectしての色を変える</span>
+<span style="color:#66d9ef">as</span> cartoon
+color purple, ss h <span style="color:#75715e">#ヘリックス</span>
+color yellow, ss s <span style="color:#75715e">#シート</span>
+color red, ss l <span style="color:#75715e">#ループ</span>
+color blue, ss <span style="color:#960050;background-color:#1e0010">“”</span> <span style="color:#75715e">#それ以外</span>
 
-# logical operatorを使って複雑なselectionを行う
-show dots, not name c+n+o+ca #側鎖
-color white, resn ala and resid 1:30 and chain A
+<span style="color:#75715e"># logical operatorを使って複雑なselectionを行う</span>
+show dots, <span style="color:#f92672">not</span> name c<span style="color:#f92672">+</span>n<span style="color:#f92672">+</span>o<span style="color:#f92672">+</span>ca <span style="color:#75715e">#側鎖</span>
+color white, resn ala <span style="color:#f92672">and</span> resid <span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">30</span> <span style="color:#f92672">and</span> chain A
 
-# selectionを名前を付けてオブジェクトとして保存し、後で使う
-select backbone, name c+n+o+ca
+<span style="color:#75715e"># selectionを名前を付けてオブジェクトとして保存し、後で使う</span>
+select backbone, name c<span style="color:#f92672">+</span>n<span style="color:#f92672">+</span>o<span style="color:#f92672">+</span>ca
 show sticks, backbone
 
-# 距離でselectする
-as cartoon
+<span style="color:#75715e"># 距離でselectする</span>
+<span style="color:#66d9ef">as</span> cartoon
 show sticks, organic
-show sticks, organic around 5.0
-show sphere, organic around 5.0 and solvent
-</code></pre><h4 id="他のよく使うコマンド">他のよく使うコマンド</h4>
+show sticks, organic around <span style="color:#ae81ff">5.0</span>
+show sphere, organic around <span style="color:#ae81ff">5.0</span> <span style="color:#f92672">and</span> solvent
+</code></pre></div><h4 id="他のよく使うコマンド">他のよく使うコマンド</h4>
 <p>構造の取得、ファイルの読み込み</p>
-<pre><code>#PDB-IDを指定してPDBから構造データをとってくる
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#PDB-IDを指定してPDBから構造データをとってくる</span>
 fetch 4ake
-#更に、Chain=Aを指定する
+<span style="color:#75715e">#更に、Chain=Aを指定する</span>
 fetch 4akeA
-#構造ファイルを読み込む
+<span style="color:#75715e">#構造ファイルを読み込む</span>
 load 4ake.pdb
-</code></pre><p>Pymol session(pseファイル)の保存と読み込み</p>
-<pre><code>save 4ake.pse
+</code></pre></div><p>Pymol session(pseファイル)の保存と読み込み</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">save 4ake.pse
 load 4ake.pse
-</code></pre><p>画像ファイルとして保存</p>
-<pre><code># レイトレーシングして綺麗にしてから
+</code></pre></div><p>画像ファイルとして保存</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># レイトレーシングして綺麗にしてから</span>
 ray
-# pngへ保存
+<span style="color:#75715e"># pngへ保存</span>
 png 4ake.png
-</code></pre><p>PyMOLの初期化</p>
-<pre><code>reinitialize
-</code></pre><p>表示の変更</p>
-<pre><code>showは表示を加える
+</code></pre></div><p>PyMOLの初期化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reinitialize
+</code></pre></div><p>表示の変更</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">showは表示を加える
 asはその表示だけにする
 hideは表示を隠す
-</code></pre><p>ヘルプ</p>
-<pre><code>help コマンド名
-</code></pre><p>構造の重ね合わせ</p>
-<pre><code>align mobile, target
+</code></pre></div><p>ヘルプ</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">help コマンド名
+</code></pre></div><p>構造の重ね合わせ</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">align mobile, target
 super mobile, target
-</code></pre><p>背景色を変える</p>
-<pre><code>bg_color white
-</code></pre><pre><code>create, select
+</code></pre></div><p>背景色を変える</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bg_color white
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create, <span style="color:#66d9ef">select</span>
 
 center, orient, zoom
 
 set
-</code></pre><h4 id="sceneシーン">Scene(シーン)</h4>
+</code></pre></div><h4 id="sceneシーン">Scene(シーン)</h4>
 <p>Sceneとは構造の表示や見ている角度を含んだ現在の可視化状態のことを言います。PyMOLではこのSceneを何個も保存して、後で気軽に呼び出すことができます。</p>
 <p>Sceneの保存</p>
-<pre><code>scene new, store
-# またはメニューから保存
-# またはFn+Cmd+→ on Mac
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scene new, store
+<span style="color:#75715e"># またはメニューから保存</span>
+<span style="color:#75715e"># またはFn+Cmd+→ on Mac</span>
 
-</code></pre><p>Sceneの呼び出し</p>
-<pre><code># 左下のSceneボタンをクリック
-</code></pre><h4 id="pymolのワークフロー">PyMOLのワークフロー</h4>
+</code></pre></div><p>Sceneの呼び出し</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 左下のSceneボタンをクリック</span>
+</code></pre></div><h4 id="pymolのワークフロー">PyMOLのワークフロー</h4>
 <ol>
 <li>構造をとってくる
 <ul>
@@ -320,56 +320,56 @@ set
 <p>それでは輪講で勉強したタンパク質の構造の特徴を実際に確認してみましょう。
 確認したらその都度sceneとして保存していきましょう。最後にpseとして保存しましょう。</p>
 <p>初期化して構造をとってくる</p>
-<pre><code>reinitialize
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reinitialize
 fetch 4akeA
-</code></pre><p>二次構造と水素結合</p>
-<pre><code># 二次構造判定
+</code></pre></div><p>二次構造と水素結合</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 二次構造判定</span>
 as cartoon
-dss #本当はdsspかstrideで二次構造判定することを推奨
-# 主鎖の水素結合を表示
+dss <span style="color:#75715e">#本当はdsspかstrideで二次構造判定することを推奨</span>
+<span style="color:#75715e"># 主鎖の水素結合を表示</span>
 as sticks, name c+n+o+ca
 Objectメニュー 4akeA-&gt;Action-&gt;find-&gt;polar contacts-&gt; just intra-main chain
-</code></pre><p>疎水性</p>
-<pre><code># 疎水性残基を黄色で表示。内部に埋もれていることを確認する
-select hydrophobic, resn ala+cys+gly+val+ile+leu+phe+pro+met+trp+tyr
+</code></pre></div><p>疎水性</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 疎水性残基を黄色で表示。内部に埋もれていることを確認する</span>
+<span style="color:#66d9ef">select</span> hydrophobic, resn ala+cys+gly+val+ile+leu+phe+pro+met+trp+tyr
 show spheres, hydrophobic
 color yellow, hydrophobic
-</code></pre><p>親水性</p>
-<pre><code># 親水性残基を黄色で表示。表面に露出していることを確認する
-select hydrophilic, resn arg+asn+asp+gln+glu+his+lys+ser+thr
+</code></pre></div><p>親水性</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 親水性残基を黄色で表示。表面に露出していることを確認する</span>
+<span style="color:#66d9ef">select</span> hydrophilic, resn arg+asn+asp+gln+glu+his+lys+ser+thr
 show spheres, hydrophilic
 color blue, hydrophilic
-</code></pre><p>分子表面</p>
-<pre><code>as surf
-</code></pre><p>Solvent accessible surface area (SASA)</p>
-<pre><code># PyMOLではSASAの値だけ
+</code></pre></div><p>分子表面</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">as surf
+</code></pre></div><p>Solvent accessible surface area (SASA)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PyMOLではSASAの値だけ</span>
 Objectメニュー-&gt;4akeA-&gt;generate-&gt;compute-&gt;surface area-&gt;solvent accessible
-</code></pre><p>静電ポテンシャル</p>
-<pre><code>Objectメニュー-&gt;4akeA-&gt;action-&gt;generate-&gt;vacuum electrostatics-&gt;protein contact potential (local)
-</code></pre><p>重ね合わせて構造比較</p>
-<pre><code>reinitialize
+</code></pre></div><p>静電ポテンシャル</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Objectメニュー-&gt;4akeA-&gt;action-&gt;generate-&gt;vacuum electrostatics-&gt;protein contact potential <span style="color:#f92672">(</span>local<span style="color:#f92672">)</span>
+</code></pre></div><p>重ね合わせて構造比較</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reinitialize
 fetch 1akeA
 fetch 4akeA
 align 4akeA, 1akeA
-</code></pre><p>結合ポケット</p>
-<pre><code># 簡易的であるがPyMOLのcavityモードを使う
-# タミフルでの例
+</code></pre></div><p>結合ポケット</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 簡易的であるがPyMOLのcavityモードを使う</span>
+<span style="color:#75715e"># タミフルでの例</span>
 reinitialize
 fetch 2ht7
 show surf
-set surface_cavity_mode, 1
+set surface_cavity_mode, <span style="color:#ae81ff">1</span>
 set surface_color, gray
-</code></pre><h4 id="シミュレーショントラジェクトリの読み込み">シミュレーショントラジェクトリの読み込み</h4>
+</code></pre></div><h4 id="シミュレーショントラジェクトリの読み込み">シミュレーショントラジェクトリの読み込み</h4>
 <p>シェルの起動コマンドラインの引数で指定してしまうのが便利です</p>
-<pre><code>$ pymol -d &quot;load resources/alanine-dipeptide-implicit.pdb, obj, 0, pdb; load_traj output.dcd, obj, 0, dcd&quot;
-</code></pre><p>シミュレーション結果は分子の並進・回転が入っているで重ね合わせをして取り除きます</p>
-<pre><code># polymerでタンパク質だけを指定して重ね合わせ
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pymol -d <span style="color:#e6db74">&#34;load resources/alanine-dipeptide-implicit.pdb, obj, 0, pdb; load_traj output.dcd, obj, 0, dcd&#34;</span>
+</code></pre></div><p>シミュレーション結果は分子の並進・回転が入っているで重ね合わせをして取り除きます</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># polymerでタンパク質だけを指定して重ね合わせ</span>
 intra_fit polymer
-</code></pre><h4 id="参考">参考</h4>
+</code></pre></div><h4 id="参考">参考</h4>
 <ul>
-<li>PyMOL Wiki <a href="https://pymolwiki.org">https://pymolwiki.org</a></li>
-<li>阪大 蛋白研 鈴木守先生のページ <a href="http://www.protein.osaka-u.ac.jp/rcsfp/supracryst/suzuki/jpxtal/Katsutani/install.php">http://www.protein.osaka-u.ac.jp/rcsfp/supracryst/suzuki/jpxtal/Katsutani/install.php</a></li>
-<li>東大 森脇さんのPyMOL tutorial <a href="https://yoshitakamo.github.io/pymol-book/index.html">https://yoshitakamo.github.io/pymol-book/index.html</a></li>
+<li><a href="https://pymolwiki.org">PyMOL Wiki</a></li>
+<li><a href="http://www.protein.osaka-u.ac.jp/rcsfp/supracryst/suzuki/jpxtal/Katsutani/install.php">阪大 蛋白研 鈴木守先生のページ</a></li>
+<li><a href="https://yoshitakamo.github.io/pymol-book/index.html">東大 森脇さんのPyMOL tutorial</a></li>
 </ul>
 
 		</div>
@@ -415,6 +415,12 @@ intra_fit polymer
 		<div class="widget-social__item widget__item">
 			<a class="widget-social__link widget__link btn" title="OneDrive" rel="noopener noreferrer" href="https://suitc-my.sharepoint.com/:f:/g/personal/ymatsunaga_mail_saitama-u_ac_jp/Ejkll3xv4iZBmiV49Ns13IIBc9Xoh_aFUODdlF_vIjCq9w" target="_blank">
 				<span>OneDrive</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Docker Hub" rel="noopener noreferrer" href="https://hub.docker.com/u/matsunagalab" target="_blank">
+				<span>Docker Hub</span>
 			</a>
 		</div>
 		
