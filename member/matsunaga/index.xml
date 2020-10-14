@@ -6,6 +6,10 @@
     <description>Recent content on 埼玉大学松永研究室</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 20 Sep 2020 20:44:26 +0900</lastBuildDate><atom:link href="https://www.bio.ics.saitama-u.ac.jp/member/matsunaga/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 20:44:26 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.bio.ics.saitama-u.ac.jp/member/matsunaga/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>
