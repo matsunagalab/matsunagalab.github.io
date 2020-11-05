@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Lab-only">
 <meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="2157">
+<meta itemprop="wordCount" content="2069">
 
 
 
@@ -150,7 +150,7 @@
 <p>資料作成のためにMicrosoft Office365(ワードやパワーポイント)を使えるようになる</p>
 </li>
 <li>
-<p>オンラインでの輪講やセミナーのためにMicrosoft Teamsを使えるようになる(新型コロナ対応)</p>
+<p>オンラインでの輪講やセミナーのためにZoomを使えるようになる(新型コロナ対応)</p>
 </li>
 <li>
 <p>プログラムのコーディングをするためにエディタ(Visual Studio Code)を使えるようになる</p>
@@ -187,8 +187,10 @@ $ defaults write NSGlobalDomain KeyRepeat -int <span style="color:#ae81ff">2</sp
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew help
 </code></pre></div><p>Slackをインストールします。別途ワークスペース情報を共有するので大学のOffice365メールアドレスでログインしてください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew cask install slack
-</code></pre></div><p>Microsoft Office365とTeamsをインストールします。インストール後、起動時にアカウントが求められますので、大学のOffice365アカウントを使ってください。Teamsではmatsunagalabという「チーム」へ参加してテレビ会議で輪講やセミナーを行います(新型コロナ対応)。チームへ参加するために必要な「チームコード」は別途共有します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew cask install microsoft-office microsoft-teams
+</code></pre></div><p>Microsoft Office365をインストールします。インストール後、起動時にアカウントが求められますので、大学のOffice365アカウントを使ってください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew cask install microsoft-office
+</code></pre></div><p>Zoomをインストールします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew cask install zoomus
 </code></pre></div><p>エディタであるVisual Studio Codeをインストールします。他のエディタのほうが好みである人はそれを使ってください。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew cask install visual-studio-code
 </code></pre></div><p>FoldItをインストールします。FoldItはワシントン大学のBaker研により開発された構造探索・デザインゲームです。初回輪講までにぜひ遊んでみて、どこまで進められたか、どこが難しかったか教えてください。</p>
@@ -220,7 +222,7 @@ $ pymol -d <span style="color:#e6db74">&#34;fetch 4akeA; center; show sticks&#34
 		<img alt="Yasuhiro Matsunaga avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
 	</figure>
 	<div class="authorbox__header">
-		<span class="authorbox__name">About Yasuhiro Matsunaga</span>
+		<span class="authorbox__name"></span>
 	</div>
 </div>
 

@@ -5,10 +5,6 @@
     <link>https://www.bio.ics.saitama-u.ac.jp/tags/</link>
     <description>Recent content in Tags on 埼玉大学松永研究室</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    
-	<atom:link href="https://www.bio.ics.saitama-u.ac.jp/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ja-jp</language><atom:link href="https://www.bio.ics.saitama-u.ac.jp/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
