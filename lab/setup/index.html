@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Lab-only">
 <meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="2069">
+<meta itemprop="wordCount" content="2260">
 
 
 
@@ -173,6 +173,9 @@
 <li>
 <p>ウィルス対策ソフトウェアをインストールしている</p>
 </li>
+<li>
+<p>セキュリティを強化している</p>
+</li>
 </ul>
 <h4 id="ターミナルの起動">「ターミナル」の起動</h4>
 <p>まず、コマンドラインを実行するために、Macの「ターミナル」を「アプリケーション」 -&gt; 「ユーティリティ」 -&gt; 「ターミナル」 の順で立ち上げます。
@@ -212,6 +215,8 @@ $ pymol -d <span style="color:#e6db74">&#34;fetch 4akeA; center; show sticks&#34
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work -w /work/ ymatsunaga/genesis mpirun -np <span style="color:#ae81ff">8</span> spdyn
 </code></pre></div><h4 id="ウィルス対策ソフトウェアのインストール">ウィルス対策ソフトウェアのインストール</h4>
 <p>大学で契約しているウィルス対策ソフトを<a href="https://www.itc.saitama-u.ac.jp/services/anti-virus.html">ここ</a>からインストールしてください。ライセンスの関係で学内ネットワークのみからインストールすることができます。</p>
+<h4 id="セキュリティを強化する">セキュリティを強化する</h4>
+<p>まず、MacBook Proへのログインパスワードが簡単すぎる場合は、<a href="https://support.apple.com/ja-jp/HT202860">ここ</a>に従って予測されにくいものへ変更してください。その後、<a href="https://support.apple.com/ja-jp/HT204837">ここ</a>に従って、MacOSの機能である「起動ディスクの暗号化(FireVault)」をオンにしてください。これを有効にすれば、例えばMacBook Proが盗難にあってもデータが漏洩することを防ぐことができます。</p>
 
 		</div>
 	</article>
