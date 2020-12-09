@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Lab-only">
 <meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="15">
+<meta itemprop="wordCount" content="111">
 
 
 
@@ -136,9 +136,34 @@
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
-			<h3 id="genesisハンズオン">GENESISハンズオン</h3>
-<p>GENESIS tutorial <a href="https://www.r-ccs.riken.jp/labs/cbrt/tutorials2019/">https://www.r-ccs.riken.jp/labs/cbrt/tutorials2019/</a></p>
+			<p>Macでのインストール</p>
+<h4 id="openmpiのインストール">OpenMPIのインストール</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install automake wget
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.5.tar.gz
+$ tar zxvf openmpi-4.0.5.tar.gz
+$ cd openmpi-4.0.5/
+$ ./configure CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin/gcc-10&#34;</span> CXX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin/g++-10&#34;</span> F77<span style="color:#f92672">=</span>gfortran FC<span style="color:#f92672">=</span>gfortran --enable-mpi-thread-multiple --prefix<span style="color:#f92672">=</span>/opt/openmpi-4.0.5
+$ make
+$ sudo make install
 
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo ln -sf /opt/openmpi-4.0.5 /opt/openmpi
+
+$ cat <span style="color:#e6db74">&lt;&lt; EOS
+</span><span style="color:#e6db74"># openmpi
+</span><span style="color:#e6db74">export PATH=/opt/openmpi/bin:$PATH
+</span><span style="color:#e6db74">export LD_LIBRARY_PATH=/opt/openmpi/lib:$LD_LIBRARY_PATH
+</span><span style="color:#e6db74">export DYLD_LIBRARY_PATH=/opt/openmpi/lib:$DYLD_LIBRARY_PATH
+</span><span style="color:#e6db74">export MANPATH=/opt/openmpi/share/man:$MANPATH
+</span><span style="color:#e6db74">EOS</span> &gt;&gt;~/.zshrc
+
+$ source ~/.zshrc
+</code></pre></div><h3 id="genesisのインストール">GENESISのインストール</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget --content-disposition <span style="color:#e6db74">&#34;https://www.r-ccs.riken.jp/labs/cbrt/?smd_process_download=1&amp;download_id=14618&#34;</span>
+$ tar jxvf genesis-1.5.1.tar.bz2
+$ cd genesis-1.5.1/
+$ ./configure
+$ make install
+</code></pre></div>
 		</div>
 	</article>
 </main>

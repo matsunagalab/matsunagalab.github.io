@@ -13,7 +13,7 @@
       <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
       
       <guid>https://www.bio.ics.saitama-u.ac.jp/lab/genesis/</guid>
-      <description>GENESISハンズオン GENESIS tutorial https://www.r-ccs.riken.jp/labs/cbrt/tutorials2019/</description>
+      <description>Macでのインストール OpenMPIのインストール $ brew install automake wget $ wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.5.tar.gz $ tar zxvf openmpi-4.0.5.tar.gz $ cd openmpi-4.0.5/ $ ./configure CC=&amp;#34;$(brew --prefix)/bin/gcc-10&amp;#34; CXX=&amp;#34;$(brew --prefix)/bin/g++-10&amp;#34; F77=gfortran FC=gfortran --enable-mpi-thread-multiple --prefix=/opt/openmpi-4.0.5 $ make $ sudo make install $ sudo ln -sf /opt/openmpi-4.0.5 /opt/openmpi $ cat &amp;lt;&amp;lt; EOS # openmpi export PATH=/opt/openmpi/bin:$PATH export LD_LIBRARY_PATH=/opt/openmpi/lib:$LD_LIBRARY_PATH export DYLD_LIBRARY_PATH=/opt/openmpi/lib:$DYLD_LIBRARY_PATH export MANPATH=/opt/openmpi/share/man:$MANPATH EOS &amp;gt;&amp;gt;~/.zshrc $ source ~/.zshrc GENESISのインストール $ wget --content-disposition &amp;#34;https://www.r-ccs.riken.jp/labs/cbrt/?smd_process_download=1&amp;amp;download_id=14618&amp;#34; $ tar jxvf genesis-1.5.1.tar.bz2 $ cd genesis-1.5.1/ $ ./configure $ make install</description>
     </item>
     
     <item>
