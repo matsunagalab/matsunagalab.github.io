@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Lab-only">
 <meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="2605">
+<meta itemprop="wordCount" content="2607">
 
 
 
@@ -209,7 +209,7 @@ $ defaults write NSGlobalDomain KeyRepeat -int 2
 </code></pre><p>Microsoft Officeをインストールします。インストール後、起動時にアカウントが求められますので、大学のMicrosoft365アカウントを使ってください。</p>
 <pre><code>$ brew install --cask microsoft-office
 </code></pre><p>Zoomをインストールします。</p>
-<pre><code>$ brew install --cask zoomus
+<pre><code>$ brew install --cask zoom
 </code></pre><p>エディタであるVisual Studio Codeをインストールします。他のエディタのほうが好みである人はそれを使ってください。</p>
 <pre><code>$ brew install --cask visual-studio-code
 </code></pre><p>FoldItをインストールします。FoldItはワシントン大学のBaker研により開発された構造探索・デザインゲームです。初回輪講までにぜひ遊んでみて、どこまで進められたか、どこが難しかったか教えてください。</p>
@@ -229,8 +229,10 @@ $ pymol -d &quot;fetch 4akeA; center; show sticks&quot;
 <pre><code>$ docker run --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v &quot;$PWD&quot;:/home/jovyan/work jupyter/datascience-notebook
 </code></pre><p>また、Dockerを使って、分子シミュレーションソフトのGENESISを起動してみましょう。以下のコマンドでGENESISの計算エンジンである<code>spdyn</code>の簡易ヘルプを表示します。</p>
 <pre><code>$ docker run --rm -v $(pwd):/work -w /work/ ymatsunaga/genesis mpirun -np 8 spdyn
-</code></pre><h4 id="ウィルス対策ソフトウェアのインストール">ウィルス対策ソフトウェアのインストール</h4>
-<p>大学で契約しているウィルス対策ソフトを<a href="https://www.itc.saitama-u.ac.jp/services/anti-virus.html">ここ</a>からインストールしてください。ライセンスの関係で学内ネットワークのみからインストールすることができます。</p>
+</code></pre><p>[](</p>
+<h4 id="ウィルス対策ソフトウェアのインストール">ウィルス対策ソフトウェアのインストール</h4>
+<p>大学で契約しているウィルス対策ソフトを<a href="https://www.itc.saitama-u.ac.jp/services/anti-virus.html">ここ</a>からインストールしてください。ライセンスの関係で学内ネットワークのみからインストールすることができます。
+)</p>
 <h4 id="セキュリティを強化する">セキュリティを強化する</h4>
 <p>まず、MacBook Proへのログインパスワードが簡単すぎる場合は、<a href="https://support.apple.com/ja-jp/HT202860">ここ</a>に従って予測されにくいものへ変更してください。その後、<a href="https://support.apple.com/ja-jp/HT204837">ここ</a>に従って、MacOSの機能である「起動ディスクの暗号化(FireVault)」をオンにしてください。これを有効にすれば、例えばMacBook Proが盗難にあってもデータが漏洩することを防ぐことができます。</p>
 
