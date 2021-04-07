@@ -9,6 +9,15 @@
     <lastBuildDate>Mon, 07 Sep 2020 01:08:13 +0900</lastBuildDate><atom:link href="https://www.bio.ics.saitama-u.ac.jp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/basics/</link>
+      <pubDate>Mon, 05 Apr 2021 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/basics/</guid>
+      <description>Macの基本的な使い方 Macの基本 https://help.apple.com/macos/big-sur/mac-basics/#apps Windowsとの違い ウィンドウを閉じてもアプリは終了していない Applicationフォルダへ入れることがインストール、その逆はアンインストール Windowsの Ctrl キーが Macの Cmd キーに相当する 右クリック</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://www.bio.ics.saitama-u.ac.jp/lab/genesis/</link>
       <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
       

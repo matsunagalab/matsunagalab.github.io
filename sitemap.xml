@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.bio.ics.saitama-u.ac.jp/resource/</loc>
-    <lastmod>2020-09-20T21:10:35+09:00</lastmod>
+    <loc>https://www.bio.ics.saitama-u.ac.jp/lab/basics/</loc>
+    <lastmod>2021-04-05T18:30:26+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/</loc>
+    <lastmod>2021-04-05T18:30:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bio.ics.saitama-u.ac.jp/categories/lab/</loc>
+    <lastmod>2021-04-05T18:30:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.bio.ics.saitama-u.ac.jp/resource/</loc>
     <lastmod>2020-09-20T21:10:35+09:00</lastmod>
   </url>
   
@@ -94,11 +104,6 @@
   
   <url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/setup/</loc>
-    <lastmod>2020-09-20T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.bio.ics.saitama-u.ac.jp/categories/lab/</loc>
     <lastmod>2020-09-20T18:30:26+09:00</lastmod>
   </url>
   
