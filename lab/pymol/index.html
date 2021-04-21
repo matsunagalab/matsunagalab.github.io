@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Lab-only">
 <meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="2409">
+<meta itemprop="wordCount" content="2443">
 
 
 
@@ -361,11 +361,13 @@ set surface_cavity_mode, <span style="color:#ae81ff">1</span>
 set surface_color, gray
 </code></pre></div><h4 id="シミュレーショントラジェクトリの読み込み">シミュレーショントラジェクトリの読み込み</h4>
 <p>シェルの起動コマンドラインの引数で指定してしまうのが便利です</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pymol -d <span style="color:#e6db74">&#34;load resources/alanine-dipeptide-implicit.pdb, obj, 0, pdb; load_traj output.dcd, obj, 0, dcd&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pymol -d <span style="color:#e6db74">&#34;load ak.pdb, obj, 0, pdb; load_traj ak.dcd, obj, 0, dcd&#34;</span>
 </code></pre></div><p>シミュレーション結果は分子の並進・回転が入っているで重ね合わせをして取り除きます</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># polymerでタンパク質だけを指定して重ね合わせ</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#75715e"># polymerでタンパク質だけを指定して重ね合わせ</span>
 intra_fit polymer
-</code></pre></div><h4 id="参考">参考</h4>
+</code></pre></div><p>重ね合わせができたら、これまでに学んだ様々な表示を行ってみましょう。</p>
+<h4 id="参考">参考</h4>
 <ul>
 <li><a href="https://pymolwiki.org">PyMOL Wiki</a></li>
 <li><a href="http://www.protein.osaka-u.ac.jp/rcsfp/supracryst/suzuki/jpxtal/Katsutani/install.php">阪大 蛋白研 鈴木守先生のページ</a></li>
