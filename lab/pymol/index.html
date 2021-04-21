@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Lab-only">
 <meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="3629">
+<meta itemprop="wordCount" content="3688">
 
 
 
@@ -158,7 +158,7 @@
 </ul>
 <h4 id="インストール">インストール</h4>
 <p>オープンソース版をインストールします。現状、MacOSにはHomebrew経由でいれるのがよいです。HomebrewはAnacondaと相性が悪いので、Anacondaはアンインストールするか、pyenvで環境をわけるのが推奨です。</p>
-<p>HomebrewでPyMOLをインストールするには森脇さん謹製のHomebrewレシピを使わせてもらいます <a href="https://qiita.com/Ag_smith/items/58e917710c4eddab46ee">https://qiita.com/Ag_smith/items/58e917710c4eddab46ee</a></p>
+<p>HomebrewでPyMOLをインストールするには @Ag_smithさん 謹製のHomebrewレシピを使わせてもらいます <a href="https://qiita.com/Ag_smith/items/58e917710c4eddab46ee">https://qiita.com/Ag_smith/items/58e917710c4eddab46ee</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew tap brewsci/bio
 $ brew install pymol
 </code></pre></div><h4 id="基本操作">基本操作</h4>
@@ -345,6 +345,7 @@ color blue, hydrophilic
 <li>4dx5を <code>fetch</code> してPyMOLで可視化させてみましょう。疎水性アミノ残基を色分けして表示させてみて、疎水アミノ残基がどの領域に集まっているか確認しましょう。</li>
 <li>4dx5には、薬剤である minocycline (PDBの中での残基名は <code>MIY</code>)が結合しています。それを <code>sphere</code> で表示させて確認してみましょう。minocyclineの周りのアミノ酸残基は疎水性でしょうか？親水性でしょうか？</li>
 </ul>
+<p>(続き)</p>
 <p>分子表面</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">as surf
 </code></pre></div><p>Solvent accessible surface area (SASA)</p>
@@ -391,9 +392,17 @@ remove h.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># polymerでタンパク質だけを指定して重ね合わせ</span>
 intra_fit polymer
 </code></pre></div><h4 id="課題2">課題2</h4>
-<p>重ね合わせができたら、これまで実験構造を観察するために学んだ様々な表示を行ってみましょう。例えば、リガンド(Ap5A)と相互作用している原子を表示させて、それが時間(フレーム, state)とともにどのように変化していくか観察してみましょう。リガンドとの相互作用の変化が、タンパク質全体の構造とどのように関連しているでしょうか？観察してみましょう。</p>
+<p>重ね合わせができたら、これまで実験構造を観察するために学んだ様々な表示を行ってみましょう。例えば、リガンド(Ap5A)と相互作用している原子を stick表示するのは以下のコマンドです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">show sticks, organic around 5.0
-</code></pre></div><h4 id="参考">参考</h4>
+</code></pre></div><ul>
+<li>
+<p>リガンド(Ap5A)と相互作用している原子を表示させて、それが時間(フレーム, state)とともにどのように変化していくか観察してください。</p>
+</li>
+<li>
+<p>リガンド(Ap5A)との相互作用の変化が、タンパク質全体の構造とどのように関連しているでしょうか？観察してみましょう。</p>
+</li>
+</ul>
+<h4 id="参考">参考</h4>
 <ul>
 <li><a href="https://pymolwiki.org">PyMOL Wiki</a></li>
 <li><a href="http://www.protein.osaka-u.ac.jp/rcsfp/supracryst/suzuki/jpxtal/Katsutani/install.php">阪大 蛋白研 鈴木守先生のページ</a></li>
