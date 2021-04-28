@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26&#43;09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26&#43;09:00" />
-<meta itemprop="wordCount" content="4163">
+<meta itemprop="wordCount" content="4290">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -422,7 +422,13 @@ show sticks, active
 <h4 id="pymol実践3-フォールディングトラジェクトリの観察">PyMOL実践3: フォールディングトラジェクトリの観察</h4>
 <p>Villin headpiece (PDB ID 1yrf)のフォールディングシミュレーションデータを観察します。</p>
 <p>トラジェクトデータは <a href="https://suitc-my.sharepoint.com/:f:/r/personal/ymatsunaga_mail_saitama-u_ac_jp/Documents/lab/data/1yrf?csf=1&amp;web=1&amp;e=PyMjTZ">ここ</a> からダウンロードしてください。これは分子動力学シミュレーションから得られたトラジェクト理で、フォールディングとアンフォールディングを何回か繰り返しています。</p>
-<ul>
+<p>以下のコマンドでデータを読み込みましょう。オブジェクト名で<code>1yrf</code>が天然構造、<code>md</code>がトラジェクトリとなります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pymol -d <span style="color:#e6db74">&#34;load 1yrf.pdb; load 1yrf.pdb, md, 0, pdb; load_traj 1yrf.dcd, md, 0, dcd&#34;</span>
+</code></pre></div><p>天然構造へ重ね合わせをしましょう</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">align md, 1yrf
+</code></pre></div><p>さらにトラジェクトリの異なる時間(フレーム, state)を重ね合わせます</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">intra_fit polymer
+</code></pre></div><ul>
 <li>TODO: 天然構造での相互作用の確認</li>
 <li>TODO: トラジェクトりの観察</li>
 <li>TODO: 動画の作り方</li>
