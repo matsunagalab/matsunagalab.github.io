@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26&#43;09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26&#43;09:00" />
-<meta itemprop="wordCount" content="428">
+<meta itemprop="wordCount" content="422">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -170,11 +170,8 @@ $ sudo mv genesis-1.6.0 /opt/
 $ sudo ln -sf /opt/openmpi-1.6.0 /opt/openmpi
 
 $ cat <span style="color:#e6db74">&lt;&lt; EOS
-</span><span style="color:#e6db74"># openmpi
-</span><span style="color:#e6db74">export PATH=/opt/openmpi/bin:$PATH
-</span><span style="color:#e6db74">export LD_LIBRARY_PATH=/opt/openmpi/lib:$LD_LIBRARY_PATH
-</span><span style="color:#e6db74">export DYLD_LIBRARY_PATH=/opt/openmpi/lib:$DYLD_LIBRARY_PATH
-</span><span style="color:#e6db74">export MANPATH=/opt/openmpi/share/man:$MANPATH
+</span><span style="color:#e6db74"># genesis
+</span><span style="color:#e6db74">export PATH=/opt/genesis/bin:$PATH
 </span><span style="color:#e6db74">EOS</span> &gt;&gt;~/.zshrc
 
 $ source ~/.zshrc
