@@ -165,20 +165,20 @@ $ cd genesis-1.6.0/
 $ ./configure
 $ make install
 </code></pre></div><p>コンパイルできたらインストールして環境変数を設定します。</p>
-<pre><code>$ cd ..
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ..
 $ sudo mv genesis-1.6.0 /opt/
 $ sudo ln -sf /opt/openmpi-1.6.0 /opt/openmpi
 
-$ cat &lt;&lt; EOS
-# openmpi
-export PATH=/opt/openmpi/bin:$PATH
-export LD_LIBRARY_PATH=/opt/openmpi/lib:$LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=/opt/openmpi/lib:$DYLD_LIBRARY_PATH
-export MANPATH=/opt/openmpi/share/man:$MANPATH
-EOS &gt;&gt;~/.zshrc
+$ cat <span style="color:#e6db74">&lt;&lt; EOS
+</span><span style="color:#e6db74"># openmpi
+</span><span style="color:#e6db74">export PATH=/opt/openmpi/bin:$PATH
+</span><span style="color:#e6db74">export LD_LIBRARY_PATH=/opt/openmpi/lib:$LD_LIBRARY_PATH
+</span><span style="color:#e6db74">export DYLD_LIBRARY_PATH=/opt/openmpi/lib:$DYLD_LIBRARY_PATH
+</span><span style="color:#e6db74">export MANPATH=/opt/openmpi/share/man:$MANPATH
+</span><span style="color:#e6db74">EOS</span> &gt;&gt;~/.zshrc
 
 $ source ~/.zshrc
-</code></pre>
+</code></pre></div>
 		</div>
 	</article>
 </main>
