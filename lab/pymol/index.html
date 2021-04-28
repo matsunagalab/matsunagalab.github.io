@@ -10,20 +10,16 @@
 		<meta property="og:title" content="" />
 <meta property="og:description" content="Lab-only" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.bio.ics.saitama-u.ac.jp/lab/pymol/" />
-<meta property="article:published_time" content="2020-09-20T18:30:26+09:00" />
-<meta property="article:modified_time" content="2020-09-20T18:30:26+09:00" />
+<meta property="og:url" content="https://www.bio.ics.saitama-u.ac.jp/lab/pymol/" /><meta property="article:section" content="lab" />
+<meta property="article:published_time" content="2020-09-20T18:30:26&#43;09:00" />
+<meta property="article:modified_time" content="2020-09-20T18:30:26&#43;09:00" />
+
 
 		<meta itemprop="name" content="">
-<meta itemprop="description" content="Lab-only">
-<meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="3688">
-
-
-
+<meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26&#43;09:00" />
+<meta itemprop="dateModified" content="2020-09-20T18:30:26&#43;09:00" />
+<meta itemprop="wordCount" content="4163">
 <meta itemprop="keywords" content="" />
-
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="Lab-only"/>
@@ -272,18 +268,15 @@ png 4ake.png
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">showは表示を加える
 asはその表示だけにする
 hideは表示を隠す
-</code></pre></div><p>ヘルプ</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">help コマンド名
+</code></pre></div><p>背景色を変える</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bg_color white
+</code></pre></div><p>構造のセンタリング、方向調整、拡大</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">center, orient, zoom
 </code></pre></div><p>構造の重ね合わせ</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">align mobile, target
 super mobile, target
-</code></pre></div><p>背景色を変える</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bg_color white
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">create, <span style="color:#66d9ef">select</span>
-
-center, orient, zoom
-
-set
+</code></pre></div><p>ヘルプ</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">help コマンド名
 </code></pre></div><h4 id="sceneシーン">Scene(シーン)</h4>
 <p>Sceneとは構造の表示や見ている角度を含んだ現在の可視化状態のことを言います。PyMOLではこのSceneを何個も保存して、後で気軽に呼び出すことができます。</p>
 <p>Sceneの保存</p>
@@ -302,7 +295,8 @@ set
 </li>
 <li>見やすい角度や表現でsceneを保存する
 <ul>
-<li><code>scene new, store</code></li>
+<li><code>scene 001, store</code></li>
+<li>またはアップデートの時は、<code>scene 001, update</code></li>
 </ul>
 </li>
 <li>PyMOL session(pse)として保存する
@@ -328,7 +322,7 @@ as cartoon
 dss <span style="color:#75715e">#本当はdsspかstrideで二次構造判定することを推奨</span>
 <span style="color:#75715e"># 主鎖の水素結合を表示</span>
 as sticks, name c+n+o+ca
-Objectメニュー 4akeA-&gt;Action-&gt;find-&gt;polar contacts-&gt; just intra-main chain
+Objectメニュー 4akeA -&gt; Action -&gt; find -&gt; polar contacts -&gt; just intra-main chain
 </code></pre></div><p>疎水性</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 疎水性残基を黄色で表示。内部に埋もれていることを確認する</span>
 <span style="color:#66d9ef">select</span> hydrophobic, resn ala+cys+gly+val+ile+leu+phe+pro+met+trp+tyr
@@ -339,26 +333,19 @@ color yellow, hydrophobic
 <span style="color:#66d9ef">select</span> hydrophilic, resn arg+asn+asp+gln+glu+his+lys+ser+thr
 show spheres, hydrophilic
 color blue, hydrophilic
-</code></pre></div><h4 id="課題1">課題1</h4>
-<p>膜タンパク質の一つで分子を輸送するトランスポータというタンパク質の種類があります。PDB ID = 4dx5 は多剤排出トランスポータと呼ばれるタンパク質で、薬剤などを輸送します。</p>
-<ul>
-<li>4dx5を <code>fetch</code> してPyMOLで可視化させてみましょう。疎水性アミノ残基を色分けして表示させてみて、疎水アミノ残基がどの領域に集まっているか確認しましょう。</li>
-<li>4dx5には、薬剤である minocycline (PDBの中での残基名は <code>MIY</code>)が結合しています。それを <code>sphere</code> で表示させて確認してみましょう。minocyclineの周りのアミノ酸残基は疎水性でしょうか？親水性でしょうか？</li>
-</ul>
-<p>(続き)</p>
-<p>分子表面</p>
+</code></pre></div><p>分子表面</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">as surf
 </code></pre></div><p>Solvent accessible surface area (SASA)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PyMOLではSASAの値だけ</span>
-Objectメニュー-&gt;4akeA-&gt;generate-&gt;compute-&gt;surface area-&gt;solvent accessible
+Objectメニュー -&gt; 4akeA -&gt; compute -&gt; surface area -&gt; solvent accessible
 </code></pre></div><p>静電ポテンシャル</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Objectメニュー-&gt;4akeA-&gt;action-&gt;generate-&gt;vacuum electrostatics-&gt;protein contact potential <span style="color:#f92672">(</span>local<span style="color:#f92672">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Objectメニュー -&gt; 4akeA -&gt; action -&gt; generate -&gt; vacuum electrostatics -&gt; protein contact potential <span style="color:#f92672">(</span>local<span style="color:#f92672">)</span>
 </code></pre></div><p>重ね合わせて構造比較</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reinitialize
 fetch 1akeA
 fetch 4akeA
 align 4akeA, 1akeA
-</code></pre></div><p>結合ポケット</p>
+</code></pre></div><p>結合ポケット(空洞、cavity)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 簡易的であるがPyMOLのcavityモードを使う</span>
 <span style="color:#75715e"># タミフルでの例</span>
 reinitialize
@@ -366,12 +353,40 @@ fetch 2ht7
 show surf
 set surface_cavity_mode, <span style="color:#ae81ff">1</span>
 set surface_color, gray
-</code></pre></div><h4 id="シミュレーショントラジェクトリの読み込み">シミュレーショントラジェクトリの読み込み</h4>
+</code></pre></div><h4 id="課題1">課題1</h4>
+<p>膜タンパク質の一つで分子を輸送するトランスポータというタンパク質の種類があります。PDB ID = 4dx5 は多剤排出トランスポータAcrBというタンパク質で、薬剤などを輸送します。</p>
+<ul>
+<li>
+<p>4dx5は3つのChainから成っています。どれも似た構造なので、Chain Bだけを表示させてみましょう。</p>
+</li>
+<li>
+<p>4dx5を <code>fetch</code> してPyMOLで可視化させてみましょう。疎水性アミノ残基を色分けして表示させてみて、疎水アミノ残基がどの領域に集まっているか確認しましょう。</p>
+</li>
+<li>
+<p>4dx5には、薬剤である minocycline (PDBの中での残基名は <code>MIY</code>)が結合しています。それを <code>sphere</code> で表示させて確認してみましょう。minocyclineが結合している場所は確かにポケットがあるかPyMOLで確認してみましょう。</p>
+</li>
+<li>
+<p>minocyclineの周りのアミノ酸残基は疎水性でしょうか？親水性でしょうか？</p>
+</li>
+</ul>
+<h4 id="pymol実践1-リガンドとタンパク質の相互作用の可視化">PyMOL実践1: リガンドとタンパク質の相互作用の可視化</h4>
+<p>Adenylate kinase (PDB ID 1ake や 4ake)の 1ake 構造は、リガンド(Ap5A、PDBの中での残基名は <code>AP5</code>)が結合しています。リガンドがどの原子との相互作用によって結合しているのか確認してみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fetch 1akeA
+zoom
+hide everything
+<span style="color:#66d9ef">select</span> ligand, resn AP5
+as sticks, ligand
+as sticks, ligand around 5.0
+Objectメニュー -&gt; ligand -&gt; Action -&gt; find -&gt; polar contacts -&gt; to other atom in object
+zoom ligand
+</code></pre></div><p>更に、わかりやすいように周りの原子名を文字で表示(ラベル)させてみましょう</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+</code></pre></div><h4 id="pymol実践2-シミュレーショントラジェクトリの観察">PyMOL実践2: シミュレーショントラジェクトリの観察</h4>
 <p>シミュレーションデータには、DCDやNetCDFというフォーマットがあります。
 これのフォーマットは主に原子のXYZ座標のみを保存するためのもので、
 原子名やアミノ酸残基名は含まれていません。
 したがって、PDBなどの原子名を含むファイルと一緒に読み込んでやる必要があります。</p>
-<p>トラジェクトデータは <a href="https://suitc-my.sharepoint.com/:f:/r/personal/ymatsunaga_mail_saitama-u_ac_jp/Documents/lab/data/ak?csf=1&amp;web=1&amp;e=D7aLxp">ここ</a> からダウンロードしてください。このシミュレーションデータは、最初に見たAdenylate kinase (PDB ID 1ake や 4ake)を、1akeの構造から分子動力学シミュレーションを行って得られたものです。</p>
+<p>トラジェクトデータは <a href="https://suitc-my.sharepoint.com/:f:/r/personal/ymatsunaga_mail_saitama-u_ac_jp/Documents/lab/data/ak?csf=1&amp;web=1&amp;e=D7aLxp">ここ</a> からダウンロードしてください。このシミュレーションデータは、Adenylate kinase (PDB ID 1ake や 4ake)の1akeの構造から分子動力学シミュレーションを行って得られたものです。</p>
 <p>例えば、PDBとDCDファイルを読み込む場合、以下のようにします</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 最初にPDBファイルをオブジェクト名 obj として読み込む</span>
 load ak.pdb, obj, 0, pdb 
@@ -385,22 +400,32 @@ load_traj ak.dcd, obj, 0, dcd
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">remove solvent or inorganic
 </code></pre></div><p>タンパク質に結合しているリガンド(Ap5A)をstickで表示させます</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">show sticks, organic
-</code></pre></div><p>シミュレーションデータの構造には水素が含まれているのが確認できます。水素は構造を見るのに邪魔(といってもプロトンが重要であることはよくありますが)なので、水素も消します</p>
+</code></pre></div><p>シミュレーションデータの構造には水素原子が含まれているのが確認できます。水素原子は構造を見るのに邪魔(といってもプロトンが重要であることはよくありますが)なので、水素原子も消します</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># h. は水素原子を選択するの略語</span>
 remove h.
 </code></pre></div><p>シミュレーション結果は分子の並進・回転が入っているで重ね合わせをして取り除きます。2つの異なるオブジェクト同士では <code>align</code> や <code>super</code> といったコマンドを用いましたが、同じオブジェクト内の異なるフレーム(state)の構造を重ね合わせるには <code>intra_fit</code> というコマンドを使います。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># polymerでタンパク質だけを指定して重ね合わせ</span>
 intra_fit polymer
 </code></pre></div><h4 id="課題2">課題2</h4>
-<p>重ね合わせができたら、これまで実験構造を観察するために学んだ様々な表示を行ってみましょう。例えば、リガンド(Ap5A)と相互作用している原子を stick表示するのは以下のコマンドです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">show sticks, organic around 5.0
+<p>重ね合わせができたら、これまで実験構造を観察するために学んだ様々な表示を行ってみましょう。例えば、リガンド(Ap5A)と相互作用しているアミノ酸残基を stick表示するのは以下のコマンドです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">select</span> ligand, resn AP5
+<span style="color:#66d9ef">select</span> active, byres all within 3.5 of ligand
+show sticks, active
 </code></pre></div><ul>
 <li>
-<p>リガンド(Ap5A)と相互作用している原子を表示させて、それが時間(フレーム, state)とともにどのように変化していくか観察してください。</p>
+<p>リガンド(Ap5A)と相互作用している原子を表示させて、それが時間(state)とともにどのように変化していくか観察してください。</p>
 </li>
 <li>
 <p>リガンド(Ap5A)との相互作用の変化が、タンパク質全体の構造とどのように関連しているでしょうか？観察してみましょう。</p>
 </li>
+</ul>
+<h4 id="pymol実践3-フォールディングトラジェクトリの観察">PyMOL実践3: フォールディングトラジェクトリの観察</h4>
+<p>Villin headpiece (PDB ID 1yrf)のフォールディングシミュレーションデータを観察します。</p>
+<p>トラジェクトデータは <a href="https://suitc-my.sharepoint.com/:f:/r/personal/ymatsunaga_mail_saitama-u_ac_jp/Documents/lab/data/1yrf?csf=1&amp;web=1&amp;e=PyMjTZ">ここ</a> からダウンロードしてください。これは分子動力学シミュレーションから得られたトラジェクト理で、フォールディングとアンフォールディングを何回か繰り返しています。</p>
+<ul>
+<li>TODO: 天然構造での相互作用の確認</li>
+<li>TODO: トラジェクトりの観察</li>
+<li>TODO: 動画の作り方</li>
 </ul>
 <h4 id="参考">参考</h4>
 <ul>
