@@ -135,7 +135,7 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Macでのインストール OpenMPIのインストール $ brew install automake wget $ wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.5.tar.gz $ tar zxvf openmpi-4.0.5.tar.gz $ cd openmpi-4.0.5/ $ ./configure CC=&#34;$(brew --prefix)/bin/gcc-10&#34; CXX=&#34;$(brew --prefix)/bin/g++-10&#34; F77=gfortran FC=gfortran --enable-mpi-thread-multiple --prefix=/opt/openmpi-4.0.5 $ make $ sudo make install もしconfigureの際に以下のようなエラーが出たら、CommandLineToolsを再インストールする $ sudo rm -rf /Library/Developer/CommandLineTools $ sudo xcode-select --install $
+		MacOSでのインストール OpenMPIのインストール GENESISでは、プロセスを並列に複数走らせて、並列計算を行います。並列化されたプロセス間のデータのやりとりにMPIという仕組みを使いますので、MPI実装の一つであるOpenMPIを使
 	</div>
 </article>
 </main>
