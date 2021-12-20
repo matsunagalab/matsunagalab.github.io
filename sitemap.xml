@@ -1,124 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/basics/</loc>
     <lastmod>2021-04-05T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/</loc>
     <lastmod>2021-04-05T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/lab/</loc>
     <lastmod>2021-04-05T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/resource/</loc>
     <lastmod>2020-09-20T21:10:35+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/resource/</loc>
     <lastmod>2020-09-20T21:10:35+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/publication/</loc>
     <lastmod>2020-09-20T21:00:54+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/publication/</loc>
     <lastmod>2020-09-20T21:00:54+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/member/matsunaga/</loc>
     <lastmod>2020-09-20T20:44:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/member/</loc>
     <lastmod>2020-09-20T20:44:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/recruiting/</loc>
     <lastmod>2020-09-20T19:22:44+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/</loc>
     <lastmod>2020-09-20T19:22:44+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/teaching/</loc>
     <lastmod>2020-09-20T18:39:20+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/teaching/</loc>
     <lastmod>2020-09-20T18:39:20+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/research/</loc>
     <lastmod>2020-09-20T18:37:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/categories/research/</loc>
     <lastmod>2020-09-20T18:37:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/</loc>
     <lastmod>2020-09-20T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/genesis/</loc>
     <lastmod>2020-09-20T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/openmm/</loc>
     <lastmod>2020-09-20T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/pc_cluster/</loc>
     <lastmod>2020-09-20T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/pymol/</loc>
     <lastmod>2020-09-20T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/lab/setup/</loc>
     <lastmod>2020-09-20T18:30:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/member/</loc>
     <lastmod>2020-09-20T18:15:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/</loc>
     <lastmod>2020-09-07T01:08:13+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.bio.ics.saitama-u.ac.jp/tags/</loc>
   </url>
-  
 </urlset>
