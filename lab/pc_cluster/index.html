@@ -172,53 +172,53 @@
 <p>クラスタの管理者(松永)へアカウント名を伝えて、アカウントを作成してもらう。アカウント名はMacで使っているものと一緒であるのが望ましい。</p>
 <h4 id="ログインノードのipアドレスを登録">ログインノードのIPアドレスを登録</h4>
 <p>ローカルのMacへ、ログインノードであるcrabのIPアドレスを登録する。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vim /etc/hosts
-<span style="color:#75715e"># IP情報は別途提供する</span>
-</code></pre></div><h4 id="クラスタへログインする">クラスタへログインする</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on local machine (Mac)</span>
-$ ssh crab
-<span style="color:#75715e"># アカウント名を指定する場合は ssh -l username crab</span>
-<span style="color:#75715e"># 初期パスワードは別途提供する</span>
-</code></pre></div><h4 id="初期パスワードを変更する">初期パスワードを変更する</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on crab</span>
-$ passwd
-<span style="color:#75715e"># 初期パスワードの入力</span>
-<span style="color:#75715e"># 新パスワードの入力</span>
-</code></pre></div><h4 id="ssh公開鍵認証の設定をする">SSH公開鍵認証の設定をする</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo vim /etc/hosts
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># IP情報は別途提供する</span>
+</span></span></code></pre></div><h4 id="クラスタへログインする">クラスタへログインする</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on local machine (Mac)</span>
+</span></span><span style="display:flex;"><span>$ ssh crab
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># アカウント名を指定する場合は ssh -l username crab</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 初期パスワードは別途提供する</span>
+</span></span></code></pre></div><h4 id="初期パスワードを変更する">初期パスワードを変更する</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on crab</span>
+</span></span><span style="display:flex;"><span>$ passwd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 初期パスワードの入力</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 新パスワードの入力</span>
+</span></span></code></pre></div><h4 id="ssh公開鍵認証の設定をする">SSH公開鍵認証の設定をする</h4>
 <p>パスワード認証はセキュアではないので、Macとcrabとで公開鍵認証が行えるように設定を行う。
 まず、Mac上で公開鍵・秘密鍵を作成する。ローカルマシンとcrabの認証に使う</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on local machine (Mac)</span>
-$ ssh-keygen -t rsa
-パスワード設定を求められたら入力する。ファイルのパスはそのままでリターン
-</code></pre></div><p>crab上でも作っておく。これはcrabと計算ノード(n1〜)の認証に使うため</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh -l username crab
-$ ssh-keygen -t rsa
-今度はパスワード設定を求められたら空のままリターン。ファイルのパスはそのままでリターン
-</code></pre></div><p>ローカルマシンに戻って、ローカルマシンの公開鍵をcrabへ登録する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on local machine (Mac)</span>
-$ scp ~/.ssh/id_rsa.pub username@crab:.ssh/authorized_keys
-今度はパスワード設定を求められたら空のままリターン。ファイルのパスはそのままでリターン
-</code></pre></div><p>ややこしいが、今度はcrabの公開鍵を同じ場所へ登録する。homeを計算ノード(n1〜)と共有しているため</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on local machine</span>
-$ ssh -l username crab
-<span style="color:#75715e"># on crab</span>
-$ cat ~/.ssh/id_rsa.pub &gt;&gt;~/.ssh/authorized_keys
-</code></pre></div><p>ローカルマシンに戻って、crabへのログインに公開鍵認証できるか試してみる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on local machine</span>
-<span style="color:#75715e"># SSHエージェントへ秘密鍵を登録する</span>
-$ ssh-add ~/.ssh/id_rsa
-$ ssh -l username crab
-</code></pre></div><p>crabから計算ノードへも公開鍵認証できるか試してみる</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on crab</span>
-$ ssh n1
-</code></pre></div><h4 id="ローカルマシンでシニョリンのシミュレーションをながす">ローカルマシンでシニョリンのシミュレーションをながす</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on local machine (Mac)</span>
+</span></span><span style="display:flex;"><span>$ ssh-keygen -t rsa
+</span></span><span style="display:flex;"><span>パスワード設定を求められたら入力する。ファイルのパスはそのままでリターン
+</span></span></code></pre></div><p>crab上でも作っておく。これはcrabと計算ノード(n1〜)の認証に使うため</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh -l username crab
+</span></span><span style="display:flex;"><span>$ ssh-keygen -t rsa
+</span></span><span style="display:flex;"><span>今度はパスワード設定を求められたら空のままリターン。ファイルのパスはそのままでリターン
+</span></span></code></pre></div><p>ローカルマシンに戻って、ローカルマシンの公開鍵をcrabへ登録する</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on local machine (Mac)</span>
+</span></span><span style="display:flex;"><span>$ scp ~/.ssh/id_rsa.pub username@crab:.ssh/authorized_keys
+</span></span><span style="display:flex;"><span>今度はパスワード設定を求められたら空のままリターン。ファイルのパスはそのままでリターン
+</span></span></code></pre></div><p>ややこしいが、今度はcrabの公開鍵を同じ場所へ登録する。homeを計算ノード(n1〜)と共有しているため</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on local machine</span>
+</span></span><span style="display:flex;"><span>$ ssh -l username crab
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># on crab</span>
+</span></span><span style="display:flex;"><span>$ cat ~/.ssh/id_rsa.pub &gt;&gt;~/.ssh/authorized_keys
+</span></span></code></pre></div><p>ローカルマシンに戻って、crabへのログインに公開鍵認証できるか試してみる</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on local machine</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SSHエージェントへ秘密鍵を登録する</span>
+</span></span><span style="display:flex;"><span>$ ssh-add ~/.ssh/id_rsa
+</span></span><span style="display:flex;"><span>$ ssh -l username crab
+</span></span></code></pre></div><p>crabから計算ノードへも公開鍵認証できるか試してみる</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on crab</span>
+</span></span><span style="display:flex;"><span>$ ssh n1
+</span></span></code></pre></div><h4 id="ローカルマシンでシニョリンのシミュレーションをながす">ローカルマシンでシニョリンのシミュレーションをながす</h4>
 <p>まずはローカルマシンで正しく計算できるか確認</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/matsunagalab/chignolin.git
-$ cd chignolin/
-$ docker run --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work -w /work matsunagalab/openmm python -u run.py
-</code></pre></div><p>シミュレーション結果の構造がおかしくないかPyMOLで確認</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pymol -d <span style="color:#e6db74">&#34;load init.psf, obj, 0, psf; load_traj run.dcd, obj, 0, dcd; remove not polymer; remove h.; dss; show sticks; intra_fit all&#34;</span>
-</code></pre></div><h4 id="計算ノードn2でシニョリンのシミュレーションをながす">計算ノードn2でシニョリンのシミュレーションをながす</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git clone https://github.com/matsunagalab/chignolin.git
+</span></span><span style="display:flex;"><span>$ cd chignolin/
+</span></span><span style="display:flex;"><span>$ docker run --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work -w /work matsunagalab/openmm python -u run.py
+</span></span></code></pre></div><p>シミュレーション結果の構造がおかしくないかPyMOLで確認</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pymol -d <span style="color:#e6db74">&#34;load init.psf, obj, 0, psf; load_traj run.dcd, obj, 0, dcd; remove not polymer; remove h.; dss; show sticks; intra_fit all&#34;</span>
+</span></span></code></pre></div><h4 id="計算ノードn2でシニョリンのシミュレーションをながす">計算ノードn2でシニョリンのシミュレーションをながす</h4>
 <ul>
 <li>
 <p>シニョリンのインプットファイル <a href="https://github.com/matsunagalab/chignolin">https://github.com/matsunagalab/chignolin</a></p>
@@ -231,37 +231,37 @@ $ docker run --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:
 </li>
 </ul>
 <p>まずは、とりあえずn2でシミュレーションがながれるか確認</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh crab
-$ ssh n2
-$ cd /data/username/
-$ git clone https://github.com/matsunagalab/chignolin.git
-$ cd chignolin/
-$ docker run --privileged -u <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work -w /work crab:5000/openmm python -u run.py
-</code></pre></div><p>ファイルを編集してGPU(CUDA)が効くようにする。速度が向上することを確認する</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on n2</span>
-$ vi run.py <span style="color:#75715e">#or emacs run.py</span>
-$ docker run --privileged -u <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work -w /work crab:5000/openmm python -u run.py
-</code></pre></div><p>crabからバッチジョブ的にn2へ長い計算をsubmitする</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on crab</span>
-$ cd /data/username/chignolin/
-$ docker service create --name jobname  --constraint node.hostname<span style="color:#f92672">==</span>n2 --replicas <span style="color:#ae81ff">1</span> -u <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> --restart-condition<span style="color:#f92672">=</span>none --mount type<span style="color:#f92672">=</span>bind,source<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>,destination<span style="color:#f92672">=</span>/work --generic-resource <span style="color:#e6db74">&#34;gpu=1&#34;</span> crab:5000/openmm python -m run.py
-<span style="color:#75715e"># 投入されているジョブのリスト表示</span>
-$ docker service ls
-<span style="color:#75715e"># 計算の途中や終了後したジョブの標準出力をチェック</span>
-$ docker service logs jobname
-<span style="color:#75715e"># マニュアルでジョブを削除しなければならない</span>
-$ docker service rm jobname
-</code></pre></div><h4 id="crabのjupyterを使って解析する">crabのjupyterを使って解析する</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh crab
+</span></span><span style="display:flex;"><span>$ ssh n2
+</span></span><span style="display:flex;"><span>$ cd /data/username/
+</span></span><span style="display:flex;"><span>$ git clone https://github.com/matsunagalab/chignolin.git
+</span></span><span style="display:flex;"><span>$ cd chignolin/
+</span></span><span style="display:flex;"><span>$ docker run --privileged -u <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work -w /work crab:5000/openmm python -u run.py
+</span></span></code></pre></div><p>ファイルを編集してGPU(CUDA)が効くようにする。速度が向上することを確認する</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on n2</span>
+</span></span><span style="display:flex;"><span>$ vi run.py <span style="color:#75715e">#or emacs run.py</span>
+</span></span><span style="display:flex;"><span>$ docker run --privileged -u <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> --rm -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work -w /work crab:5000/openmm python -u run.py
+</span></span></code></pre></div><p>crabからバッチジョブ的にn2へ長い計算をsubmitする</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># on crab</span>
+</span></span><span style="display:flex;"><span>$ cd /data/username/chignolin/
+</span></span><span style="display:flex;"><span>$ docker service create --name jobname  --constraint node.hostname<span style="color:#f92672">==</span>n2 --replicas <span style="color:#ae81ff">1</span> -u <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> --restart-condition<span style="color:#f92672">=</span>none --mount type<span style="color:#f92672">=</span>bind,source<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>,destination<span style="color:#f92672">=</span>/work --generic-resource <span style="color:#e6db74">&#34;gpu=1&#34;</span> crab:5000/openmm python -m run.py
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 投入されているジョブのリスト表示</span>
+</span></span><span style="display:flex;"><span>$ docker service ls
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 計算の途中や終了後したジョブの標準出力をチェック</span>
+</span></span><span style="display:flex;"><span>$ docker service logs jobname
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># マニュアルでジョブを削除しなければならない</span>
+</span></span><span style="display:flex;"><span>$ docker service rm jobname
+</span></span></code></pre></div><h4 id="crabのjupyterを使って解析する">crabのjupyterを使って解析する</h4>
 <p>linksのページから、jupyter on crabのリンクをたどる</p>
 <h4 id="データをローカルマシンへコピーする">データをローカルマシンへコピーする</h4>
 <p>単純にはscpコマンドを使う</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ scp -Cr username@crab:/data/username/chignolin ./
-</code></pre></div><p>ディレクトリが巨大で、差分を少しずつローカルへコピーしたい場合などはrsyncを使う。最後のスラッシュは抜かさないように気をつける</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rsync -auz -vv --stats --progress --exclude <span style="color:#e6db74">&#34;*~&#34;</span> username@crab:/data/username/chignolin/ /home/username/path/to/
-</code></pre></div><p>ローカルマシンへコピーしたら、シミュレーション結果の構造がおかしくないかPyMOLで確認</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd chignolin/
-$ pymol -d <span style="color:#e6db74">&#34;load init.psf, obj, 0, psf; load_traj run.dcd, obj, 0, dcd; remove not polymer; remove h.; dss; show sticks; intra_fit all&#34;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ scp -Cr username@crab:/data/username/chignolin ./
+</span></span></code></pre></div><p>ディレクトリが巨大で、差分を少しずつローカルへコピーしたい場合などはrsyncを使う。最後のスラッシュは抜かさないように気をつける</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rsync -auz -vv --stats --progress --exclude <span style="color:#e6db74">&#34;*~&#34;</span> username@crab:/data/username/chignolin/ /home/username/path/to/
+</span></span></code></pre></div><p>ローカルマシンへコピーしたら、シミュレーション結果の構造がおかしくないかPyMOLで確認</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd chignolin/
+</span></span><span style="display:flex;"><span>$ pymol -d <span style="color:#e6db74">&#34;load init.psf, obj, 0, psf; load_traj run.dcd, obj, 0, dcd; remove not polymer; remove h.; dss; show sticks; intra_fit all&#34;</span>
+</span></span></code></pre></div>
 		</div>
 	</article>
 </main>
