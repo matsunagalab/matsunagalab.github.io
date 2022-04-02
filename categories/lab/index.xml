@@ -22,7 +22,16 @@
       <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
       
       <guid>https://www.bio.ics.saitama-u.ac.jp/lab/</guid>
-      <description>研究室内部向け Setup Basics PyMOL GENESIS OpenMM PC Cluster</description>
+      <description>研究室内部向け Macの環境セットアップ Macの基本的な使い方 PyMOL GENESIS OpenMM PCクラスタの使い方 PCクラスタ管理メモ</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/lab/admin/</link>
+      <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
+      
+      <guid>https://www.bio.ics.saitama-u.ac.jp/lab/admin/</guid>
+      <description>PCクラスタ設定メモ Slurm mungeのインストール ubuntuの場合はパッケージでインストールできる。 パッケージをインストールすると munge というユーザが自動的に作られる。 sudo apt update sudo apt install -y munge libmunge-dev libmunge2 鍵ファイル munge.key を作成して共有。鍵は以下に置く。 /etc/munge/munge.key munge.key のパーミッ</description>
     </item>
     
     <item>
@@ -49,7 +58,7 @@
       <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
       
       <guid>https://www.bio.ics.saitama-u.ac.jp/lab/pc_cluster/</guid>
-      <description>PCクラスタ情報と初期設定 クラスタの構成とストレージ環境 crabがログインノード兼ファイルサーバ。クラスタへログインする際はcrabが入り口となる。演算ノードへログインするとはほとんどなく、ほとんどの作業をcrab上で行う。crabはメモリ</description>
+      <description>PCクラスタ情報 クラスタの構成とストレージ環境 crabがログインノード兼ファイルサーバ。クラスタへログインする際はcrabが入り口となる。演算ノードへログインするとはほとんどなく、ほとんどの作業をcrab上で行う。crabはメモリ容量大きめ</description>
     </item>
     
     <item>

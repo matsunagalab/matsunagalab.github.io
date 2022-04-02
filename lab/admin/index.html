@@ -4,20 +4,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Lab - 埼玉大学 松永研究室</title>
+	<title> - 埼玉大学 松永研究室</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="Lab" />
-<meta property="og:description" content="Website of Matsuanga-lab Saitama University" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.bio.ics.saitama-u.ac.jp/categories/lab/" />
+	<meta name="description" content="Lab-only">
+		<meta property="og:title" content="" />
+<meta property="og:description" content="Lab-only" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.bio.ics.saitama-u.ac.jp/lab/admin/" /><meta property="article:section" content="lab" />
+<meta property="article:published_time" content="2020-09-20T18:30:26+09:00" />
+<meta property="article:modified_time" content="2020-09-20T18:30:26+09:00" />
 
 
-		<meta itemprop="name" content="Lab">
-<meta itemprop="description" content="Website of Matsuanga-lab Saitama University">
+		<meta itemprop="name" content="">
+<meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
+<meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
+<meta itemprop="wordCount" content="770">
+<meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Lab"/>
-<meta name="twitter:description" content="Website of Matsuanga-lab Saitama University"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Lab-only"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -26,7 +31,6 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="alternate" type="application/rss+xml" href="/categories/lab/index.xml" title="埼玉大学 松永研究室">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -116,39 +120,143 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main">
-	<header class="main__header">
-		<h1 class="main__title">Lab</h1>
-	</header><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/lab/pymol/" rel="bookmark">
-			
-			</a>
-		</h3>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title"></h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Yasuhiro Matsunaga</span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-20T18:30:26&#43;09:00">2020-09-20</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/lab/" rel="category">Lab</a>
 	</span>
 </div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		PyMOLハンズオン PyMOLとは？ 20年くらいの歴史がある分子構造可視化ソフト 分子可視化ソフトにはVMDやCHIMERAなどがあるが、表示の美しさ・センスの良さで定評がある Python、OpenGL、FreeGLUTなどを使用している Warren D
-	</div>
-</article>
+		</header><div class="content post__content clearfix">
+			<h3 id="pcクラスタ設定メモ">PCクラスタ設定メモ</h3>
+<h3 id="slurm">Slurm</h3>
+<h4 id="mungeのインストール">mungeのインストール</h4>
+<p>ubuntuの場合はパッケージでインストールできる。
+パッケージをインストールすると <code>munge</code> というユーザが自動的に作られる。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt install -y munge libmunge-dev libmunge2
+</code></pre></div><p>鍵ファイル <code>munge.key</code> を作成して共有。鍵は以下に置く。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/munge/munge.key
+</code></pre></div><p><code>munge.key</code> のパーミッションは <code>0600</code> でなければならない。</p>
+<h4 id="slurmのインストール">slurmのインストール</h4>
+<p>コンパイルしてインストール。defaultでは <code>/usr/local</code> 以下へインストールされる。
+Contorlのための <code>slumctld</code> と clientのための <code>slurmd</code> デーモンが作成される(他のもあるが割愛)。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure --with-hdf5<span style="color:#f92672">=</span>no
+make
+sudo make install
+</code></pre></div><p><code>slurm.conf</code> を作成して以下へ置く。全てのノードで同じ内容のファイルを置く。</p>
+<pre tabindex="0"><code>/usr/local/etc/slurm.conf
+</code></pre><p><code>slurm.conf</code> の中身は以下。コア数などは <code>lscpu</code> や <code>sudo slurmd -C</code> などで確認しながら記入する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># slurm.conf file generated by configurator easy.html.</span>
+<span style="color:#75715e"># Put this file on all nodes of your cluster.</span>
+<span style="color:#75715e"># See the slurm.conf man page for more information.</span>
+<span style="color:#75715e">#</span>
+SlurmctldHost<span style="color:#f92672">=</span>crab
+<span style="color:#75715e"># </span>
+<span style="color:#75715e">#MailProg=/bin/mail </span>
+MpiDefault<span style="color:#f92672">=</span>none
+<span style="color:#75715e">#MpiParams=ports=#-# </span>
+ProctrackType<span style="color:#f92672">=</span>proctrack/pgid
+ReturnToService<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+SlurmctldPidFile<span style="color:#f92672">=</span>/var/run/slurmctld.pid
+<span style="color:#75715e">#SlurmctldPort=6817 </span>
+SlurmdPidFile<span style="color:#f92672">=</span>/var/run/slurmd.pid
+<span style="color:#75715e">#SlurmdPort=6818 </span>
+SlurmdSpoolDir<span style="color:#f92672">=</span>/var/spool/slurmd
+<span style="color:#75715e">#SlurmUser=slurm</span>
+SlurmdUser<span style="color:#f92672">=</span>root 
+StateSaveLocation<span style="color:#f92672">=</span>/var/spool
+SwitchType<span style="color:#f92672">=</span>switch/none
+TaskPlugin<span style="color:#f92672">=</span>task/affinity
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># TIMERS </span>
+<span style="color:#75715e">#KillWait=30 </span>
+<span style="color:#75715e">#MinJobAge=300 </span>
+<span style="color:#75715e">#SlurmctldTimeout=120 </span>
+<span style="color:#75715e">#SlurmdTimeout=300 </span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># SCHEDULING </span>
+SchedulerType<span style="color:#f92672">=</span>sched/backfill
+SelectType<span style="color:#f92672">=</span><span style="color:#66d9ef">select</span>/cons_tres
+SelectTypeParameters<span style="color:#f92672">=</span>CR_Core
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># LOGGING AND ACCOUNTING </span>
+AccountingStorageType<span style="color:#f92672">=</span>accounting_storage/none
+ClusterName<span style="color:#f92672">=</span>cluster
+<span style="color:#75715e">#JobAcctGatherFrequency=30 </span>
+JobAcctGatherType<span style="color:#f92672">=</span>jobacct_gather/none
+<span style="color:#75715e">#SlurmctldDebug=info </span>
+<span style="color:#75715e">#SlurmctldLogFile=</span>
+<span style="color:#75715e">#SlurmdDebug=info </span>
+<span style="color:#75715e">#SlurmdLogFile=</span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># COMPUTE NODES </span>
+GresTypes<span style="color:#f92672">=</span>gpu
+
+NodeName<span style="color:#f92672">=</span>crab CPUs<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> RealMemory<span style="color:#f92672">=</span><span style="color:#ae81ff">512000</span> Sockets<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> CoresPerSocket<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> ThreadsPerCore<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> State<span style="color:#f92672">=</span>UNKNOWN
+NodeName<span style="color:#f92672">=</span>n<span style="color:#f92672">[</span>1-2<span style="color:#f92672">]</span> Gres<span style="color:#f92672">=</span>gpu:titan:10 CPUs<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> RealMemory<span style="color:#f92672">=</span><span style="color:#ae81ff">64000</span> Sockets<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> CoresPerSocket<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> ThreadsPerCore<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> State<span style="color:#f92672">=</span>UNKNOWN
+NodeName<span style="color:#f92672">=</span>n<span style="color:#f92672">[</span>3-4<span style="color:#f92672">]</span> Gres<span style="color:#f92672">=</span>gpu:1080:10 CPUs<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> RealMemory<span style="color:#f92672">=</span><span style="color:#ae81ff">64000</span> Sockets<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> CoresPerSocket<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> ThreadsPerCore<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> State<span style="color:#f92672">=</span>UNKNOWN
+NodeName<span style="color:#f92672">=</span>n5 Gres<span style="color:#f92672">=</span>gpu:2080:10 CPUs<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span> RealMemory<span style="color:#f92672">=</span><span style="color:#ae81ff">64000</span> Sockets<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> CoresPerSocket<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span> ThreadsPerCore<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> State<span style="color:#f92672">=</span>UNKNOWN
+NodeName<span style="color:#f92672">=</span>m1 Gres<span style="color:#f92672">=</span>gpu:8000:2 CPUs<span style="color:#f92672">=</span><span style="color:#ae81ff">28</span> RealMemory<span style="color:#f92672">=</span><span style="color:#ae81ff">512000</span> Sockets<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> CoresPerSocket<span style="color:#f92672">=</span><span style="color:#ae81ff">28</span> ThreadsPerCore<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> State<span style="color:#f92672">=</span>UNKNOWN
+
+PartitionName<span style="color:#f92672">=</span>crab Nodes<span style="color:#f92672">=</span>crab Default<span style="color:#f92672">=</span>NO MaxTime<span style="color:#f92672">=</span>INFINITE State<span style="color:#f92672">=</span>UP
+<span style="color:#75715e">#PartitionName=no_n1 Nodes=n[2-5] Default=NO MaxTime=INFINITE State=UP</span>
+PartitionName<span style="color:#f92672">=</span>all Nodes<span style="color:#f92672">=</span>crab,n<span style="color:#f92672">[</span>1-5<span style="color:#f92672">]</span>,m1 Default<span style="color:#f92672">=</span>YES MaxTime<span style="color:#f92672">=</span>INFINITE State<span style="color:#f92672">=</span>UP
+</code></pre></div><p>また、Generic ResoucesとしてGPUを管理下に入れることができる。
+GPUを搭載するCompute nodeでは、GPU を自動認識してもらうために同じ場所に <code>gres.conf</code> を作成。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo echo <span style="color:#e6db74">&#34;AutoDetect=nvml&#34;</span> &gt;/usr/local/etc/gres.conf
+</code></pre></div><p>firewallを適用している場合にはslurm通信用のポートを解放する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo firewall-cmd --zone<span style="color:#f92672">=</span>external --add-port<span style="color:#f92672">=</span>6817/tcp --permanent
+sudo firewall-cmd --zone<span style="color:#f92672">=</span>external --add-port<span style="color:#f92672">=</span>6817/udp --permanent
+sudo firewall-cmd --zone<span style="color:#f92672">=</span>external --add-port<span style="color:#f92672">=</span>6818/tcp --permanent
+sudo firewall-cmd --zone<span style="color:#f92672">=</span>external --add-port<span style="color:#f92672">=</span>6818/udp --permanent
+sudo firewall-cmd --reload
+</code></pre></div><p><code>slurm.conf</code> の設定が上手く行っているかどうかを
+<code>sudo slurmd -D</code> として対話的にデーモンを実行しながら確認。</p>
+<p>エラーがなくなって、正常に起動するようになったら
+Controller node で <code>slurmctld</code> デーモンを動かす
+compute node で <code>slurmd</code> デーモンを動かす</p>
+<p><code>sinfo</code> で status が <code>drain</code> となってしまう場合は、
+<code>scontrol show node ホスト名</code> などで理由をみる。</p>
+<p>動作するようになったらsystemdへ登録する</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp etc/slurmctld.service /etc/systemd/system
+sudo cp etc/slurmd.service /etc/systemd/system
+
+<span style="color:#75715e"># On Controller node</span>
+sudo systemctl start slurmctld
+sudo systemctl status slurmctld
+sudo systemctl enable slurmctld
+
+<span style="color:#75715e"># On Compute node</span>
+sudo systemctl start slurmd
+sudo systemctl status slurmd
+sudo systemctl enable slurmd
+</code></pre></div>
+		</div>
+	</article>
 </main>
 
-<div class="pagination">
-	<a class="pagination__item pagination__item--prev btn" href="/categories/lab/page/6/">«</a>
-	<span class="pagination__item pagination__item--current">7/8</span>
-	<a class="pagination__item pagination__item--next btn" href="/categories/lab/page/8/">»</a>
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Yasuhiro Matsunaga avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
 </div>
 
+
+
 			</div>
-			
-<aside class="sidebar sidebar--left">
+			<aside class="sidebar">
 <div class="widget-social widget">
 	<h4 class="widget-social__title widget__title">Social</h4>
 	<div class="widget-social__content widget__content">
@@ -257,5 +365,7 @@
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+<script src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
 </html>
