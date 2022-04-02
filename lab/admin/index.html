@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="772">
+<meta itemprop="wordCount" content="1404">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -135,8 +135,20 @@
 			<h3 id="pcクラスタ設定メモ">PCクラスタ設定メモ</h3>
 <hr>
 <h3 id="slurm">Slurm</h3>
+<p>Slurmの設定に関しては、日本語情報では以下が参考になる</p>
+<ul>
+<li>
+<p><a href="http://www-fps.nifs.ac.jp/ito/memo/slurm01.html">http://www-fps.nifs.ac.jp/ito/memo/slurm01.html</a></p>
+</li>
+<li>
+<p><a href="https://biomodeling.co.jp/2019/11/06/slurmmpichcuda">https://biomodeling.co.jp/2019/11/06/slurmmpichcuda</a>の設定centos7/</p>
+</li>
+</ul>
 <h4 id="mungeのインストール">mungeのインストール</h4>
-<p>ubuntuの場合はパッケージでインストールできる。
+<p>mungeは認証に使われる。
+本家の<a href="https://github.com/dun/munge/wiki/Installation-Guide">ドキュメント</a>
+がよくまとまっているので、主にこれに従う。
+ubuntuの場合はパッケージでインストールできる。
 パッケージをインストールすると <code>munge</code> というユーザが自動的に作られる。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
 sudo apt install -y munge libmunge-dev libmunge2
@@ -144,7 +156,9 @@ sudo apt install -y munge libmunge-dev libmunge2
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/munge/munge.key
 </code></pre></div><p><code>munge.key</code> のパーミッションは <code>0600</code> でなければならない。</p>
 <h4 id="slurmのインストール">slurmのインストール</h4>
-<p>コンパイルしてインストール。defaultでは <code>/usr/local</code> 以下へインストールされる。
+<p>コンパイルしてインストール。本家の<a href="https://slurm.schedmd.com/quickstart_admin.html">ドキュメント</a>
+は非常にわかりにくいが細かな情報はこれを読むしかない。
+defaultでは <code>/usr/local</code> 以下へインストールされる。
 Contorlのための <code>slumctld</code> と clientのための <code>slurmd</code> デーモンが作成される(他のもあるが割愛)。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure --with-hdf5<span style="color:#f92672">=</span>no
 make
@@ -211,10 +225,16 @@ NodeName<span style="color:#f92672">=</span>m1 Gres<span style="color:#f92672">=
 PartitionName<span style="color:#f92672">=</span>crab Nodes<span style="color:#f92672">=</span>crab Default<span style="color:#f92672">=</span>NO MaxTime<span style="color:#f92672">=</span>INFINITE State<span style="color:#f92672">=</span>UP
 <span style="color:#75715e">#PartitionName=no_n1 Nodes=n[2-5] Default=NO MaxTime=INFINITE State=UP</span>
 PartitionName<span style="color:#f92672">=</span>all Nodes<span style="color:#f92672">=</span>crab,n<span style="color:#f92672">[</span>1-5<span style="color:#f92672">]</span>,m1 Default<span style="color:#f92672">=</span>YES MaxTime<span style="color:#f92672">=</span>INFINITE State<span style="color:#f92672">=</span>UP
-</code></pre></div><p>また、Generic ResoucesとしてGPUを管理下に入れることができる。
+</code></pre></div><p>Generic ResoucesとしてGPUを管理下に入れている。
 GPUを搭載するCompute nodeでは、GPU を自動認識してもらうために同じ場所に <code>gres.conf</code> を作成。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo echo <span style="color:#e6db74">&#34;AutoDetect=nvml&#34;</span> &gt;/usr/local/etc/gres.conf
-</code></pre></div><p>firewallを適用している場合にはslurm通信用のポートを解放する。</p>
+</code></pre></div><p><code>slurm.conf</code>の中で指定しているgpuの名前(例えば <code>Gres=gpu:titan:10</code>)を知るには、
+本家の<a href="https://slurm.schedmd.com/gres.html">ドキュメント</a>によると、
+以下のようにすれば良いらしい。</p>
+<pre tabindex="0"><code>To see the GPU name, set SlurmdDebug=debug2 in your slurm.conf and either restart or reconfigure slurmd and check the slurmd log. For example, with AutoDetect=nvml:
+</code></pre><p>しかしgpuの名前を知るには、<code>slurm.conf</code>でとりあえず名前は指定せずにしておいて、
+<code>sudo slurmd -D</code> でデーモンを直接起動してnvmlからの出力を見るほうが楽である。</p>
+<p>その後、firewallを適用している場合にはslurm通信用のポートを解放する。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo firewall-cmd --zone<span style="color:#f92672">=</span>external --add-port<span style="color:#f92672">=</span>6817/tcp --permanent
 sudo firewall-cmd --zone<span style="color:#f92672">=</span>external --add-port<span style="color:#f92672">=</span>6817/udp --permanent
 sudo firewall-cmd --zone<span style="color:#f92672">=</span>external --add-port<span style="color:#f92672">=</span>6818/tcp --permanent
@@ -242,8 +262,36 @@ sudo systemctl status slurmd
 sudo systemctl enable slurmd
 </code></pre></div><hr>
 <h3 id="nis">NIS</h3>
-<hr>
-<h3 id="nfs">NFS</h3>
+<p>新しめのUbuntuの場合は、以下でインストールできる。</p>
+<pre tabindex="0"><code>$ sudo apt -y install nis
+</code></pre><h4 id="client">client</h4>
+<p><code>/etc/yp.conf</code> にNISドメイン名とサーバ名(orIPアドレス)を記入</p>
+<pre tabindex="0"><code>domain NISドメイン名 server サーバ名
+</code></pre><p>更に、<code>/etc/nsswitch.conf</code> の中のNISで共有したい情報に <code>nis</code> を追加</p>
+<pre tabindex="0"><code>passwd:         files systemd nis
+group:          files systemd nis
+shadow:         files nis
+gshadow:        files
+
+hosts:          files mdns4_minimal [NOTFOUND=return] dns
+networks:       files
+
+protocols:      db files
+services:       db files
+ethers:         db files
+rpc:            db files
+
+netgroup:       nis
+</code></pre><p>systemdでサービス起動。問題なければ登録する。</p>
+<pre tabindex="0"><code>systemctl restart rpcbind nis 
+systemctl status nis
+systemctl enable rpcbind nis 
+</code></pre><h4 id="server">server</h4>
+<p><code>/etc/sysconfig/network</code> にNISドメイン名と、必要があればNISで用いるポート番号を登録。</p>
+<pre tabindex="0"><code>NISDOMAIN=NISドメイン名
+YPSERV_ARGS=&quot;-p ポート番号&quot;
+</code></pre><p>必要に応じて、設定したポート番号を <code>firewall-cmd</code> で解放。</p>
+<p>サービスの登録。</p>
 <hr>
 
 		</div>
