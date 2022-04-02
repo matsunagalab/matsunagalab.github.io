@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="1487">
+<meta itemprop="wordCount" content="1523">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -132,8 +132,8 @@
 	</span>
 </div></div>
 		</header><div class="content post__content clearfix">
-			<h3 id="pcクラスタ情報">PCクラスタ情報</h3>
-<h4 id="クラスタの構成とストレージ環境">クラスタの構成とストレージ環境</h4>
+			<h3 id="pcクラスタの使い方">PCクラスタの使い方</h3>
+<h4 id="ノードとストレージ情報">ノードとストレージ情報</h4>
 <p>crabがログインノード兼ファイルサーバ。クラスタへログインする際はcrabが入り口となる。演算ノードへログインするとはほとんどなく、ほとんどの作業をcrab上で行う。crabはメモリ容量大きめ(512GB)なのでデータ解析にも使える。Jupyterが常時稼働しており、研究室HPのトップページからリンクでとべる。</p>
 <p>crabを含めて、crabのネットワークに接続されている演算ノードのスペックは以下の通り。</p>
 <table>
@@ -233,7 +233,7 @@
 </tbody>
 </table>
 <hr>
-<h3 id="slurmへのジョブの投入">slurmへのジョブの投入</h3>
+<h3 id="slurmへのジョブの投入方法">slurmへのジョブの投入方法</h3>
 <p>流れているジョブの確認</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ squeue 
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span style="color:#f92672">(</span>REASON<span style="color:#f92672">)</span>
@@ -245,9 +245,9 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sbatch -w n4 run.sh
 </code></pre></div><p>更に、GPU枚数を指定してジョブを投入</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sbatch --gres<span style="color:#f92672">=</span>gpu:2080:1 -w n5 run.sh
-</code></pre></div><p>ジョブのキャンセル (JOB_IDを指定する。ここでは117とする)</p>
+</code></pre></div><p>ジョブのキャンセル (JOBIDを指定する。ここでは127とする)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ scancel <span style="color:#ae81ff">127</span>
-</code></pre></div><p>JOB_ID=54が終わったら実行するジョブの投入 (chain jobs)</p>
+</code></pre></div><p>依存関係のあるジョブの投入。例えばJOB_ID=54が終わった後で実行されるべきジョブの投入 (chain jobと呼ばれる)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sbatch -w n1 --dependency<span style="color:#f92672">=</span>afterok:54 run.sh
 </code></pre></div><p>ジョブスクリプトrun.shの例</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
@@ -267,7 +267,7 @@ namd3 +devices <span style="color:#ae81ff">0</span> +p <span style="color:#ae81f
 <h4 id="アカウントの作成">アカウントの作成</h4>
 <p>クラスタの管理者(松永)へアカウント名を伝えて、アカウントを作成してもらう。アカウント名はローカルマシンで使っているものと一緒であるのが望ましい。</p>
 <h4 id="ログインノードのipアドレスを登録">ログインノードのIPアドレスを登録</h4>
-<p>ローカルマシンへログインノードであるcrabのIPアドレスを登録する。</p>
+<p>ローカルマシンへログインノードであるcrabと、m1のIPアドレスを登録する。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vim /etc/hosts
 <span style="color:#75715e"># IP情報は別途提供する</span>
 </code></pre></div><h4 id="クラスタへログインする">クラスタへログインする</h4>
@@ -282,7 +282,7 @@ $ passwd
 <span style="color:#75715e"># 新パスワードの入力</span>
 </code></pre></div><h4 id="ssh公開鍵認証の設定をする">SSH公開鍵認証の設定をする</h4>
 <p>パスワード認証はセキュアではないので、ローカルマシンとcrabとで公開鍵認証が行えるように設定を行う。
-まず、Mac上で公開鍵・秘密鍵を作成する。ローカルマシンとcrabの認証に使う</p>
+まず、ローカルマシン上で公開鍵・秘密鍵を作成する。ローカルマシンとcrabの認証に使う</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># on local machine</span>
 $ ssh-keygen -t rsa
 パスワード設定を求められたら入力する。ファイルのパスはそのままでリターン
