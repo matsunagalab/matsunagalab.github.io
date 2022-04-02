@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="1404">
+<meta itemprop="wordCount" content="1606">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -262,8 +262,14 @@ sudo systemctl status slurmd
 sudo systemctl enable slurmd
 </code></pre></div><hr>
 <h3 id="nis">NIS</h3>
-<p>新しめのUbuntuの場合は、以下でインストールできる。</p>
+<p>新しめのUbuntuの場合は、以下でインストールできる。
+インストール時にNISドメイン名を聞かれるので入力する。</p>
 <pre tabindex="0"><code>$ sudo apt -y install nis
+</code></pre><h4 id="ホームディレクトリを空にする">ホームディレクトリを空にする</h4>
+<p>NISとNFSでホームディレクトリを共有する場合は、
+ローカルユーザのディレクトリがあってバッティングするとややこしいので
+ローカルユーザのディレクトリは別の場所へ移す。例えば <code>home_local</code> など。</p>
+<pre tabindex="0"><code>sudo usermod -d /home_local/user_name user_name
 </code></pre><h4 id="client">client</h4>
 <p><code>/etc/yp.conf</code> にNISドメイン名とサーバ名(orIPアドレス)を記入</p>
 <pre tabindex="0"><code>domain NISドメイン名 server サーバ名
@@ -282,15 +288,21 @@ ethers:         db files
 rpc:            db files
 
 netgroup:       nis
-</code></pre><p>systemdでサービス起動。問題なければ登録する。</p>
+</code></pre><p>systemdでサービス起動。</p>
 <pre tabindex="0"><code>systemctl restart rpcbind nis 
 systemctl status nis
-systemctl enable rpcbind nis 
+</code></pre><p><code>ypwhich</code> でNISサーバまたはマップマスタの名前が返るはず。</p>
+<pre tabindex="0"><code>ypwhich
+</code></pre><p><code>ypcat</code> でマップされた情報を確認できる。例えば</p>
+<pre tabindex="0"><code>ypcat passwd
+</code></pre><p>問題なければ登録する。</p>
+<pre tabindex="0"><code>systemctl enable rpcbind nis 
 </code></pre><h4 id="server">server</h4>
 <p><code>/etc/sysconfig/network</code> にNISドメイン名と、必要があればNISで用いるポート番号を登録。</p>
 <pre tabindex="0"><code>NISDOMAIN=NISドメイン名
 YPSERV_ARGS=&quot;-p ポート番号&quot;
-</code></pre><p>必要に応じて、設定したポート番号を <code>firewall-cmd</code> で解放。</p>
+</code></pre><p><code>authconfig</code> でNISサーバ情報を登録する。</p>
+<p>必要に応じて、設定したポート番号を <code>firewall-cmd</code> で解放。</p>
 <p>サービスの登録。</p>
 <hr>
 
