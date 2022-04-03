@@ -236,9 +236,9 @@
 <h3 id="slurmへのジョブの投入方法">slurmへのジョブの投入方法</h3>
 <p>流れているジョブの確認</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ squeue 
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span style="color:#f92672">(</span>REASON<span style="color:#f92672">)</span>
-               <span style="color:#ae81ff">115</span>       all   isrest nakayama  R 1-22:49:43      <span style="color:#ae81ff">1</span> n3
-               <span style="color:#ae81ff">125</span>       all isrest_t     yasu  R 1-00:09:45      <span style="color:#ae81ff">1</span> n2
+ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span style="color:#f92672">(</span>REASON<span style="color:#f92672">)</span>
+   <span style="color:#ae81ff">115</span>       all   isrest nakayama  R 1-22:49:43      <span style="color:#ae81ff">1</span> n3
+   <span style="color:#ae81ff">125</span>       all isrest_t     yasu  R 1-00:09:45      <span style="color:#ae81ff">1</span> n2
 </code></pre></div><p>ジョブの投入</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sbatch run.sh
 </code></pre></div><p>ノードを指定してジョブを投入</p>
