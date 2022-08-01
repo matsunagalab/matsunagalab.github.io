@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2021-04-05T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2021-04-05T18:30:26+09:00" />
-<meta itemprop="wordCount" content="1593">
+<meta itemprop="wordCount" content="1806">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -154,6 +154,7 @@
 <ul>
 <li>コピー <code>Cmd-c</code></li>
 <li>ペースト <code>Cmd-v</code></li>
+<li>複製 <code>Cmd-d</code> (PowerPointやFinderでよく使う)</li>
 <li>Undo <code>Cmd-z</code></li>
 <li>ウィンドウ/タブを閉じる <code>Cmd-w</code></li>
 <li>アプリの終了 <code>Cmd-q</code></li>
@@ -163,7 +164,8 @@
 <li>Safariなど ページ戻し <code>Shift-Space</code></li>
 <li>Safariなど URLへフォーカス <code>Cmd-l</code></li>
 <li>Safariやターミナルなど 新しいタブの作成 <code>Cmd-t</code></li>
-<li>Safariやターミナルなど タブの移動 <code>Cmd-Shift-矢印</code> <code>Cmd-Shift-[]</code></li>
+<li>Safariやターミナルなど タブの移動 <code>Cmd-Shift-矢印</code> <code>Cmd-Shift-[]</code>e</li>
+<li>Finder ディレクトリの移動 <code>Cmd-上下矢印</code></li>
 </ul>
 <h4 id="便利なアプリ">便利なアプリ</h4>
 <ul>
@@ -267,7 +269,28 @@
 <p>シェルの機能であるパイプについてネットで調べてください。パイプを使って面白いワンライナーを作ってみてください。</p>
 </li>
 </ol>
-
+<h3 id="今後のための環境構築">今後のための環境構築</h3>
+<h4 id="jupyter-labのインストール">Jupyter Labのインストール</h4>
+<p>pythonとjuliaをbrewでインストール</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ brew install python3
+</span></span><span style="display:flex;"><span>$ brew install julia
+</span></span></code></pre></div><p>juliaで必要なパッケージなどをインストール</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ julia
+</span></span><span style="display:flex;"><span>julia&gt; 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># enter the package mode by pressing ]</span>
+</span></span><span style="display:flex;"><span>pkg&gt; add IJulia, Flux, Plots, Statistics, BSON, Revise, HTTP
+</span></span><span style="display:flex;"><span>pkg&gt; add https://github.com/matsunagalab/MDToolbox.jl.git
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># return to the REPL mode by pressing BACKSPACE or DELETE</span>
+</span></span><span style="display:flex;"><span>julia&gt; using IJulia
+</span></span><span style="display:flex;"><span>julia&gt; exit<span style="color:#f92672">()</span>
+</span></span></code></pre></div><p>Jupyter Labのインストール</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip3 install jupyterlab
+</span></span></code></pre></div><p>Jupyter Labの起動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ jupyter lab
+</span></span></code></pre></div><h4 id="コンパイラ関連のインストール">コンパイラ関連のインストール</h4>
+<p>gccのインストール</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ brew install gcc@11
+</span></span></code></pre></div>
 		</div>
 	</article>
 </main>
