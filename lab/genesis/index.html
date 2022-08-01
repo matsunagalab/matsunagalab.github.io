@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="487">
+<meta itemprop="wordCount" content="508">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -147,19 +147,15 @@
 </span></span><span style="display:flex;"><span>$ sudo xcode-select --install
 </span></span></code></pre></div><p>コンパイルできたらインストールして環境変数PATHを設定します。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ln -sf /opt/openmpi-4.0.5 /opt/openmpi
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ cat <span style="color:#e6db74">&lt;&lt;&#39;EOS&#39; &gt;&gt;~/.zshrc
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># openmpi
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export PATH=/opt/openmpi/bin:$PATH
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export LD_LIBRARY_PATH=/opt/openmpi/lib:$LD_LIBRARY_PATH
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export DYLD_LIBRARY_PATH=/opt/openmpi/lib:$DYLD_LIBRARY_PATH
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export MANPATH=/opt/openmpi/share/man:$MANPATH
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;EOS</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ source ~/.zshrc
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 無事にインストールされてPATHが通っているか確認</span>
-</span></span><span style="display:flex;"><span>$ which mpirun
+</span></span></code></pre></div><p>vimで <code>~/.zshrc</code> の末尾に以下を追加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># openmpi</span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>/opt/openmpi/bin:$PATH
+</span></span><span style="display:flex;"><span>export LD_LIBRARY_PATH<span style="color:#f92672">=</span>/opt/openmpi/lib:$LD_LIBRARY_PATH
+</span></span><span style="display:flex;"><span>export DYLD_LIBRARY_PATH<span style="color:#f92672">=</span>/opt/openmpi/lib:$DYLD_LIBRARY_PATH
+</span></span><span style="display:flex;"><span>export MANPATH<span style="color:#f92672">=</span>/opt/openmpi/share/man:$MANPATH
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ source ~/.zshrc
+</span></span></code></pre></div><p>無事にインストールされてPATHが通っているか確認</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ which mpirun
 </span></span></code></pre></div><h3 id="genesisのインストール">GENESISのインストール</h3>
 <p>MacOSでGENESISをコンパイルする手順は以下の通りです。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ wget --content-disposition <span style="color:#e6db74">&#34;https://www.r-ccs.riken.jp/labs/cbrt/?smd_process_download=1&amp;download_id=15613&#34;</span>
@@ -172,16 +168,14 @@
 </span></span><span style="display:flex;"><span>$ sudo mv genesis-1.6.0 /opt/
 </span></span><span style="display:flex;"><span>$ sudo ln -sf /opt/genesis-1.6.0 /opt/genesis
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ cat <span style="color:#e6db74">&lt;&lt; &#39;EOS&#39; &gt;&gt;~/.zshrc
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># genesis
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export PATH=/opt/genesis/bin:$PATH
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;EOS</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ source ~/.zshrc
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 無事にインストールされてPATHが通っているか確認</span>
-</span></span><span style="display:flex;"><span>$ which atdyn
+</span></span><span style="display:flex;"><span>vimで <span style="color:#e6db74">`</span>~/.zshrc<span style="color:#e6db74">`</span> の末尾に以下を追加
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># genesis</span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>/opt/genesis/bin:$PATH
+</span></span></code></pre></div><p>設定を反映</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ source ~/.zshrc
+</span></span></code></pre></div><p>無事にインストールされてPATHが通っているか確認</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ which atdyn
 </span></span></code></pre></div>
 		</div>
 	</article>
