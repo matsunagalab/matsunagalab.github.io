@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2021-04-05T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2021-04-05T18:30:26+09:00" />
-<meta itemprop="wordCount" content="1526">
+<meta itemprop="wordCount" content="1593">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -187,6 +187,27 @@
 <li>ターミナルの設定(フォントサイズ、背景の透過など)</li>
 <li>タブの使用</li>
 </ul>
+<h4 id="シェルの機能">シェルの機能</h4>
+<ul>
+<li>シェルとは？</li>
+<li>Tab補完</li>
+<li>ワイルドカード <code>*</code> <code>?</code></li>
+<li>履歴の呼び起こし</li>
+<li>履歴のインクリメンタル検索 <code>Ctrl-r</code> (履歴に関しては <a href="http://0xcc.net/unimag/3/">http://0xcc.net/unimag/3/</a> )</li>
+<li>一度手入力した長めのコマンドは二度と手入力しないように、履歴を使いこなすことを心がける</li>
+</ul>
+<h4 id="ショートカットキー">ショートカットキー</h4>
+<ul>
+<li>一文字先 <code>Ctrl-f</code></li>
+<li>一文字前 <code>Ctrl-f</code></li>
+<li>カーソル上の文字を削除 <code>Ctrl-d</code></li>
+<li>カーソル上の一つ前を削除 <code>Ctrl-h</code></li>
+<li>行先頭 <code>Ctrl-a</code></li>
+<li>行末尾 <code>Ctrl-e</code></li>
+<li>一つ前のコマンド <code>Ctrl-p</code></li>
+<li>一つ後のコマンド <code>Ctrl-n</code></li>
+<li>履歴のインクリメンタル検索 <code>Ctrl-r</code></li>
+</ul>
 <h4 id="パスの概念">パスの概念</h4>
 <ul>
 <li>絶対パス</li>
@@ -215,27 +236,6 @@
 <li>コマンドのマニュアルを読む <code>man</code></li>
 <li>番外編 音声読み上げ <code>say</code>、コピー <code>pbcopy</code></li>
 </ul>
-<h4 id="シェルの機能">シェルの機能</h4>
-<ul>
-<li>シェルとは？</li>
-<li>Tab補完</li>
-<li>ワイルドカード <code>*</code> <code>?</code></li>
-<li>履歴の呼び起こし</li>
-<li>履歴のインクリメンタル検索 <code>Ctrl-r</code> (履歴に関しては <a href="http://0xcc.net/unimag/3/">http://0xcc.net/unimag/3/</a> )</li>
-<li>一度手入力した長めのコマンドは二度と手入力しないように、履歴を使いこなすことを心がける</li>
-</ul>
-<h4 id="ショートカットキー">ショートカットキー</h4>
-<ul>
-<li>一文字先 <code>Ctrl-f</code></li>
-<li>一文字前 <code>Ctrl-f</code></li>
-<li>カーソル上の文字を削除 <code>Ctrl-d</code></li>
-<li>カーソル上の一つ前を削除 <code>Ctrl-h</code></li>
-<li>行先頭 <code>Ctrl-a</code></li>
-<li>行末尾 <code>Ctrl-e</code></li>
-<li>一つ前のコマンド <code>Ctrl-p</code></li>
-<li>一つ後のコマンド <code>Ctrl-n</code></li>
-<li>履歴のインクリメンタル検索 <code>Ctrl-r</code></li>
-</ul>
 <h4 id="環境変数">環境変数</h4>
 <ul>
 <li><code>HOME</code> ( <code>echo $HOME</code> で確認)</li>
@@ -246,13 +246,26 @@
 <ul>
 <li>dotファイルは設定ファイル。環境変数などを定義。<code>ls -a</code> で表示できる</li>
 <li><code>~/.zshrc</code> シェルの設定ファイル</li>
-<li><code>~/.zsh_history</code> 履歴</li>
+<li><code>~/.zsh_history</code> コマンドの履歴が保存されるファイル</li>
+</ul>
+<h4 id="ターミナル上でテキストファイルを編集">ターミナル上でテキストファイルを編集</h4>
+<ul>
+<li>ターミナル上で使うエディタとしては vim がお手軽で便利なので、以下を閲覧して基本だけでも使えるようになってください。 <a href="https://dotinstall.com/lessons/basic_vim">https://dotinstall.com/lessons/basic_vim</a></li>
 </ul>
 <h3 id="課題">課題</h3>
 <ol>
-<li>シェルにはどのような種類があるかネットで調べてきてください。自分が使っているシェルは何かを確認してください</li>
-<li>環境変数だけでなくシェル変数というのがありますが、その2つの違いを調べてきてください</li>
-<li>ターミナルでコマンド(シェル)を使ってみて、「このようなことができれば便利なのに」というものを一人ひとつ考えてきてください</li>
+<li>vimを使って、<code>~/.zshrc</code> へ以下の設定を追加してください。保存される履歴を増やします。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HISTSIZE<span style="color:#f92672">=</span><span style="color:#ae81ff">6000000</span>
+</span></span><span style="display:flex;"><span>SAVEHIST<span style="color:#f92672">=</span><span style="color:#ae81ff">6000000</span>
+</span></span><span style="display:flex;"><span>setopt share_history
+</span></span></code></pre></div><ol start="2">
+<li>
+<p><code>find</code> と <code>mdfind</code> の実用的なオプションを調べて、試してみてください。</p>
+</li>
+<li>
+<p>シェルの機能であるパイプについてネットで調べてください。パイプを使って面白いワンライナーを作ってみてください。</p>
+</li>
 </ol>
 
 		</div>
