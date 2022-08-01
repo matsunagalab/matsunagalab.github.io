@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2021-04-05T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2021-04-05T18:30:26+09:00" />
-<meta itemprop="wordCount" content="1830">
+<meta itemprop="wordCount" content="2116">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -164,7 +164,7 @@
 <li>Safariなど ページ戻し <code>Shift-Space</code></li>
 <li>Safariなど URLへフォーカス <code>Cmd-l</code></li>
 <li>Safariやターミナルなど 新しいタブの作成 <code>Cmd-t</code></li>
-<li>Safariやターミナルなど タブの移動 <code>Cmd-Shift-矢印</code> <code>Cmd-Shift-[]</code>e</li>
+<li>Safariやターミナルなど タブの移動 <code>Cmd-Shift-矢印</code> <code>Cmd-Shift-[]</code></li>
 <li>Finder ディレクトリの移動 <code>Cmd-上下矢印</code></li>
 </ul>
 <h4 id="便利なアプリ">便利なアプリ</h4>
@@ -256,11 +256,60 @@
 </ul>
 <h3 id="課題">課題</h3>
 <ol>
-<li>vimを使って、<code>~/.zshrc</code> へ以下の設定を追加してください。保存される履歴を増やします。</li>
+<li>vimを使って、<code>~/.zshrc</code> へ以下の設定を追加してください。lsをカラー化したり保存される履歴などを増やします。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HISTSIZE<span style="color:#f92672">=</span><span style="color:#ae81ff">6000000</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># prompt</span>
+</span></span><span style="display:flex;"><span>PROMPT<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%m:%c %n$ &#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># zsh-completions(補完機能)の設定</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e /usr/local/share/zsh-completions <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    fpath<span style="color:#f92672">=(</span>/usr/local/share/zsh-completions $fpath<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>autoload -U compinit
+</span></span><span style="display:flex;"><span>compinit -u
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ls に色を付ける</span>
+</span></span><span style="display:flex;"><span>export LSCOLORS<span style="color:#f92672">=</span>exfxcxdxbxegedabagacad
+</span></span><span style="display:flex;"><span>export LS_COLORS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30&#39;</span>
+</span></span><span style="display:flex;"><span>alias ls<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ls -GF&#34;</span>
+</span></span><span style="display:flex;"><span>alias gls<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gls --color&#34;</span>
+</span></span><span style="display:flex;"><span>zstyle <span style="color:#e6db74">&#39;:completion:*&#39;</span> list-colors <span style="color:#e6db74">&#39;di=34&#39;</span> <span style="color:#e6db74">&#39;ln=35&#39;</span> <span style="color:#e6db74">&#39;so=32&#39;</span> <span style="color:#e6db74">&#39;ex=31&#39;</span> <span style="color:#e6db74">&#39;bd=46;34&#39;</span> <span style="color:#e6db74">&#39;cd=43;34&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># コマンド履歴</span>
+</span></span><span style="display:flex;"><span>HISTSIZE<span style="color:#f92672">=</span><span style="color:#ae81ff">6000000</span>
 </span></span><span style="display:flex;"><span>SAVEHIST<span style="color:#f92672">=</span><span style="color:#ae81ff">6000000</span>
 </span></span><span style="display:flex;"><span>setopt share_history
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># コマンド履歴検索</span>
+</span></span><span style="display:flex;"><span>autoload history-search-end
+</span></span><span style="display:flex;"><span>zle -N history-beginning-search-backward-end history-search-end
+</span></span><span style="display:flex;"><span>zle -N history-beginning-search-forward-end history-search-end
+</span></span><span style="display:flex;"><span>bindkey <span style="color:#e6db74">&#34;^P&#34;</span> history-beginning-search-backward-end
+</span></span><span style="display:flex;"><span>bindkey <span style="color:#e6db74">&#34;^N&#34;</span> history-beginning-search-forward-end
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ディレクトリ名を入力するだけで移動</span>
+</span></span><span style="display:flex;"><span>setopt auto_cd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 移動したディレクトリを記録しておく。&#34;cd -[Tab]&#34;で移動履歴を一覧</span>
+</span></span><span style="display:flex;"><span>setopt auto_pushd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># コマンド訂正</span>
+</span></span><span style="display:flex;"><span>setopt correct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 補完候補を詰めて表示する</span>
+</span></span><span style="display:flex;"><span>setopt list_packed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 補完候補表示時などにピッピとビープ音をならないように設定</span>
+</span></span><span style="display:flex;"><span>setopt nolistbeep
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Emacsライクキーバインド設定</span>
+</span></span><span style="display:flex;"><span>bindkey -e 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ターミナルの文字コードの設定</span>
+</span></span><span style="display:flex;"><span>export LC_CTYPE<span style="color:#f92672">=</span>ja_JP.UTF-8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># デフォルトのエディタ</span>
+</span></span><span style="display:flex;"><span>export EDITOR<span style="color:#f92672">=</span>vim
 </span></span></code></pre></div><ol start="2">
 <li>
 <p><code>find</code> と <code>mdfind</code> の実用的なオプションを調べて、試してみてください。</p>
