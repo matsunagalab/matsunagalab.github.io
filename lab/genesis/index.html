@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="508">
+<meta itemprop="wordCount" content="512">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -136,6 +136,7 @@
 <h4 id="openmpiのインストール">OpenMPIのインストール</h4>
 <p>GENESISでは、プロセスを並列に複数走らせて、並列計算を行います。並列化されたプロセス間のデータのやりとりにMPIという仕組みを使いますので、MPI実装の一つであるOpenMPIを使います。MacOSでOpenMPIをコンパイルする手順は以下の通りです。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ brew install automake wget
+</span></span><span style="display:flex;"><span>$ brew install gcc@11
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.5.tar.gz
 </span></span><span style="display:flex;"><span>$ tar zxvf openmpi-4.0.5.tar.gz
 </span></span><span style="display:flex;"><span>$ cd openmpi-4.0.5/
