@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="">
 <meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
 <meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="wordCount" content="508">
+<meta itemprop="wordCount" content="507">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
@@ -135,48 +135,46 @@
 			<p>MacOSでのインストール</p>
 <h4 id="openmpiのインストール">OpenMPIのインストール</h4>
 <p>GENESISでは、プロセスを並列に複数走らせて、並列計算を行います。並列化されたプロセス間のデータのやりとりにMPIという仕組みを使いますので、MPI実装の一つであるOpenMPIを使います。MacOSでOpenMPIをコンパイルする手順は以下の通りです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ brew install automake wget
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.5.tar.gz
-</span></span><span style="display:flex;"><span>$ tar zxvf openmpi-4.0.5.tar.gz
-</span></span><span style="display:flex;"><span>$ cd openmpi-4.0.5/
-</span></span><span style="display:flex;"><span>$ ./configure CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin/gcc-11&#34;</span> CXX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin/g++-11&#34;</span> F77<span style="color:#f92672">=</span>gfortran FC<span style="color:#f92672">=</span>gfortran --enable-mpi-thread-multiple --prefix<span style="color:#f92672">=</span>/opt/openmpi-4.0.5
-</span></span><span style="display:flex;"><span>$ make
-</span></span><span style="display:flex;"><span>$ sudo make install
-</span></span></code></pre></div><p>もし<code>configure</code>の際に以下のようなエラーが出たら、CommandLineToolsを再インストールします。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo rm -rf /Library/Developer/CommandLineTools
-</span></span><span style="display:flex;"><span>$ sudo xcode-select --install
-</span></span></code></pre></div><p>コンパイルできたらインストールして環境変数PATHを設定します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ln -sf /opt/openmpi-4.0.5 /opt/openmpi
-</span></span></code></pre></div><p>vimで <code>~/.zshrc</code> の末尾に以下を追加</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># openmpi</span>
-</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>/opt/openmpi/bin:$PATH
-</span></span><span style="display:flex;"><span>export LD_LIBRARY_PATH<span style="color:#f92672">=</span>/opt/openmpi/lib:$LD_LIBRARY_PATH
-</span></span><span style="display:flex;"><span>export DYLD_LIBRARY_PATH<span style="color:#f92672">=</span>/opt/openmpi/lib:$DYLD_LIBRARY_PATH
-</span></span><span style="display:flex;"><span>export MANPATH<span style="color:#f92672">=</span>/opt/openmpi/share/man:$MANPATH
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ source ~/.zshrc
-</span></span></code></pre></div><p>無事にインストールされてPATHが通っているか確認</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ which mpirun
-</span></span></code></pre></div><h3 id="genesisのインストール">GENESISのインストール</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install automake wget
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.5.tar.gz
+$ tar zxvf openmpi-4.0.5.tar.gz
+$ cd openmpi-4.0.5/
+$ ./configure CC<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin/gcc-11&#34;</span> CXX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin/g++-11&#34;</span> F77<span style="color:#f92672">=</span>gfortran FC<span style="color:#f92672">=</span>gfortran --enable-mpi-thread-multiple --prefix<span style="color:#f92672">=</span>/opt/openmpi-4.0.5
+$ make
+$ sudo make install
+</code></pre></div><p>もし<code>configure</code>の際に以下のようなエラーが出たら、CommandLineToolsを再インストールします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo rm -rf /Library/Developer/CommandLineTools
+$ sudo xcode-select --install
+</code></pre></div><p>コンパイルできたらインストールして環境変数PATHを設定します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo ln -sf /opt/openmpi-4.0.5 /opt/openmpi
+</code></pre></div><p>vimで <code>~/.zshrc</code> の末尾に以下を追加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># openmpi</span>
+export PATH<span style="color:#f92672">=</span>/opt/openmpi/bin:$PATH
+export LD_LIBRARY_PATH<span style="color:#f92672">=</span>/opt/openmpi/lib:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH<span style="color:#f92672">=</span>/opt/openmpi/lib:$DYLD_LIBRARY_PATH
+export MANPATH<span style="color:#f92672">=</span>/opt/openmpi/share/man:$MANPATH
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ source ~/.zshrc
+</code></pre></div><p>無事にインストールされてPATHが通っているか確認</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ which mpirun
+</code></pre></div><h3 id="genesisのインストール">GENESISのインストール</h3>
 <p>MacOSでGENESISをコンパイルする手順は以下の通りです。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ wget --content-disposition <span style="color:#e6db74">&#34;https://www.r-ccs.riken.jp/labs/cbrt/?smd_process_download=1&amp;download_id=25561&#34;</span>
-</span></span><span style="display:flex;"><span>$ tar jxvf genesis-2.0.0.tar.bz2
-</span></span><span style="display:flex;"><span>$ cd genesis-2.0.0/
-</span></span><span style="display:flex;"><span>$ ./configure
-</span></span><span style="display:flex;"><span>$ make install
-</span></span></code></pre></div><p>コンパイルできたらインストールして環境変数PATHを設定します。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd ..
-</span></span><span style="display:flex;"><span>$ sudo mv genesis-2.0.0 /opt/
-</span></span><span style="display:flex;"><span>$ sudo ln -sf /opt/genesis-2.0.0 /opt/genesis
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>vimで <span style="color:#e6db74">`</span>~/.zshrc<span style="color:#e6db74">`</span> の末尾に以下を追加
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># genesis</span>
-</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>/opt/genesis/bin:$PATH
-</span></span></code></pre></div><p>設定を反映</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ source ~/.zshrc
-</span></span></code></pre></div><p>無事にインストールされてPATHが通っているか確認</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ which atdyn
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget --content-disposition <span style="color:#e6db74">&#34;https://www.r-ccs.riken.jp/labs/cbrt/?smd_process_download=1&amp;download_id=25561&#34;</span>
+$ tar jxvf genesis-2.0.0.tar.bz2
+$ cd genesis-2.0.0/
+$ ./configure
+$ make install
+</code></pre></div><p>コンパイルできたらインストールして環境変数PATHを設定します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ..
+$ sudo mv genesis-2.0.0 /opt/
+$ sudo ln -sf /opt/genesis-2.0.0 /opt/genesis
+</code></pre></div><p>vimで <code>~/.zshrc</code> の末尾に以下を追加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># genesis</span>
+export PATH<span style="color:#f92672">=</span>/opt/genesis/bin:$PATH
+</code></pre></div><p>設定を反映</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ source ~/.zshrc
+</code></pre></div><p>無事にインストールされてPATHが通っているか確認</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ which atdyn
+</code></pre></div>
 		</div>
 	</article>
 </main>
