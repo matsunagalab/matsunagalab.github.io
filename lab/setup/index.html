@@ -11,13 +11,13 @@
 <meta property="og:description" content="Lab-only" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.bio.ics.saitama-u.ac.jp/lab/setup/" /><meta property="article:section" content="lab" />
-<meta property="article:published_time" content="2020-09-20T18:30:26+09:00" />
-<meta property="article:modified_time" content="2020-09-20T18:30:26+09:00" />
+<meta property="article:published_time" content="2020-09-20T18:30:26&#43;09:00" />
+<meta property="article:modified_time" content="2020-09-20T18:30:26&#43;09:00" />
 
 
 		<meta itemprop="name" content="">
-<meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26+09:00" />
-<meta itemprop="dateModified" content="2020-09-20T18:30:26+09:00" />
+<meta itemprop="description" content="Lab-only"><meta itemprop="datePublished" content="2020-09-20T18:30:26&#43;09:00" />
+<meta itemprop="dateModified" content="2020-09-20T18:30:26&#43;09:00" />
 <meta itemprop="wordCount" content="1452">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
@@ -175,13 +175,13 @@
 <h4 id="homebrewのインストールと必要なソフトウェアのインストール">Homebrewのインストールと必要なソフトウェアのインストール</h4>
 <p>HomebrewとはMacのアプリケーションのインストール・アンインストールを管理してくれるパッケージマネージャです。<a href="https://brew.sh/index_ja">ここ</a>に従ってターミナルからインストールしてください。</p>
 <p>Homebrewでは<code>brew</code>というコマンドの後に、命令を書いてアプリケーションを探したりインストールすることができます。以下で、命令可能なコマンドを確認してみてください。</p>
-<pre tabindex="0"><code>$ brew help
+<pre><code>$ brew help
 </code></pre><p>Slackをインストールします。別途ワークスペース情報を共有するので大学のMicrosoft365メールアドレスでログインしてください。</p>
-<pre tabindex="0"><code>$ brew install --cask slack
+<pre><code>$ brew install --cask slack
 </code></pre><p>Microsoft Officeをインストールします。インストール後、起動時にアカウントが求められますので、大学のMicrosoft365アカウントを使ってください。</p>
-<pre tabindex="0"><code>$ brew install --cask microsoft-office
+<pre><code>$ brew install --cask microsoft-office
 </code></pre><p>Zoomをインストールします。</p>
-<pre tabindex="0"><code>$ brew install --cask zoom
+<pre><code>$ brew install --cask zoom
 </code></pre><h4 id="セキュリティを強化する">セキュリティを強化する</h4>
 <p>まず、MacBook Proへのログインパスワードが簡単すぎる場合は、<a href="https://support.apple.com/ja-jp/HT202860">ここ</a>に従って予測されにくいものへ変更してください。その後、<a href="https://support.apple.com/ja-jp/HT204837">ここ</a>に従って、MacOSの機能である「起動ディスクの暗号化(FireVault)」をオンにしてください。これを有効にすれば、例えばMacBook Proが盗難にあってもデータが漏洩することを防ぐことができます。</p>
 
@@ -268,6 +268,14 @@
 					<svg role="img" width="24" height="24" viewBox="1 -3 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><title>Jupyter icon</title><path d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799zM20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427zM4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056zm7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.363 9.363 0 0 0-3.393-4.547 9.238 9.238 0 0 0-5.377-1.728A9.238 9.238 0 0 0 6.95 3.73a9.363 9.363 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424zm.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.363 9.363 0 0 0 3.394 4.547A9.238 9.238 0 0 0 12.33 21a9.238 9.238 0 0 0 5.377-1.729 9.363 9.363 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z"/></svg>
 
 				<span>Jupyter on m1</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Jupyter on m2" rel="noopener noreferrer" href="http://192.168.1.52:8000/" target="_blank">
+					<svg role="img" width="24" height="24" viewBox="1 -3 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><title>Jupyter icon</title><path d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799zM20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427zM4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056zm7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.363 9.363 0 0 0-3.393-4.547 9.238 9.238 0 0 0-5.377-1.728A9.238 9.238 0 0 0 6.95 3.73a9.363 9.363 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424zm.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.363 9.363 0 0 0 3.394 4.547A9.238 9.238 0 0 0 12.33 21a9.238 9.238 0 0 0 5.377-1.729 9.363 9.363 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z"/></svg>
+
+				<span>Jupyter on m2</span>
 			</a>
 		</div>
 		
