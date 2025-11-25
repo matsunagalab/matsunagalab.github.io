@@ -4,17 +4,16 @@
     <title>Lab on 埼玉大学 松永研究室</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/categories/lab/</link>
     <description>Recent content in Lab on 埼玉大学 松永研究室</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 20 Sep 2020 18:30:26 +0900</lastBuildDate><atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/lab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 18:30:26 +0900</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/lab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.bio.ics.saitama-u.ac.jp/lab/</link>
       <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/lab/</guid>
-      <description>研究室向け 研究室の学生の皆さんへ 以下には研究室のGitHub organizationのrepositoriesへのリンクや文書があります。 研究に使う情報やコード・データを整理整頓して他のメンバーと共有し、研究を進めることが目的です。 メンバー</description>
+      <description>&lt;h3 id=&#34;研究室向け&#34;&gt;研究室向け&lt;/h3&gt;&#xA;&lt;h4 id=&#34;研究室の学生の皆さんへ&#34;&gt;研究室の学生の皆さんへ&lt;/h4&gt;&#xA;&lt;p&gt;以下には研究室のGitHub organizationのrepositoriesへのリンクや文書があります。&#xA;研究に使う情報やコード・データを整理整頓して他のメンバーと共有し、研究を進めることが目的です。&#xA;メンバーの人はGitHubの勉強も兼ねて積極的にCommit&amp;amp;Pushしてください。バージョン管理ですので間違ったCommitをしても大丈夫です。&#xA;不安がある人はまず&lt;a href=&#34;https://www.youtube.com/results?search_query=GitHub+%E5%88%9D%E5%BF%83%E8%80%85&#34;&gt;YouTubeでGitHubとは何かを学んだり&lt;/a&gt;、&#xA;&lt;a href=&#34;https://www.aise.ics.saitama-u.ac.jp/~gotoh/IntroGitHub.html&#34;&gt;後藤先生の解説を読んだり&lt;/a&gt;、&#xA;&lt;a href=&#34;https://kaityo256.github.io/github/&#34;&gt;渡邊先生のGitHub演習を読んだり&lt;/a&gt;してから作業してください。&#xA;心配ならばCommit&amp;amp;Pushの代わりにPull Requestをしてくれれば教員がレビュー後にマージします。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

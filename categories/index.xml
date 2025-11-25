@@ -4,71 +4,58 @@
     <title>Categories on 埼玉大学 松永研究室</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/categories/</link>
     <description>Recent content in Categories on 埼玉大学 松永研究室</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 20 Sep 2020 21:10:35 +0900</lastBuildDate><atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 21:10:35 +0900</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Resource</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/resource/</link>
       <pubDate>Sun, 20 Sep 2020 21:10:35 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/resource/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Publication</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/publication/</link>
       <pubDate>Sun, 20 Sep 2020 21:00:54 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/publication/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Member</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/member/</link>
       <pubDate>Sun, 20 Sep 2020 20:44:26 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/member/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Recruiting</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/</link>
       <pubDate>Sun, 20 Sep 2020 19:22:44 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Teaching</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/teaching/</link>
       <pubDate>Sun, 20 Sep 2020 18:39:20 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/teaching/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Research</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/research/</link>
       <pubDate>Sun, 20 Sep 2020 18:37:38 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/research/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Lab</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/lab/</link>
       <pubDate>Sun, 20 Sep 2020 18:30:26 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/lab/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

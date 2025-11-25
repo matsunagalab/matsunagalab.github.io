@@ -4,17 +4,16 @@
     <title>Research on 埼玉大学 松永研究室</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/categories/research/</link>
     <description>Recent content in Research on 埼玉大学 松永研究室</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 20 Sep 2020 18:37:38 +0900</lastBuildDate><atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 18:37:38 +0900</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.bio.ics.saitama-u.ac.jp/research/</link>
       <pubDate>Sun, 20 Sep 2020 18:37:38 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/research/</guid>
-      <description>研究の概要 生命現象の多くはタンパク質というヒモ状の分子が担っています。タンパク質は数十億年におよぶ進化の過程でデザインされた神秘的なふるまいを持つ一方で、多くの病気にも関与している重要な研究対象です。 タンパク質はとても複雑であり、数千から数</description>
+      <description>&lt;h3 id=&#34;研究の概要&#34;&gt;研究の概要&lt;/h3&gt;&#xA;&lt;p&gt;生命現象の多くはタンパク質というヒモ状の分子が担っています。タンパク質は数十億年におよぶ進化の過程でデザインされた神秘的なふるまいを持つ一方で、多くの病気にも関与している重要な研究対象です。&#xA;タンパク質はとても複雑であり、数千から数十万個の原子からできています。このように複雑なものをどのようにして調べることができるでしょうか？&#xA;私たちはこの問題に対し情報工学からアプローチしています。コンピュータの仮想空間の中でタンパク質を構築し、自然法則を真似て詳しく観察する手法(シミュレーション)を開発し応用する。&#xA;そしてそこから得られたビッグデータもコンピュータに理解させ(データサイエンス)、次の仮説を作り出しシミュレーションを行う。&#xA;このサイクルを迅速・自動的にまわすフレームワークとソフトウェアを開発することでタンパク質のふるまいを理解し制御する、具体的にはタンパク質機能を改善する合理的デザインや薬剤設計へ貢献することを目標としています。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

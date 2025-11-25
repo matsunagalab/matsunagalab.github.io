@@ -4,17 +4,16 @@
     <title>Recruiting on 埼玉大学 松永研究室</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/</link>
     <description>Recent content in Recruiting on 埼玉大学 松永研究室</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 20 Sep 2020 19:22:44 +0900</lastBuildDate><atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 19:22:44 +0900</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/recruiting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.bio.ics.saitama-u.ac.jp/recruiting/</link>
       <pubDate>Sun, 20 Sep 2020 19:22:44 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/recruiting/</guid>
-      <description>FAQ 研究室でどのような能力が得られますか？ 情報工学、特に学部で学んできた数学・プログラミング・データ解析の知識を自然現象の解析(我々の場合は特に生命科学)へ応用する能力が得られます。また逆に、データ解析やシミュレーションは、実際のモノへ応用し</description>
+      <description>&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;&#xA;&lt;h4 id=&#34;研究室でどのような能力が得られますか&#34;&gt;研究室でどのような能力が得られますか？&lt;/h4&gt;&#xA;&lt;p&gt;情報工学、特に学部で学んできた数学・プログラミング・データ解析の知識を自然現象の解析(我々の場合は特に生命科学)へ応用する能力が得られます。また逆に、データ解析やシミュレーションは、実際のモノへ応用してあれこれ苦労することで、手法自身に対する理解が深まるということが多いです。その意味では、自然現象にあまり興味がなくても、とにかく大きな計算をしてみたいとか、複雑なデータを解析してみたい、という向きの人もマッチすると思いますし、もちろん歓迎します。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

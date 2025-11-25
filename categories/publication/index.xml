@@ -4,17 +4,16 @@
     <title>Publication on 埼玉大学 松永研究室</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/categories/publication/</link>
     <description>Recent content in Publication on 埼玉大学 松永研究室</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 20 Sep 2020 21:00:54 +0900</lastBuildDate><atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/publication/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 21:00:54 +0900</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/publication/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.bio.ics.saitama-u.ac.jp/publication/</link>
       <pubDate>Sun, 20 Sep 2020 21:00:54 +0900</pubDate>
-      
       <guid>https://www.bio.ics.saitama-u.ac.jp/publication/</guid>
-      <description>Papers R. Toyooka, S. Nishimoto, T. Tendo, T. Horiyama*, T. Tachi*, and Y. Matsunaga*, “Explicit description of viral capsid subunit shapes by unfolding dihedrons” Communications Biology 7, 1509 (9 pages) (2024) DOI:10.1038/s42003-024-07218-x J. Jung, K. Yagi, C. Tan, H. Oshima, T. Mori, I. Yu, Y. Matsunaga, C. Kobayashi, S. Ito, D. Ugarte La Torre, and Y. Sugita* &amp;ldquo;GENESIS 2.1: High-Performance Molecular Dynamics Software for Enhanced Sampling and Free-Energy Calculations for Atomistic, Coarse-Grained, and Quantum Mechanics/Molecular Mechanics Models&amp;rdquo; Journal of Physical Chemistry B 128, 6028-6048 (2024) DOI:10.1021/acs.jpcb.4c02096 T. Ishizone*, Y. Matsunaga, S. Fuchigami, and K. Nakamura &amp;ldquo;Representation of Protein Dynamics Disentangled by Time-Structure-Based Prior&amp;rdquo;</description>
+      <description>&lt;h3 id=&#34;papers&#34;&gt;Papers&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;R. Toyooka, S. Nishimoto, T. Tendo, T. Horiyama*, T. Tachi*, and Y. Matsunaga*, “Explicit description of viral capsid subunit shapes by unfolding dihedrons” Communications Biology 7, 1509 (9 pages) (2024) &lt;a href=&#34;https://doi.org/10.1038/s42003-024-07218-x&#34;&gt;DOI:10.1038/s42003-024-07218-x&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;J. Jung, K. Yagi, C. Tan, H. Oshima, T. Mori, I. Yu, Y. Matsunaga, C. Kobayashi, S. Ito, D. Ugarte La Torre, and Y. Sugita* &amp;ldquo;GENESIS 2.1: High-Performance Molecular Dynamics Software for Enhanced Sampling and Free-Energy Calculations for Atomistic, Coarse-Grained, and Quantum Mechanics/Molecular Mechanics Models&amp;rdquo; Journal of Physical Chemistry B 128, 6028-6048 (2024) &lt;a href=&#34;https://doi.org/10.1021/acs.jpcb.4c02096&#34;&gt;DOI:10.1021/acs.jpcb.4c02096&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;T. Ishizone*, Y. Matsunaga, S. Fuchigami, and K. Nakamura &amp;ldquo;Representation of Protein Dynamics Disentangled by Time-Structure-Based Prior&amp;rdquo; Journal of Chemical Theory and Computation 20, 436-450 (2023) &lt;a href=&#34;https://doi.org/10.1021/acs.jctc.3c01025&#34;&gt;DOI:10.1021/acs.jctc.3c01025&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
