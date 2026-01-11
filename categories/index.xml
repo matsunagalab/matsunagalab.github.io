@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 埼玉大学 松永研究室</title>
+    <title>Categories on Matsunaga Lab</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/categories/</link>
-    <description>Recent content in Categories on 埼玉大学 松永研究室</description>
+    <description>Recent content in Categories on Matsunaga Lab</description>
     <generator>Hugo</generator>
-    <language>ja-jp</language>
-    <lastBuildDate>Sun, 20 Sep 2020 21:10:35 +0900</lastBuildDate>
+    <language>en</language>
+    <copyright>Yasuhiro Matsunaga</copyright>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Resource</title>
-      <link>https://www.bio.ics.saitama-u.ac.jp/categories/resource/</link>
-      <pubDate>Sun, 20 Sep 2020 21:10:35 +0900</pubDate>
-      <guid>https://www.bio.ics.saitama-u.ac.jp/categories/resource/</guid>
+      <title>Preprint</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/categories/preprint/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/categories/preprint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Invited Talk</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/categories/invited-talk/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/categories/invited-talk/</guid>
       <description></description>
     </item>
     <item>
       <title>Publication</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/categories/publication/</link>
-      <pubDate>Sun, 20 Sep 2020 21:00:54 +0900</pubDate>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://www.bio.ics.saitama-u.ac.jp/categories/publication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Resource</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/categories/resource/</link>
+      <pubDate>Sun, 20 Sep 2020 21:10:35 +0900</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/categories/resource/</guid>
       <description></description>
     </item>
     <item>

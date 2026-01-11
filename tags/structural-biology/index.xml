@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Structural Biology on Matsunaga Lab</title>
+    <link>https://www.bio.ics.saitama-u.ac.jp/tags/structural-biology/</link>
+    <description>Recent content in Structural Biology on Matsunaga Lab</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Yasuhiro Matsunaga</copyright>
+    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/tags/structural-biology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Explicit description of viral capsid subunit shapes by unfolding dihedrons</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/publication-viral-capsid/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/publication-viral-capsid/</guid>
+      <description>&lt;p&gt;Our collaborative paper with Dr. Tachi (University of Tokyo), Toyooka-san, Nishimoto-san, Tendo-san, and Dr. Horiyama (Hokkaido University) on viral capsid structure tiling has been published in Communications Biology.&lt;/p&gt;&#xA;&lt;p&gt;Virus capsid structures are formed by proteins of the same shape assembling into icosahedra, but the possible tile shapes were not well understood. Through this collaboration with the Tachi group and Dr. Horiyama, who are experts in tiling, we developed a framework to explicitly describe capsid tile shapes and applied it to classify actual viral capsid structures.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

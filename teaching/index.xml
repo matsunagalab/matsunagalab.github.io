@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>埼玉大学 松永研究室</title>
+    <title>Teaching on Matsunaga Lab</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/teaching/</link>
-    <description>Recent content on 埼玉大学 松永研究室</description>
+    <description>Recent content in Teaching on Matsunaga Lab</description>
     <generator>Hugo</generator>
-    <language>ja-jp</language>
+    <language>en</language>
+    <copyright>Yasuhiro Matsunaga</copyright>
     <lastBuildDate></lastBuildDate>
     <atom:link href="https://www.bio.ics.saitama-u.ac.jp/teaching/index.xml" rel="self" type="application/rss+xml" />
   </channel>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.bio.ics.saitama-u.ac.jp/sitemap.xml

@@ -1,11 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 埼玉大学 松永研究室</title>
+    <title>Tags on Matsunaga Lab</title>
     <link>https://www.bio.ics.saitama-u.ac.jp/tags/</link>
-    <description>Recent content in Tags on 埼玉大学 松永研究室</description>
+    <description>Recent content in Tags on Matsunaga Lab</description>
     <generator>Hugo</generator>
-    <language>ja-jp</language>
+    <language>en</language>
+    <copyright>Yasuhiro Matsunaga</copyright>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.bio.ics.saitama-u.ac.jp/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/machine-learning/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nanobody</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/nanobody/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/nanobody/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Protein Language Model</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/protein-language-model/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/protein-language-model/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AFM</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/afm/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/afm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Protein Structure</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/protein-structure/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/protein-structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Presentation</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/presentation/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/presentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Structural Biology</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/structural-biology/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/structural-biology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tiling</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/tiling/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/tiling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Viral Capsid</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/viral-capsid/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/viral-capsid/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

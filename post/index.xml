@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Matsunaga Lab</title>
+    <link>https://www.bio.ics.saitama-u.ac.jp/post/</link>
+    <description>Recent content in Posts on Matsunaga Lab</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Yasuhiro Matsunaga</copyright>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-interpretability/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-interpretability/</guid>
+      <description>&lt;p&gt;T. Murakami, Y. Hashidate, and Y. Matsunaga published a new preprint on bioRxiv.&lt;/p&gt;&#xA;&lt;p&gt;Read the full paper: &lt;a href=&#34;https://www.biorxiv.org/content/10.64898/2025.12.22.695878v1&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AFM-Fold: Rapid Reconstruction of Protein Conformations from AFM Images</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/preprint-afm-fold/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/preprint-afm-fold/</guid>
+      <description>&lt;p&gt;T. Kawai, and Y. Matsunaga published a new preprint on bioRxiv.&lt;/p&gt;&#xA;&lt;p&gt;Read the full paper: &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2025.11.17.688836v2&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;AFM-Fold: Rapid Reconstruction of Protein Conformations from AFM Images&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Invited Talk at SPM Workshop 2024</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/invited-talk-spm-2025/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/invited-talk-spm-2025/</guid>
+      <description>&lt;p&gt;Prof. Matsunaga gave an invited talk titled &amp;ldquo;AFM data tip shape estimation and its application to biomolecular dynamics modeling&amp;rdquo; at the &lt;a href=&#34;https://microscopy.or.jp/jsm2022/wp-content/uploads/2024/10/b15a333eada44726925860197606e317.pdf&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Japanese Society of Microscopy SPM Workshop 2024&lt;/a&gt; held at Hokkaido University Enreiso on January 9, 2025.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Explicit description of viral capsid subunit shapes by unfolding dihedrons</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/publication-viral-capsid/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/publication-viral-capsid/</guid>
+      <description>&lt;p&gt;Our collaborative paper with Dr. Tachi (University of Tokyo), Toyooka-san, Nishimoto-san, Tendo-san, and Dr. Horiyama (Hokkaido University) on viral capsid structure tiling has been published in Communications Biology.&lt;/p&gt;&#xA;&lt;p&gt;Virus capsid structures are formed by proteins of the same shape assembling into icosahedra, but the possible tile shapes were not well understood. Through this collaboration with the Tachi group and Dr. Horiyama, who are experts in tiling, we developed a framework to explicitly describe capsid tile shapes and applied it to classify actual viral capsid structures.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

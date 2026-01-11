@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Preprint on Matsunaga Lab</title>
+    <link>https://www.bio.ics.saitama-u.ac.jp/categories/preprint/</link>
+    <description>Recent content in Preprint on Matsunaga Lab</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Yasuhiro Matsunaga</copyright>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.bio.ics.saitama-u.ac.jp/categories/preprint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-interpretability/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-interpretability/</guid>
+      <description>&lt;p&gt;T. Murakami, Y. Hashidate, and Y. Matsunaga published a new preprint on bioRxiv.&lt;/p&gt;&#xA;&lt;p&gt;Read the full paper: &lt;a href=&#34;https://www.biorxiv.org/content/10.64898/2025.12.22.695878v1&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AFM-Fold: Rapid Reconstruction of Protein Conformations from AFM Images</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/preprint-afm-fold/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/preprint-afm-fold/</guid>
+      <description>&lt;p&gt;T. Kawai, and Y. Matsunaga published a new preprint on bioRxiv.&lt;/p&gt;&#xA;&lt;p&gt;Read the full paper: &lt;a href=&#34;https://www.biorxiv.org/content/10.1101/2025.11.17.688836v2&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;AFM-Fold: Rapid Reconstruction of Protein Conformations from AFM Images&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
