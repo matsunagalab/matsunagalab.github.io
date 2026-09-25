@@ -7,21 +7,21 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Yasuhiro Matsunaga</copyright>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.bio.ics.saitama-u.ac.jp/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/post/publication-nanobody-interpretability/</link>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/post/publication-nanobody-interpretability/</guid>
+      <description>&lt;p&gt;T. Murakami, Y. Hashidate, and Y. Matsunaga published a paper in Bioinformatics.&lt;/p&gt;&#xA;&lt;p&gt;We fine-tuned the protein language model ESM-2 on nanobody thermostability data and used sparse autoencoders (SAEs) to decompose its embeddings into sparse, interpretable features. The analysis identified known determinants of stability, such as the VHH tetrad and disulfide bonds, as well as candidate stabilizing residues, which were supported by free energy perturbation calculations.&lt;/p&gt;&#xA;&lt;p&gt;Read the full paper: &lt;a href=&#34;https://doi.org/10.1093/bioinformatics/btag685&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Transfer learning from computed stability data for nanobody melting-temperature prediction</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-tm-prediction/</link>
       <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-tm-prediction/</guid>
       <description>&lt;p&gt;T. Murakami, K. Sasaki, S. Oda, K. Okada, and Y. Matsunaga published a new preprint on bioRxiv.&lt;/p&gt;&#xA;&lt;p&gt;Read the full paper: &lt;a href=&#34;https://www.biorxiv.org/content/10.64898/2026.07.30.741744v1&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Transfer learning from computed stability data for nanobody melting-temperature prediction&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction</title>
-      <link>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-interpretability/</link>
-      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.bio.ics.saitama-u.ac.jp/post/preprint-nanobody-interpretability/</guid>
-      <description>&lt;p&gt;T. Murakami, Y. Hashidate, and Y. Matsunaga published a new preprint on bioRxiv.&lt;/p&gt;&#xA;&lt;p&gt;Read the full paper: &lt;a href=&#34;https://www.biorxiv.org/content/10.64898/2025.12.22.695878v1&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

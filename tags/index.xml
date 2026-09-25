@@ -7,13 +7,27 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Yasuhiro Matsunaga</copyright>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.bio.ics.saitama-u.ac.jp/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Machine Learning</title>
       <link>https://www.bio.ics.saitama-u.ac.jp/tags/machine-learning/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
       <guid>https://www.bio.ics.saitama-u.ac.jp/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nanobody</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/nanobody/</link>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/nanobody/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Protein Language Model</title>
+      <link>https://www.bio.ics.saitama-u.ac.jp/tags/protein-language-model/</link>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/protein-language-model/</guid>
       <description></description>
     </item>
     <item>
@@ -21,20 +35,6 @@
       <link>https://www.bio.ics.saitama-u.ac.jp/tags/molecular-dynamics/</link>
       <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://www.bio.ics.saitama-u.ac.jp/tags/molecular-dynamics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nanobody</title>
-      <link>https://www.bio.ics.saitama-u.ac.jp/tags/nanobody/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/nanobody/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Protein Language Model</title>
-      <link>https://www.bio.ics.saitama-u.ac.jp/tags/protein-language-model/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.bio.ics.saitama-u.ac.jp/tags/protein-language-model/</guid>
       <description></description>
     </item>
     <item>
